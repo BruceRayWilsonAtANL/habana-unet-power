@@ -4,6 +4,7 @@ Reminder: until the shell defaulting to zsh is fixed, must use:
 source /etc/profile.d/habanalabs.sh
 export PYTHON=/home/aevard/aevard_venv/bin/python
 export PYTHONPATH=/home/aevard/Model-References:/home/aevard/aevard_venv/bin/python
+export HABANA_LOGS=~/habana_logs
 ```
 before running the script.
 

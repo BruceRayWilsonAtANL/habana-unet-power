@@ -183,8 +183,8 @@ def datasets(images, image_size, aug_scale, aug_angle):
         image_size=image_size,
         from_cache=True,
     )
-    print(len(train))
-    print(len(valid))
+    # print(len(train))
+    # print(len(valid))
     return train, valid
 
 def data_loaders(batch_size, workers, image_size, aug_scale, aug_angle):

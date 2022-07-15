@@ -29,4 +29,9 @@
 
 (Within Habana)
 `$PYTHON unet.py --hpu --use_lazy_mode --epochs 50` is the current default.
+
 Remember to specify a different `--weights-file` than `unet.pt` if running two or more models at once, or if wanting to save the weights file.
+
+Current additions are `--im-path` (bool), and `--cache-path` (str). Testing `--image-size` as well.
+
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 256-1 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256.pt`

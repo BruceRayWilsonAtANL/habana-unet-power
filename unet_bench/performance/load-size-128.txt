@@ -1,0 +1,125 @@
+Command: ['unet.py', '--hpu', '--use_lazy_mode', '--epochs', '50', '--image-size', '128', '--im-cache', '--cache-path', './kaggle_128_cache', '--weights-file', './128.pt', '--run-name', 'load-size-128']
+Initializing loaders time: 649.5738637447357
+epoch 1 train time: 45.62983250617981
+epoch 1 eval time: 4.563174247741699
+epoch 2 train time: 26.51561164855957
+epoch 2 eval time: 0.377061128616333
+epoch 3 train time: 26.6097731590271
+epoch 3 eval time: 0.3919529914855957
+epoch 4 train time: 26.982080221176147
+epoch 4 eval time: 0.37894654273986816
+epoch 5 train time: 27.76691746711731
+epoch 5 eval time: 0.3743855953216553
+epoch 6 train time: 27.57503867149353
+epoch 6 eval time: 0.37827610969543457
+epoch 7 train time: 27.412333488464355
+epoch 7 eval time: 0.37274622917175293
+epoch 8 train time: 26.178602933883667
+epoch 8 eval time: 0.3791999816894531
+epoch 9 train time: 26.38820791244507
+epoch 9 eval time: 0.37946271896362305
+epoch 10 train time: 26.39519739151001
+epoch 10 eval time: 0.3729820251464844
+epoch 11 train time: 26.237348318099976
+epoch 11 eval time: 0.3854081630706787
+epoch 12 train time: 26.241549253463745
+epoch 12 eval time: 0.3840358257293701
+epoch 13 train time: 28.5020751953125
+epoch 13 eval time: 0.3876340389251709
+epoch 14 train time: 28.461344242095947
+epoch 14 eval time: 0.41483569145202637
+epoch 15 train time: 30.465954303741455
+epoch 15 eval time: 0.40319347381591797
+epoch 16 train time: 29.928841829299927
+epoch 16 eval time: 0.3826003074645996
+epoch 17 train time: 29.665048599243164
+epoch 17 eval time: 0.4189424514770508
+epoch 18 train time: 30.663328409194946
+epoch 18 eval time: 0.38176846504211426
+epoch 19 train time: 27.4182870388031
+epoch 19 eval time: 0.4151759147644043
+epoch 20 train time: 27.33858299255371
+epoch 20 eval time: 0.3798811435699463
+epoch 21 train time: 27.21996283531189
+epoch 21 eval time: 0.4032752513885498
+epoch 22 train time: 27.101195335388184
+epoch 22 eval time: 0.3800070285797119
+epoch 23 train time: 28.11556601524353
+epoch 23 eval time: 0.4024665355682373
+epoch 24 train time: 28.531129598617554
+epoch 24 eval time: 0.39229321479797363
+epoch 25 train time: 29.46260690689087
+epoch 25 eval time: 0.3924293518066406
+epoch 26 train time: 28.89389395713806
+epoch 26 eval time: 0.38362669944763184
+epoch 27 train time: 28.137534856796265
+epoch 27 eval time: 0.3812601566314697
+epoch 28 train time: 26.636170148849487
+epoch 28 eval time: 0.3842334747314453
+epoch 29 train time: 28.31958031654358
+epoch 29 eval time: 0.42670273780822754
+epoch 30 train time: 28.049200773239136
+epoch 30 eval time: 0.40315771102905273
+epoch 31 train time: 26.949455976486206
+epoch 31 eval time: 0.38605809211730957
+epoch 32 train time: 27.876649856567383
+epoch 32 eval time: 0.41416192054748535
+epoch 33 train time: 27.871713876724243
+epoch 33 eval time: 0.439117431640625
+epoch 34 train time: 26.87323570251465
+epoch 34 eval time: 0.39092135429382324
+epoch 35 train time: 28.88548755645752
+epoch 35 eval time: 0.38177943229675293
+epoch 36 train time: 28.40017580986023
+epoch 36 eval time: 0.3928821086883545
+epoch 37 train time: 28.238255500793457
+epoch 37 eval time: 0.3887345790863037
+epoch 38 train time: 28.24911856651306
+epoch 38 eval time: 0.41708850860595703
+epoch 39 train time: 30.271723747253418
+epoch 39 eval time: 0.4297056198120117
+epoch 40 train time: 27.9640896320343
+epoch 40 eval time: 0.38521766662597656
+epoch 41 train time: 28.591368436813354
+epoch 41 eval time: 0.4211604595184326
+epoch 42 train time: 30.6257221698761
+epoch 42 eval time: 0.40364599227905273
+epoch 43 train time: 29.83697533607483
+epoch 43 eval time: 0.3939952850341797
+epoch 44 train time: 28.258446216583252
+epoch 44 eval time: 0.3870987892150879
+epoch 45 train time: 31.384660720825195
+epoch 45 eval time: 0.4371018409729004
+epoch 46 train time: 30.730997323989868
+epoch 46 eval time: 0.4351062774658203
+epoch 47 train time: 30.019057989120483
+epoch 47 eval time: 0.40403223037719727
+epoch 48 train time: 27.937530755996704
+epoch 48 eval time: 0.38173580169677734
+epoch 49 train time: 28.199492931365967
+epoch 49 eval time: 0.4041886329650879
+epoch 50 train time: 28.736886024475098
+epoch 50 eval time: 0.3820223808288574
+total_train_time = 1428.743840456009 for 50 epochs
+total_eval_time = 1428.743840456009 for 50 epochs
+
+Best validation mean DSC: 0.6559468463476424
+
+Command: ['unet.py', '--hpu', '--use_lazy_mode', '--epochs', '50', '--image-size', '128', '--im-cache', '--cache-path', './kaggle_128_cache', '--weights-file', './128.pt', '--run-name', 'load-size-128']
+Image read time: 17.19056010246277
+Image preprocess time: 8.940696716308594e-05
+Image cropping time: 6.2643654346466064
+Image padding time: 0.3088700771331787
+Image resizing time: 546.6243135929108
+Image normalizing time: 7.433590888977051
+Image caching time: 7.2776548862457275
+Patient index: 0.002766132354736328
+Image read time: 17.84153389930725
+Image preprocess time: 2.3126602172851562e-05
+Image cropping time: 0.6554708480834961
+Image padding time: 0.01660752296447754
+Image resizing time: 56.4246780872345
+Image normalizing time: 0.7949118614196777
+Image caching time: 0.5590271949768066
+Patient index: 0.00021767616271972656
+Initializing loaders time: 661.4225158691406

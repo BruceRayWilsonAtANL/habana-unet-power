@@ -94,12 +94,12 @@ class BrainSegmentationDataset(Dataset):
         image_size=256,
         subset="train",
         from_cache=False,
+        cache_dir="kaggle_cache"
     ):
         assert subset in ["all", "train", "validation"]
         volumes = {}
         masks = {}
-        cache_dir = "kaggle_cache"
-
+        
         if from_cache:
             for patient in sorted(os.listdir(cache_dir)):
                 if "mask.npy" in patient:
@@ -144,7 +144,6 @@ class BrainSegmentationDataset(Dataset):
                     masks[patient_id] = np.array(mask_slices[1:-1])
 
             self.patients = sorted(volumes)
-            print(self.patients)
 
             if not subset == "all":
                 
@@ -157,9 +156,6 @@ class BrainSegmentationDataset(Dataset):
                         list(set(self.patients).difference(validation_patients))
                     )
 
-
-            #TODO figure out how to separate this block and save (with a param to redo)
-            
             print("preprocessing {} volumes...".format(subset))
             self.volumes = [(volumes[k], masks[k]) for k in self.patients]
 
@@ -187,8 +183,6 @@ class BrainSegmentationDataset(Dataset):
                 np.save(path_name, vol[0])
                 np.save(f"{path_name}_mask", vol[1])
             print("done caching {} dataset".format(subset))
-
-        # TODO either cache the dataset or load it right here.
 
         num_slices = [v.shape[0] for v, m in self.volumes]
         self.patient_slice_index = list(

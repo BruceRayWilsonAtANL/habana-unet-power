@@ -12,6 +12,7 @@ from torchvision.transforms import Compose
 from dataset import BrainSegmentationDataset
 import argparse
 import utils
+import sys
 
 import habana_frameworks.torch.core as htcore
 # os.environ["PT_HPU_LAZY_MODE"]="1"
@@ -118,7 +119,6 @@ class UNet(nn.Module):
 def transforms_net(scale=0.995, angle=5):
     transform_list = []
 
-    #TODO set default scale angle values that match normal rotation
     if scale is not None:
         transform_list.append(Scale(scale))
     if angle is not None:
@@ -174,24 +174,26 @@ class Rotate(object):
         )
         return image, mask
 
-def dataset_net(images, args):
+def dataset_net(args):
     train = BrainSegmentationDataset(
-        images_dir=images,
+        images_dir="data/" + args.data_path,
         subset="train",
         image_size=args.image_size,
         transform=transforms_net(scale=args.aug_scale, angle=args.aug_angle),
-        from_cache=True,
+        from_cache=args.im_cache,
+        cache_dir="data/" + args.cache_path
     )
     valid = BrainSegmentationDataset(
-        images_dir=images,
+        images_dir="data/" + args.data_path,
         subset="validation",
         image_size=args.image_size,
-        from_cache=True,
+        from_cache=args.im_cache,
+        cache_dir="data/" + args.cache_path
     )
     return train, valid
 
 def data_loaders(args):
-    dataset_train, dataset_valid = dataset_net("kaggle_3m", args) #TODO convert to args
+    dataset_train, dataset_valid = dataset_net(args) #TODO add this as an arg (and cache'd dir)
 
     def worker_init(worker_id):
         np.random.seed(2021)
@@ -216,10 +218,10 @@ def data_loaders(args):
     return loader_train, loader_valid
 
 def log_loss_summary(loss, step, prefix=""):
-    print("epoch {} | {}: {}".format(step, prefix + "loss", np.mean(loss)))
+    return f"epoch {step} | {prefix}loss: {np.mean(loss)}"
 
 def log_scalar_summary(tag, value, step):
-    print("epoch {} | {}: {}".format(step, tag, value))
+    return f"epoch {step} | {tag}: {value}"
 
 def dsc(y_pred, y_true):
     y_pred = np.round(y_pred).astype(int)
@@ -260,8 +262,9 @@ def train(args, model, loss_fn, optimizer, trainloader, device, epoch):
             if args.use_lazy_mode:
                 htcore.mark_step() 
             loss_train.append(loss.item())
-    log_loss_summary(loss_train, epoch)
-    # print(f"Time spent training this epoch: {time.time() - train_time}") #TODO add something about this eventually maybe?
+
+    print(log_loss_summary(loss_train, epoch))
+    log(os.path.join("./performance/", args.run_name + ".txt"), log_loss_summary(loss_train, epoch))
 
 def eval(args, model, loss_fn, testloader, device, epoch):
     model.eval()
@@ -289,7 +292,9 @@ def eval(args, model, loss_fn, testloader, device, epoch):
             [y_true_np[s] for s in range(y_true_np.shape[0])]
         )
 
-    log_loss_summary(loss_valid, epoch, prefix="val_")
+    save_path = os.path.join("./performance/", args.run_name + ".txt")
+    print(log_loss_summary(loss_valid, epoch, prefix="val_"))
+    log(save_path, log_loss_summary(loss_valid, epoch, prefix="val_"))
     mean_dsc = np.mean(
         dsc_per_volume(
             validation_pred,
@@ -297,11 +302,18 @@ def eval(args, model, loss_fn, testloader, device, epoch):
             testloader.dataset.patient_slice_index,
         )
     )
-    log_scalar_summary("val_dsc", mean_dsc, epoch)
+    print(log_scalar_summary("val_dsc", mean_dsc, epoch))
+    log(save_path, log_scalar_summary("val_dsc", mean_dsc, epoch))
     return mean_dsc
+
+def log(save_path, line):
+    with open(save_path, "a") as file:
+        file.write(line +"\n")
 
 def main():
     args = add_parser()
+    save_path = os.path.join("./performance/", args.run_name + ".txt")
+    log(save_path, f"Command: {sys.argv}")
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     torch.manual_seed(args.seed)
     device = torch.device("cuda" if use_cuda else "cpu")
@@ -334,8 +346,10 @@ def main():
                        'shuffle': True}
         train_kwargs.update(cuda_kwargs)
         test_kwargs.update(cuda_kwargs)
-
+    
+    st_timer = time.time()
     trainloader, validloader = data_loaders(args)
+    log(save_path, f"Initializing loaders time: {time.time() - st_timer}")
 
 
     model = UNet(in_channels=3, out_channels=1)
@@ -345,25 +359,37 @@ def main():
     best_validation_dsc = 0.0
     optimizer = optim.Adam(model.parameters(), lr=args.lr)
     total_train_time = 0
+    total_eval_time = 0
 
     for epoch in range(1, args.epochs+1):
         print(f"Beginning epoch {epoch}")
         st_timer = time.time()
         train(args, model, loss_fn, optimizer, trainloader, device, epoch)
         end_timer = time.time()
-        total_train_time = total_train_time +  (end_timer - st_timer)
+        total_train_time += (end_timer - st_timer)
+        log(save_path, f"epoch {epoch} | train time: {end_timer - st_timer}")
+        st_timer = time.time()
         dsc = eval(args, model, loss_fn, validloader, device, epoch)
+        end_timer = time.time()
+        total_eval_time += (end_timer - st_timer)
+        log(save_path, f"epoch {epoch} | eval time: {end_timer - st_timer}")
 
         if dsc > best_validation_dsc:
             best_validation_dsc = dsc
-            torch.save(model.state_dict(), os.path.join("./", args.weights_file))
+            torch.save(model.state_dict(), os.path.join("weights", args.weights_file))
+    log(save_path, f"total_train_time = {total_train_time} for {args.epochs} epochs")
     print(f"total_train_time = {total_train_time} for {args.epochs} epochs")
-    print("\nBest validation mean DSC: {:4f}\n".format(best_validation_dsc))
+    log(save_path, f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
+    print(f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
+    log(save_path, f"\nBest validation mean DSC: {best_validation_dsc}\n")
+    print(f"\nBest validation mean DSC: {best_validation_dsc}\n")
 
 def add_parser():
     # Training settings
     #TODO clean these up
     parser = argparse.ArgumentParser(description='PyTorch unet bmri')
+    parser.add_argument('--run-name', type=str, default=None,
+                        help='name of the run to give the perf file'),
     parser.add_argument('--batch-size', type=int, default=64, metavar='N',
                         help='input batch size for training (default: 64)')
     parser.add_argument('--test-batch-size', type=int, default=1, metavar='N',
@@ -373,7 +399,7 @@ def add_parser():
     parser.add_argument('--lr', type=float, default=0.0001, metavar='LR',
                         help='learning rate (default: 0.0001)')
     parser.add_argument('--gamma', type=float, default=0.7, metavar='M',
-                        help='Learning rate step gamma (default: 0.7)')
+                        help='learning rate step gamma (default: 0.7)')
     parser.add_argument('--no-cuda', action='store_true', default=False,
                         help='disables CUDA training')
     parser.add_argument('--dry-run', action='store_true', default=False,
@@ -383,14 +409,16 @@ def add_parser():
     parser.add_argument('--log-interval', type=int, default=10, metavar='N',
                         help='how many batches to wait before logging training status')
     parser.add_argument('--save-model', action='store_true', default=False,
-                        help='For Saving the current Model')
+                        help='for Saving the current Model')
     parser.add_argument('--hpu', action='store_true', default=False,
-                        help='Use hpu device')
+                        help='use hpu device')
     parser.add_argument('--use_lazy_mode', action='store_true', default=False,
-                        help='Enable lazy mode on hpu device, default eager mode')
-    parser.add_argument('--data-path', type=str, default='./lgg-mri-segmentation/kaggle_3m', metavar='STR',
+                        help='enable lazy mode on hpu device, default eager mode')
+    parser.add_argument('--data-path', type=str, default='kaggle_3m', metavar='STR',
                         help='input data path for train and test')
-    parser.add_argument('--weights-file', type=str, default='./unet.pt', metavar='STR',
+    parser.add_argument('--im-cache', action='store_false', default=True, help='use pre-processed and cached images'),
+    parser.add_argument('--cache-path', type=str, default='kaggle_cache', help='place to store/load cached images'),
+    parser.add_argument('--weights-file', type=str, default='unet.pt', metavar='STR',
                         help='file path to save and load PyTorch weights.')
     parser.add_argument('--image-size', type=int, default=32, help='image size to resize data to')
     parser.add_argument('--aug-angle', type=int, default=5, help='image angle for transforms')
