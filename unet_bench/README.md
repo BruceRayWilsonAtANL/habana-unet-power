@@ -35,3 +35,11 @@ Remember to specify a different `--weights-file` than `unet.pt` if running two o
 Current additions are `--im-path` (bool), and `--cache-path` (str). Testing `--image-size` as well.
 
 `$PYTHON unet.py --hpu --use_lazy_mode --run-name 256-1 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256.pt`
+
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 256-b-32-1 --batch-size 32 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256-32-1.pt`
+
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 256-b-64-1 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256-64-1.pt`
+
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 256-b-128-1 --batch-size 128 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256-128-1.pt`
+
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 32-csv-check --epochs 25 --image-size 32 --cache-path kaggle_cache --weights-file 32-csv.pt`

@@ -1,5 +1,4 @@
 
-from collections import OrderedDict
 from torch import nn
 import torch.optim as optim
 import os
@@ -7,7 +6,7 @@ import time
 import torch
 import numpy as np
 from skimage.transform import rescale, rotate 
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 from torchvision.transforms import Compose
 from dataset import BrainSegmentationDataset
 import argparse
@@ -32,89 +31,6 @@ class DiceLoss(nn.Module):
             y_pred.sum() + y_true.sum() + self.smooth
         )
         return 1. - dsc
-
-class UNet(nn.Module):
-
-    def __init__(self, in_channels=3, out_channels=1, initial_features=32):
-        super(UNet, self).__init__()
-
-        features = initial_features
-        self.enc1 = UNet._block(in_channels, features, name="enc1")
-        self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.enc2 = UNet._block(features, features * 2, name="enc2")
-        self.pool2 = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.enc3 = UNet._block(features * 2, features * 4, name="enc3")
-        self.pool3 = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.enc4 = UNet._block(features * 4, features * 8, name="enc4")
-        self.pool4 = nn.MaxPool2d(kernel_size=2, stride=2)
-
-        self.bottleneck = UNet._block(features * 8, features * 16, name="bottleneck")
-
-        self.upconv4 = nn.ConvTranspose2d(features * 16, features * 8, kernel_size=2, stride=2)
-        self.dec4 = UNet._block(features * 16, features * 8, name="dec4")
-        self.upconv3 = nn.ConvTranspose2d(features * 8, features * 4, kernel_size=2, stride=2)
-        self.dec3 = UNet._block(features * 8, features * 4, name="dec3")
-        self.upconv2 = nn.ConvTranspose2d(features * 4, features * 2, kernel_size=2, stride=2)
-        self.dec2 = UNet._block(features * 4, features * 2, name="dec2")
-        self.upconv1 = nn.ConvTranspose2d(features * 2, features, kernel_size=2, stride=2)
-        self.dec1 = UNet._block(features * 2, features, name="dec1")
-
-        self.conv = nn.Conv2d(in_channels=features, out_channels=out_channels, kernel_size=1)
-
-    def forward(self, x):
-        enc1 = self.enc1(x)
-        enc2 = self.enc2(self.pool1(enc1))
-        enc3 = self.enc3(self.pool2(enc2))
-        enc4 = self.enc4(self.pool3(enc3))
-
-        bottleneck = self.bottleneck(self.pool4(enc4))
-
-        dec4 = self.upconv4(bottleneck)
-        dec4 = torch.cat((dec4, enc4), dim=1)
-        dec4 = self.dec4(dec4)
-        dec3 = self.upconv3(dec4)
-        dec3 = torch.cat((dec3, enc3), dim=1)
-        dec3 = self.dec3(dec3)
-        dec2 = self.upconv2(dec3)
-        dec2 = torch.cat((dec2, enc2), dim=1)
-        dec2 = self.dec2(dec2)
-        dec1 = self.upconv1(dec2)
-        dec1 = torch.cat((dec1, enc1), dim=1)
-        dec1 = self.dec1(dec1)
-        return torch.sigmoid(self.conv(dec1))
-
-    @staticmethod
-    def _block(in_channels, features, name):
-        return nn.Sequential(
-            OrderedDict(
-                [
-                    (
-                        name + "conv1",
-                        nn.Conv2d(
-                            in_channels=in_channels,
-                            out_channels=features,
-                            kernel_size=3,
-                            padding=1,
-                            bias=False,
-                        ),
-                    ),
-                    (name + "norm1", nn.BatchNorm2d(num_features=features)),
-                    (name + "relu1", nn.ReLU(inplace=True)),
-                    (
-                        name + "conv2",
-                        nn.Conv2d( 
-                            in_channels=features,
-                            out_channels=features,
-                            kernel_size=3,
-                            padding=1,
-                            bias=False,
-                        ),
-                    ),
-                    (name + "norm2", nn.BatchNorm2d(num_features=features)),
-                    (name + "relu2", nn.ReLU(inplace=True)),
-                ]
-            )
-        )
 
 def transforms_net(scale=0.995, angle=5):
     transform_list = []
@@ -175,25 +91,26 @@ class Rotate(object):
         return image, mask
 
 def dataset_net(args):
+    dir_path = os.path.dirname(os.path.abspath(__file__))
     train = BrainSegmentationDataset(
-        images_dir="data/" + args.data_path,
+        images_dir=os.path.join(dir_path, f"data/{args.data_path}"),
         subset="train",
         image_size=args.image_size,
         transform=transforms_net(scale=args.aug_scale, angle=args.aug_angle),
         from_cache=args.im_cache,
-        cache_dir="data/" + args.cache_path
+        cache_dir=os.path.join(dir_path, f"data/{args.cache_path}")
     )
     valid = BrainSegmentationDataset(
-        images_dir="data/" + args.data_path,
+        images_dir=os.path.join(dir_path, f"data/{args.data_path}"),
         subset="validation",
         image_size=args.image_size,
         from_cache=args.im_cache,
-        cache_dir="data/" + args.cache_path
+        cache_dir=os.path.join(dir_path, f"data/{args.cache_path}")
     )
     return train, valid
 
 def data_loaders(args):
-    dataset_train, dataset_valid = dataset_net(args) #TODO add this as an arg (and cache'd dir)
+    dataset_train, dataset_valid = dataset_net(args) #TODO add dataset as an arg
 
     def worker_init(worker_id):
         np.random.seed(2021)
@@ -263,11 +180,16 @@ def train(args, model, loss_fn, optimizer, trainloader, device, epoch):
                 htcore.mark_step() 
             loss_train.append(loss.item())
 
+    log(
+        os.path.join(os.path.dirname(os.path.abspath(__file__)),
+        f"performance/{args.run_name}.txt"), 
+        f"train,{epoch},{time.time() - train_time},{np.mean(loss_train)},"
+    )
     print(log_loss_summary(loss_train, epoch))
-    log(os.path.join("./performance/", args.run_name + ".txt"), log_loss_summary(loss_train, epoch))
 
 def eval(args, model, loss_fn, testloader, device, epoch):
     model.eval()
+    eval_time = time.time()
 
     loss_valid = []
     validation_pred = []
@@ -276,7 +198,7 @@ def eval(args, model, loss_fn, testloader, device, epoch):
         x, y_true = data
         x, y_true = x.to(device), y_true.to(device)
         if args.use_lazy_mode:
-            htcore.mark_step() 
+            htcore.mark_step()
 
         # with torch.set_grad_enabled(False):
         y_pred = model(x)
@@ -292,9 +214,8 @@ def eval(args, model, loss_fn, testloader, device, epoch):
             [y_true_np[s] for s in range(y_true_np.shape[0])]
         )
 
-    save_path = os.path.join("./performance/", args.run_name + ".txt")
+    save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"performance/{args.run_name}.txt")
     print(log_loss_summary(loss_valid, epoch, prefix="val_"))
-    log(save_path, log_loss_summary(loss_valid, epoch, prefix="val_"))
     mean_dsc = np.mean(
         dsc_per_volume(
             validation_pred,
@@ -302,8 +223,11 @@ def eval(args, model, loss_fn, testloader, device, epoch):
             testloader.dataset.patient_slice_index,
         )
     )
+    log(
+        save_path, f"eval,{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, {mean_dsc}"
+    )
     print(log_scalar_summary("val_dsc", mean_dsc, epoch))
-    log(save_path, log_scalar_summary("val_dsc", mean_dsc, epoch))
+    # log(save_path, log_scalar_summary("val_dsc", mean_dsc, epoch))
     return mean_dsc
 
 def log(save_path, line):
@@ -312,8 +236,11 @@ def log(save_path, line):
 
 def main():
     args = add_parser()
-    save_path = os.path.join("./performance/", args.run_name + ".txt")
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    save_path = os.path.join(dir_path, f"performance/{args.run_name}.txt")
     log(save_path, f"Command: {sys.argv}")
+    log(save_path, f"Begin CSV")
+    log(save_path, f"type,epoch,time,loss,dsc")
     use_cuda = not args.no_cuda and torch.cuda.is_available()
     torch.manual_seed(args.seed)
     device = torch.device("cuda" if use_cuda else "cpu")
@@ -349,8 +276,14 @@ def main():
     
     st_timer = time.time()
     trainloader, validloader = data_loaders(args)
-    log(save_path, f"Initializing loaders time: {time.time() - st_timer}")
+    log(save_path, f"loaders_init,,{time.time() - st_timer},,")
 
+    if args.layers == 3:
+        from models.unet_three_layer import UNet
+    elif args.layers == 4:
+        from models.unet_base import UNet
+    elif args.layers == 5:
+        from models.unet_base import UNet
 
     model = UNet(in_channels=3, out_channels=1)
     model.to(device)
@@ -367,22 +300,22 @@ def main():
         train(args, model, loss_fn, optimizer, trainloader, device, epoch)
         end_timer = time.time()
         total_train_time += (end_timer - st_timer)
-        log(save_path, f"epoch {epoch} | train time: {end_timer - st_timer}")
+
         st_timer = time.time()
         dsc = eval(args, model, loss_fn, validloader, device, epoch)
         end_timer = time.time()
         total_eval_time += (end_timer - st_timer)
-        log(save_path, f"epoch {epoch} | eval time: {end_timer - st_timer}")
 
         if dsc > best_validation_dsc:
             best_validation_dsc = dsc
-            torch.save(model.state_dict(), os.path.join("weights", args.weights_file))
-    log(save_path, f"total_train_time = {total_train_time} for {args.epochs} epochs")
+            torch.save(model.state_dict(), os.path.join(dir_path, f"weights/{args.weights_file}"))
+    log(save_path, f"total_train_time,{args.epochs},{total_train_time},,")
     print(f"total_train_time = {total_train_time} for {args.epochs} epochs")
-    log(save_path, f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
+    log(save_path, f"total_eval_time,{args.epochs},{total_eval_time},,")
     print(f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
-    log(save_path, f"\nBest validation mean DSC: {best_validation_dsc}\n")
+    log(save_path, f"End CSV")
     print(f"\nBest validation mean DSC: {best_validation_dsc}\n")
+    log(save_path, f"\nBest validation mean DSC: {best_validation_dsc}\n")
 
 def add_parser():
     # Training settings
@@ -410,6 +343,7 @@ def add_parser():
                         help='how many batches to wait before logging training status')
     parser.add_argument('--save-model', action='store_true', default=False,
                         help='for Saving the current Model')
+    parser.add_argument('--layers', type=int, default=4, help='number of layers in the UNet')
     parser.add_argument('--hpu', action='store_true', default=False,
                         help='use hpu device')
     parser.add_argument('--use_lazy_mode', action='store_true', default=False,

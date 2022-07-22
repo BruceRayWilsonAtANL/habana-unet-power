@@ -2,6 +2,7 @@ Reminder: until the shell defaulting to zsh is fixed, must use:
 
 ```
 source /etc/profile.d/habanalabs.sh
+export HABANA_PROFILE=1
 export PYTHON=/home/aevard/aevard_venv/bin/python
 export PYTHONPATH=/home/aevard/Model-References:/home/aevard/aevard_venv/bin/python
 export HABANA_LOGS=~/habana_logs
@@ -9,7 +10,7 @@ export HABANA_LOGS=~/habana_logs
 before running the script.
 
 I am also uncertain of ways to move the files from here without using Globus Connect.
-For that, I open `/lambda_stor/homes/aevard/` on Globus connect, and `/~/Documents/Argonne/Habana/` for my mounting.
+For that, I open `/lambda0/homes/aevard/` on Globus connect, and `/~/Documents/Argonne/Habana/` for my mounting.
 Then transfer appropriate files.
 
 ## Directory Contents
