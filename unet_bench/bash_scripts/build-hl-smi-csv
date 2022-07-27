@@ -1,7 +1,0 @@
-touch $1
-
-for i in {1..1000}
-do
-    hl-smi -Q timestamp,module_id,utilization.aip -f csv >> $1
-    sleep 5
-done

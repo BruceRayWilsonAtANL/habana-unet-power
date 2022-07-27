@@ -283,7 +283,7 @@ def main():
     elif args.layers == 4:
         from models.unet_base import UNet
     elif args.layers == 5:
-        from models.unet_base import UNet
+        from models.unet_five_layer import UNet
 
     model = UNet(in_channels=3, out_channels=1)
     model.to(device)

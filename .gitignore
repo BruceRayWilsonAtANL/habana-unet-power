@@ -1,8 +1,10 @@
 Model-References
 **/kaggle_cache/
-**/.DS_STORE
+**/.DS_Store
 **/__pycache__
 unet_bench/performance/csvs/*
 unet_bench/performance/txts/*
 hltvs/*.txt
 hltvs/*.json
+**/post-procure/*
+**/pre-procure/*
