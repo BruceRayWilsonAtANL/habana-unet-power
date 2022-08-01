@@ -1,0 +1,8 @@
+#!/bin/bash
+touch $1
+
+for i in {1..3500}
+do
+    nvidia-smi --query-gpu=gpu_name,gpu_bus_id,timestamp,utilization.gpu,power.draw --format=csv >> $1
+    sleep 1
+done

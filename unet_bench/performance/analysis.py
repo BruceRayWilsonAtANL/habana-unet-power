@@ -7,98 +7,21 @@ import matplotlib.pyplot as plt
 from responses import target
 from itertools import product
 import sys
-
-MAX_MEM = 32768
+from smi_analysis import smi_analysis
 
 def main():
     if len(sys.argv) <= 1:
-        exit("usage: analysis.py hl-smi OR analysis.py run")  
+        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")  
     elif sys.argv[1].__eq__("run"):
         run_analysis()
+    elif len(sys.argv) <= 2:
+        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")  
     elif sys.argv[1].__eq__("hl-smi"):
-        hl_smi_analysis()
+        smi_analysis(sys.argv[2], mode="hl-smi")
+    elif sys.argv[1].__eq__("nvidia-smi"):
+        smi_analysis(sys.argv[2], mode="theta")
     else:
-        exit("usage: analysis.py hl-smi OR analysis.py run")
-
-def hl_smi_analysis():
-    id_frames = load_hl_csv()
-
-    metrics = [tuple(metric.split(' ')) for metric in next(iter(id_frames.values())) if len(metric.split(' ')) > 1]
-    # example_frame = next(iter(id_frames.values()))
-    # for name in example_frame.columns:
-        # metrics.append(name)
-
-    # fig = plt.figure()
-    frames = []
-    for id_frame in id_frames.items():
-        frames.append(id_frame)
-        # if id_frame[1].var()["utilization.aip [%]"] > 1.0:
-
-    if ("utilization.aip", "[%]") in metrics: #TODO get average util that's above the baseline
-        for frame in frames:
-            print(utilization_vals(frame[1]))
-            plt.plot(frame[1]["time-diff"], frame[1]["utilization.aip [%]"], label=frame[0])
-
-        plt.legend()
-        plt.xlabel("utilization.aip")
-        plt.ylabel("%")
-        plt.show()
-        
-    if ("power.draw", "[W]") in metrics:
-        plt.close()
-        for frame in frames:
-            plt.plot(frame[1]["time-diff"], frame[1]["power.draw [W]"], label=frame[0])
-
-        plt.legend()
-        plt.xlabel("power.draw")
-        plt.ylabel("[W]")
-        plt.show()
-
-    # if ('memory.used', '[%]') in metrics: #TODO needs spans of time to be useful doubtful even then
-    #     for frame in frames:
-    #         print(frame[1].groupby('memory.used [%]').count())
-
-def utilization_vals(frame: pd.DataFrame):
-    #TODO get length (in time) of non-baseline
-    metric = "utilization.aip [%]"
-    baseline = frame[metric].mode().squeeze()
-    totals = frame.groupby(metric).count()
-    try:
-        totals.drop(labels=[baseline, baseline-1], inplace=True)
-    except KeyError:
-        totals.drop(labels=baseline, inplace=True)
-    
-    sum = 0
-    total = 0
-    for index, row in totals.iterrows():
-        total += row["time-diff"]
-        sum += index * row["time-diff"]
-    if total == 0:
-        return 0.0, 0
-    avg = sum / total
-    max = index
-    # returning non-baseline average, and max
-    return sum / total, index
-
-def load_hl_csv() -> dict[pd.DataFrame]:
-    target = "hl-smi-csvs/post-procure/dup-cache.csv"
-    all_data = pd.read_csv(target)
-    id_frames = {id: pd.DataFrame() for id in all_data['device'].unique()}
-
-    for id in id_frames.keys():
-        id_frames[id] = all_data[all_data["device"] == id].copy()
-        id_frames[id].drop(columns="device", inplace=True)
-        try:
-            id_frames[id]["memory.used [MiB]"] = id_frames[id]["memory.used [MiB]"] / MAX_MEM
-            id_frames[id].rename(columns={"memory.used [MiB]": "memory.used [%]"}, inplace=True)
-        except KeyError:
-            pass
-        try:
-            id_frames[id]["power.draw [W]"] = id_frames[id]["power.draw [W]"]
-        except KeyError:
-            pass
-
-    return id_frames    
+        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")
 
 def run_analysis():
     plt.close("all")
@@ -109,8 +32,9 @@ def run_analysis():
     e_origs = []
     
     ## These are the things to change when targetting different files
-    skeleton = "habana01_no_cache/256-{}-cache"
-    formats = ["no"]
+    skeleton = "habana02_large_batch/128-{}-64"
+    # skeleton = "theta/128-{}-theta"
+    formats = ["batch"]
     run_numbers = ["1", "2", "3"]
 
     total_times = dict.fromkeys(formats)
@@ -133,7 +57,7 @@ def run_analysis():
         for k, v in outside_runs[run].items():
             collector[run][k] = v
     
-    json_safe = cat_tuples(collector, "cache")
+    json_safe = cat_tuples(collector, "64")
     print(json.dumps(json_safe, indent=2))
     
     # run_names = [f"{kind}_{num}_{format}" for kind in ["loss"] for num in range(1, 3+1) for format in formats]
@@ -153,25 +77,31 @@ def cat_tuples(data: dict, affix: str) -> dict:
     dup = dict(sorted(dup.items(), key=lambda v: v[0]))
     return dup
 
-
 def train_analysis(train_data: pd.DataFrame, formats: List[str], run_names: List[str]) -> Tuple[pd.DataFrame, dict]:
     runs = {(run, format): dict() for run in run_names for format in formats}
     for data in train_data:
-        data.drop(columns=["loss_x", "loss_y", "loss"], inplace=True)
-    t_info = merge_cols(train_data, [f"time_{name}" for name in run_names], formats)
+        data.drop(columns=["loss_x", "loss_y", "loss"], inplace=True, errors='ignore')
+    if len(train_data) == 1:
+        t_info = train_data[0]
+    else:
+        t_info = merge_cols(train_data, [f"time_{name}" for name in run_names], formats)
     merged_info = pd.DataFrame(t_info["epoch"])
     for format in formats:
-        merged_info[f"time_{format}"] = (t_info[f"time_2"] + t_info[f"time_3"] + t_info[f"time_1"]) / 3
+        tmp = t_info["time_1"].copy()
+        for name in run_names[1:]:
+            tmp += t_info[f"time_{name}"]
+        merged_info[f"time_{format}"] = tmp / len(run_names)
+        # merged_info[f"time_{format}"] = (t_info[f"time_2"] + t_info[f"time_3"] + t_info[f"time_1"]) / 3
     
     loading_time = merged_info.max()
     for format in formats:
         runs[format] = {}
-        runs[format]["first run"] = loading_time.get(f'time_{format}')
+        runs[format]["first epoch"] = loading_time.get(f'time_{format}')
         for run in run_names:
-            runs[(run, format)]["first train time"] = t_info.max().get(f"time_{run}")
+            runs[(run, format)]["first epoch train time"] = t_info.max().get(f"time_{run}")
     
     merged_info.drop(index=merged_info.idxmax()[f"time_{format}"], inplace=True)
-    t_info.drop(index=t_info.idxmax()[f"time_2"], inplace=True)
+    t_info.drop(index=t_info.idxmax()[f"time_{run}"], inplace=True)
 
     for format in formats:
         runs[format]["average train time"] = merged_info.mean().get(f'time_{format}')
@@ -190,8 +120,9 @@ def train_analysis(train_data: pd.DataFrame, formats: List[str], run_names: List
 
 def merge_cols(data: List[pd.DataFrame], rows: List[str], names: List[str]) -> pd.DataFrame:
     if len(data) == 1:
+        data[0].rename(columns = {f"{row}": f"{row}_{names[0]}" for row in rows}, inplace=True)
         return data[0]
-    tmp = data[0]
+    tmp = data[0].copy()
     for entry in data[1:]:
         tmp = tmp.merge(entry, on="epoch")
 
@@ -206,14 +137,21 @@ def merge_cols(data: List[pd.DataFrame], rows: List[str], names: List[str]) -> p
 
 def eval_analysis(eval_data: pd.DataFrame, formats: dict, run_names: List[str]) -> Tuple[pd.DataFrame, dict]:
     runs = {(run, format): dict() for run in run_names for format in formats}
-    for format in formats:
-         runs[format] = dict()
     to_merges = [f"{kind}_{num}" for kind in ["time", "loss", "dsc"] for num in run_names]
-    e_info = merge_cols(eval_data, to_merges, formats)
+    if len(eval_data) == 1:
+        e_info = eval_data[0]
+    else:
+        e_info = merge_cols(eval_data, to_merges, formats)
     merged_info = pd.DataFrame(e_info["epoch"])
     for format in formats:
-        merged_info[f"loss_{format}"] = (e_info[f"loss_2"] + e_info[f"loss_3"] + e_info[f"loss_1"]) / 3
+        tmp_frame = e_info["loss_1"]
+        for i in range(1, len(run_names)):
+            tmp_frame += e_info[f"loss_{i}"]
+        merged_info[f"loss_{format}"] = tmp_frame / len(run_names)
     
+    for format in formats:
+        runs[format] = dict()
+
     dsc = "max eval dsc"
     for run, format in product(run_names, formats):
         if len(formats) > 1:
@@ -224,7 +162,10 @@ def eval_analysis(eval_data: pd.DataFrame, formats: dict, run_names: List[str]) 
         runs[(run, format)]["max dsc index"] = int(e_info[name].idxmax())
     
     for format in formats:
-        avg = (runs[('2', format)][dsc] + runs[('3', format)][dsc] + runs[('1', format)][dsc]) / 3
+        tmp_frame = runs[(run_names[0], format)][dsc].copy()
+        for run in run_names[1:]:
+            tmp_frame += runs[(run, format)][dsc]
+        avg = tmp_frame / len(run_names)
         runs[format][dsc] = avg
 
     for run, format in product(run_names, formats):
@@ -232,8 +173,6 @@ def eval_analysis(eval_data: pd.DataFrame, formats: dict, run_names: List[str]) 
             name = f"loss_{run}_{format}"
         else:
             name = f"loss_{run}"
-        window = e_info.tail(10)
-        runs[(run, format)]["ending loss movement"] = window.head()[name].mean() - window.tail()[name].mean()
         
     return e_info, runs
 
@@ -242,13 +181,14 @@ def outsides_analysis(times_data: dict, formats: List[str], run_names: List[str]
     for format in formats:
         for run in times_data[format].keys():
             runs[(run, format)] = times_data[format][run].copy()
+
     for format in formats:
         runs[format] = {}
-        for run in times_data[format].keys():
+        for key in times_data[format][run].keys():
             avg = 0.0
-            for key in times_data[format][run].keys():
-                avg += runs[(run, format)][key]
-            runs[format][key] = avg / 3
+            for name in run_names:
+                avg += runs[(name, format)][key]
+            runs[format][key] = avg / len(run_names)
 
     return runs
 

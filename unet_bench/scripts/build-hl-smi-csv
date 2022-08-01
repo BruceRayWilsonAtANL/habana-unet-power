@@ -1,10 +1,8 @@
 #!/bin/bash
 touch $1
 
-top >> $1
 for i in {1..3500}
 do
     hl-smi -Q timestamp,module_id,utilization.aip,power.draw,memory.used -f csv >> $1
     sleep 1
 done
-top >> $1

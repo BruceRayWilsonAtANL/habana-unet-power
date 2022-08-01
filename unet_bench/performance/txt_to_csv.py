@@ -15,6 +15,8 @@ def csvify_file(txt_filename, base_dir, parent):
     
     have_written = False
     writing = False
+    if not os.path.exists(f"{base_dir}/csvs/{parent}"):
+        os.mkdir(f"{base_dir}/csvs/{parent}")
     with open(f"{base_dir}/csvs/{parent}/{txt_filename}.csv", 'w') as output:
         for line in lines:
             if line.__eq__("Begin CSV\n"):

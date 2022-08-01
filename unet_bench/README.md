@@ -50,4 +50,23 @@ This area is set apart to stage various versions runs, so the commands don't nee
 
 `$PYTHON unet.py --hpu --use_lazy_mode --run-name 128-batch-256-3 --epochs 50 --image-size 128 --batch-size 256 --cache-path kaggle_duped_cache --weights-file 128-b-256-3.pt`
 
-`$PYTHON unet.py --hpu --use_lazy_mode --run-name 32-csv-check --epochs 25 --image-size 32 --cache-path kaggle_cache --weights-file 32-csv.pt`
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 128-duped-128-1 --epochs 50 --image-size 128 --cache-path kaggle_duped_cache --weights-file 128-b-128-1.pt`
+
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 128-duped-128-2 --epochs 50 --image-size 128 --cache-path kaggle_duped_cache --weights-file 128-b-128-2.pt`
+
+`$PYTHON unet.py --hpu --use_lazy_mode --run-name 128-duped-128-3 --epochs 50 --image-size 128 --cache-path kaggle_duped_cache --weights-file 128-b-128-3.pt`
+
+`qsub -I -n 1 -t 60 -A datascience -q single-gpu --attrs enable_ssh=1`
+`module load conda/pytorch`
+`conda activate`
+
+`./build-nvidia-smi-csv theta_power.txt &`
+`python3 unet.py --run-name 128-duped-theta-1 --epochs 15 --image-size 128 --cache-path kaggle_duped_cache --weights-file 128-duped-theta-1.pt`
+
+`python3 unet.py --run-name 128-normal-theta-1 --epochs 50 --image-size 128 --cache-path kaggle_128_cache --weights-file 128-n-t-1.pt`
+
+`-I` may also be an option for interactive mode. Prepare nvidia-smi command here. Reduce epochs to fit in 60 minutes.
+
+nvidia-smi --query-gpu=gpu_name,gpu_bus_id,utilization.gpu,power.draw --format=csv
+
+reverse the & order I'm thinking
