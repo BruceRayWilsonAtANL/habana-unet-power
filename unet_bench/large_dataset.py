@@ -102,7 +102,7 @@ class BrainSegmentationDataset(Dataset):
         
         if from_cache:
             for patient in sorted(os.listdir(cache_dir)):
-                if "mask" in patient:
+                if "mask.npy" in patient:
                     masks[patient.replace("_mask", "")] = np.load(f"{cache_dir}/{patient}")
                 elif ".npy" in patient:
                     volumes[patient] = np.load(f"{cache_dir}/{patient}")
@@ -155,22 +155,28 @@ class BrainSegmentationDataset(Dataset):
                     self.patients = sorted(
                         list(set(self.patients).difference(validation_patients))
                     )
+            print(f"start: {volumes[self.patients[0]].shape}")
 
             print("preprocessing {} volumes...".format(subset))
             self.volumes = [(volumes[k], masks[k]) for k in self.patients]
 
             print("cropping {} volumes...".format(subset))
             self.volumes = [crop_sample(v) for v in self.volumes]
+            print(f"crop: {self.volumes[0][0].shape}")
 
             print("padding {} volumes...".format(subset))
             self.volumes = [pad_sample(v) for v in self.volumes]
+            print(f"pad: {self.volumes[0][0].shape}")
 
             print("resizing {} volumes...".format(subset))
             self.volumes = [resize_sample(v, size=image_size) for v in self.volumes]
+            print(f"resize: {self.volumes[0][0].shape}")
 
             print("normalizing {} volumes...".format(subset))
             self.volumes = [(normalize_volume(v), normalize_mask(m)) for v, m in self.volumes] 
             self.volumes = [(v, m[..., np.newaxis]) for (v, m) in self.volumes]
+            print(f"normalize: {self.volumes[0][0].shape}")
+            exit()
 
             print("done creating {} dataset".format(subset))
             if not os.path.exists(cache_dir):

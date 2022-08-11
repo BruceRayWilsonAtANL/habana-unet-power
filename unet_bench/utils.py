@@ -9,6 +9,7 @@ import torch
 import torch.distributed as dist
 import errno
 import os
+import mpi4py
 mpi_comm = None
 
 class SmoothedValue(object):
@@ -265,50 +266,40 @@ def barrier():
         mpi_comm.Barrier()
 
 def init_distributed_mode(args):
-    if 'RANK' in os.environ and 'WORLD_SIZE' in os.environ:
-        args.rank = int(os.environ["RANK"])
-        args.world_size = int(os.environ['WORLD_SIZE'])
-        args.gpu = int(os.environ['LOCAL_RANK'])
-    elif 'SLURM_PROCID' in os.environ:
-        args.rank = int(os.environ['SLURM_PROCID'])
-        args.gpu = args.rank % torch.cuda.device_count()
-    elif hasattr(args, "rank"):
-        pass
-    else:
-        msg = 'Not using distributed mode'
-        try:
-            from mpi4py import MPI
-            global mpi_comm
-            mpi_comm = MPI.COMM_WORLD
-            size = mpi_comm.Get_size() # new: gives number of ranks in comm
-            rank = mpi_comm.Get_rank()
-            if size > 1:
-                args.rank = rank
-                args.world_size = size
-                if os.getenv('MASTER_ADDR') is None:
-                    os.environ['MASTER_ADDR'] = 'localhost'
-                if os.getenv('MASTER_PORT') is None:
-                    os.environ['MASTER_PORT'] = '12355'
-            else:
-                print(msg)
-                args.distributed = False
-                return
-        except Exception as e:
-            print(e)
-            print("**mpi4py is not available, using mpirun will not run distributed mode")
+    if os.getenv('MASTER_ADDR') is None:
+        os.environ['MASTER_ADDR'] = 'localhost'
+    if os.getenv('MASTER_PORT') is None:
+        os.environ['MASTER_PORT'] = '12300'
+    msg = 'Not using distributed mode'
+    try:
+        from mpi4py import MPI
+        global mpi_comm
+        mpi_comm = MPI.COMM_WORLD
+        size = mpi_comm.Get_size() # new: gives number of ranks in comm
+        rank = mpi_comm.Get_rank()
+        if size > 1:
+            args.rank = rank
+            args.world_size = size
+        else:
+            print(msg)
             args.distributed = False
             return
+    except Exception as e:
+        print(e)
+        print("**mpi4py is not available, using mpirun will not run distributed mode")
+        args.distributed = False
+        return
 
     args.distributed = True
     print('| distributed init (rank {}): {}'.format(
         args.rank, args.dist_url), flush=True)
 
-    if args.hpu and args.world_size  > 1:
+    if args.hpu and args.world_size > 1:
         args.dist_backend = 'hccl'
         os.environ["ID"] = str(args.rank % args.process_per_node )
         #not used currently
         os.environ["LOCAL_RANK"] = str(args.rank % args.process_per_node )
-        import habana_frameworks.torch.core.hccl
+        import habana_frameworks.torch.distributed.hccl
         dist.init_process_group(args.dist_backend, rank=args.rank, world_size=args.world_size)
     else:
         torch.cuda.set_device(args.gpu)

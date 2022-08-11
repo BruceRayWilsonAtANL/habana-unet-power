@@ -1,5 +1,6 @@
 Model-References
-**/kaggle_cache/
+**/data
+!**/data/kaggle_3m
 **/.DS_Store
 **/__pycache__
 unet_bench/performance/csvs/*
@@ -8,3 +9,15 @@ hltvs/*.txt
 hltvs/*.json
 **/post-procure/*
 **/pre-procure/*
+**/weights/*
+
+
+# Remove eventually
+unet_bench/performance/*
+**/unet_five_layer.py
+**/unet_three_layer.py
+unet_bench/scripts/*.py
+**/unet_pet.py
+mnist.py
+train_fp16_bs16.py
+hltvs

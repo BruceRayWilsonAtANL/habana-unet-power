@@ -11,17 +11,17 @@ from smi_analysis import smi_analysis
 
 def main():
     if len(sys.argv) <= 1:
-        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")  
+        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi>")  
     elif sys.argv[1].__eq__("run"):
         run_analysis()
-    elif len(sys.argv) <= 2:
-        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")  
     elif sys.argv[1].__eq__("hl-smi"):
-        smi_analysis(sys.argv[2], mode="hl-smi")
+        smi_analysis(mode="hl-smi")
     elif sys.argv[1].__eq__("nvidia-smi"):
-        smi_analysis(sys.argv[2], mode="theta")
+        smi_analysis(mode="theta")
+    # elif len(sys.argv) <= 2:
+        # exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")  
     else:
-        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")
+        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi>")
 
 def run_analysis():
     plt.close("all")
@@ -32,10 +32,10 @@ def run_analysis():
     e_origs = []
     
     ## These are the things to change when targetting different files
-    skeleton = "habana02_large_batch/128-{}-64"
+    skeleton = "habana02_large_batch/64-{}"
     # skeleton = "theta/128-{}-theta"
-    formats = ["batch"]
-    run_numbers = ["1", "2", "3"]
+    formats = ["max-theta"]
+    run_numbers = ["1"]
 
     total_times = dict.fromkeys(formats)
     for format in formats:
@@ -61,7 +61,7 @@ def run_analysis():
             collector[run][k] = v
     
     # Get the data into a reasoanble form, then print out.
-    json_safe = cat_tuples(collector, "64")
+    json_safe = cat_tuples(collector, "64s")
     print(json.dumps(json_safe, indent=2))
     
     # Leftover plotting stuff
@@ -110,8 +110,8 @@ def train_analysis(train_data: List[pd.DataFrame], formats: List[str], run_names
         runs[format] = {}
         runs[format]["first epoch"] = 0.0
         for run in run_names:
-            runs[format]["first epoch"] += t_info.at[0, delayed()] / len(run_names)
             runs[(run, format)]["first epoch train time"] = t_info.max().get(delayed())
+            runs[format]["first epoch"] += runs[(run, format)]["first epoch train time"] / len(run_names)
     
     # Remove first epoch timing data as to not skew other metrics.
     t_info.drop(index=t_info.idxmax()[delayed()], inplace=True)

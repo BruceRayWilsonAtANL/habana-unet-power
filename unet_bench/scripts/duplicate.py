@@ -16,7 +16,7 @@ for root, dirs, files in os.walk("../data/kaggle_3m"):
         target_dir = f"{parent}_{i}"
         if '.DS_Store' in files:
             continue
-        for filename in files:
+        for filename in files: 
             shutil.copy(f"{root}/{filename}", f"{new_dir}/{target_dir}/{filename}")
 
 

@@ -34,3 +34,8 @@ Then transfer appropriate files.
 
 * `performance/analysis.py`:
     The script for all things analysis.
+
+
+https://pytorch.org/tutorials/intermediate/ddp_tutorial.html
+
+https://pytorch.org/tutorials/intermediate/dist_tuto.html
