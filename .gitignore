@@ -1,23 +1,24 @@
 Model-References
-**/data
-!**/data/kaggle_3m
-**/.DS_Store
-**/__pycache__
-unet_bench/performance/csvs/*
-unet_bench/performance/txts/*
+hltvs
 hltvs/*.txt
 hltvs/*.json
+mnist.py
+train_fp16_bs16.py
+
+**/.DS_Store
+**/__pycache__
+
 **/post-procure/*
 **/pre-procure/*
 **/weights/*
-unet_bench/performance/*
+unet_bench/performance/csvs/*
+unet_bench/performance/txts/*
+**/unet_pet.py
+
 **/unet_five_layer.py
 **/unet_three_layer.py
 unet_bench/scripts/*.py
-**/unet_pet.py
-mnist.py
-train_fp16_bs16.py
-hltvs
+unet_bench/performance/*
 unet_bench/unet_thet_dist.py
 
 
