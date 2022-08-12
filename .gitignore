@@ -21,3 +21,4 @@ unet_bench/scripts/*.py
 mnist.py
 train_fp16_bs16.py
 hltvs
+unet_bench/unet_thet_dist.py

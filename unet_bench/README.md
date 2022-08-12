@@ -59,7 +59,11 @@ This area is set apart to stage various versions runs, so the commands don't nee
 
 `python3 unet.py --run-name 128-normal-theta-1 --epochs 50 --image-size 128 --cache-path kaggle_128_cache --weights-file 128-n-t-1.pt`
 
-`mpirun -np 2 --bind-to core --rank-by core --allow-run-as-root $PYTHON unet_distrib.py --hpu --use_lazy_mode --distributed --run-name 64-duped-cards-2 --epochs 25 --image-size 64 --batch-size 256 --cache-path kaggle_duped_64_cache --weights-file 64-d-c-2.pt --world-size 2`
+`mpirun -n 2 --bind-to core --rank-by core --allow-run-as-root $PYTHON unet_distrib.py --hpu --use_lazy_mode --distributed --run-name 64-test-cards-2 --epochs 5 --image-size 64 --batch-size 256 --cache-path kaggle_cache --weights-file 64-test-c-d.pt --world-size 2`
+
+`mpirun -n 2 --bind-to core --rank-by core --allow-run-as-root python3 unet_thet_dist.py --distributed --run-name 64-test-cards-2 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-test-c-2.pt --world-size 2`
+
+`$PYTHON unet_distrib.py --hpu --use_lazy_mode --run-name 64-test-cards-1 --epochs 5 --image-size 64 --batch-size 256 --cache-path kaggle_cache --weights-file 64-test-c-1.pt --world-size 1`
 
 `$PYTHON unet.py --hpu --use_lazy_mode --run-name distrib-compare --epochs 10 --cache-path kaggle_cache --weights-file d-c-1.pt`
 COMMAND WORKS. Currently goal is to see if it scales to 4, whether it repeats images, and that weird error. Then monitor.

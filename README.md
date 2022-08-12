@@ -1,3 +1,4 @@
+THIS AND OTHER READMES PRIMARILY USED AS REMINDERS FOR MYSELF. will change that in the next week.
 Reminder: various setup commands
 
 ```
