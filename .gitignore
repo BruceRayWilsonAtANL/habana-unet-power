@@ -10,9 +10,6 @@ hltvs/*.json
 **/post-procure/*
 **/pre-procure/*
 **/weights/*
-
-
-# Remove eventually
 unet_bench/performance/*
 **/unet_five_layer.py
 **/unet_three_layer.py
@@ -22,3 +19,6 @@ mnist.py
 train_fp16_bs16.py
 hltvs
 unet_bench/unet_thet_dist.py
+
+
+# Remove eventually
