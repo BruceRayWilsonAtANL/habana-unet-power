@@ -266,6 +266,8 @@ def barrier():
         mpi_comm.Barrier()
 
 def init_distributed_mode(args):
+    if not args.distributed:
+        return
     if os.getenv('MASTER_ADDR') is None:
         os.environ['MASTER_ADDR'] = 'localhost'
     if os.getenv('MASTER_PORT') is None:
