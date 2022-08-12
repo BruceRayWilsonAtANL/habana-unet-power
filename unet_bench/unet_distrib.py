@@ -110,7 +110,7 @@ def dataset_net(args):
     return train, valid
 
 def data_loaders(args):
-    dataset_train, dataset_valid = dataset_net(args) #TODO add dataset as an arg
+    dataset_train, dataset_valid = dataset_net(args)
 
     def worker_init(worker_id):
         np.random.seed(2021)
@@ -366,7 +366,6 @@ def main():
 
 def add_parser():
     # Training settings
-    #TODO clean these up
     parser = argparse.ArgumentParser(description='PyTorch unet bmri')
     parser.add_argument('--run-name', type=str, default=None,
                         help='name of the run to give the perf file'),
