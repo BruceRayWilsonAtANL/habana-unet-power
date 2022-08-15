@@ -244,18 +244,18 @@ def eval(args, model, loss_fn, testloader, device, epoch):
         )
 
     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"performance/{args.run_name}.txt")
-    print(log_loss_summary(loss_valid, epoch, prefix="val_"))
-    if args.distributed:
-        mean_dsc = np.mean(
-            dsc_per_volume(
-                validation_pred,
-                validation_true,
-                testloader.dataset.patient_slice_index,
-            )
+    mean_dsc = np.mean(
+        dsc_per_volume(
+            validation_pred,
+            validation_true,
+            testloader.dataset.patient_slice_index,
         )
+    )
+    print(log_loss_summary(loss_valid, epoch, prefix="val_"))
+    if not args.distributed:
         log(save_path, f"eval,{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, {mean_dsc}")
         print(log_scalar_summary("val_dsc", mean_dsc, epoch))
-    else:
+    elif args.distributed and args.rank == 0:
         log(save_path, f"eval,{args.rank},{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, nan")
     # log(save_path, log_scalar_summary("val_dsc", mean_dsc, epoch))
     return mean_dsc
@@ -327,13 +327,14 @@ def main():
         train(args, model, loss_fn, optimizer, loader_train, device, epoch)
         total_train_time += (time.time() - st_timer)
 
-        st_timer = time.time()
-        dsc = eval(args, model, loss_fn, loader_valid, device, epoch)
-        total_eval_time += (time.time() - st_timer)
+        if args.rank == 0:
+            st_timer = time.time()
+            dsc = eval(args, model, loss_fn, loader_valid, device, epoch)
+            total_eval_time += (time.time() - st_timer)
 
-        if dsc > best_validation_dsc:
-            best_validation_dsc = dsc
-            torch.save(model.state_dict(), os.path.join(dir_path, f"weights/{args.weights_file}"))
+            if dsc > best_validation_dsc:
+                best_validation_dsc = dsc
+                torch.save(model.state_dict(), os.path.join(dir_path, f"weights/{args.weights_file}"))
 
     # Log all the info not already logged in train/eval
     if not args.distributed:
