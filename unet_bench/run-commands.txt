@@ -7,6 +7,10 @@ Remember to specify a different --weights-file than unet.pt if running two or mo
 
 This area is set apart to stage various versions runs, so the commands don't need to be written on the remote. Remove the ticks, of course.
 
+basic run:
+
+$PYTHON unet.py --hpu --use_lazy_mode --run-name 64-batch-64 --epochs 50 --cache-path kaggle_cache --weights-file 64-b-64.pt
+
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 256-1 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256.pt
 
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 128-batch-256-1 --epochs 50 --image-size 128 --batch-size 256 --cache-path kaggle_duped_cache --weights-file 128-b-256-1.pt

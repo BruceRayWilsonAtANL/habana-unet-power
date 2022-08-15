@@ -108,7 +108,7 @@ def dataset_net(args):
     return train, valid
 
 def data_loaders(args):
-    dataset_train, dataset_valid = dataset_net(args) #TODO add dataset as an arg
+    dataset_train, dataset_valid = dataset_net(args)
 
     def worker_init(worker_id):
         np.random.seed(2021)
@@ -276,13 +276,11 @@ def main():
         print(f"Beginning epoch {epoch}")
         st_timer = time.time()
         train(args, model, loss_fn, optimizer, trainloader, device, epoch)
-        end_timer = time.time()
-        total_train_time += (end_timer - st_timer)
+        total_train_time += (time.time() - st_timer)
 
         st_timer = time.time()
         dsc = eval(args, model, loss_fn, validloader, device, epoch)
-        end_timer = time.time()
-        total_eval_time += (end_timer - st_timer)
+        total_eval_time += (time.time() - st_timer)
 
         if dsc > best_validation_dsc:
             best_validation_dsc = dsc
