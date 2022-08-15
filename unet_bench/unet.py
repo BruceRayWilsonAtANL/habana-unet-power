@@ -246,7 +246,6 @@ def eval(args, model, loss_fn, testloader, device, epoch):
     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"performance/{args.run_name}.txt")
     print(log_loss_summary(loss_valid, epoch, prefix="val_"))
     if args.distributed:
-        log(save_path, f"eval,{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, {mean_dsc}")
         mean_dsc = np.mean(
             dsc_per_volume(
                 validation_pred,
@@ -254,6 +253,7 @@ def eval(args, model, loss_fn, testloader, device, epoch):
                 testloader.dataset.patient_slice_index,
             )
         )
+        log(save_path, f"eval,{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, {mean_dsc}")
         print(log_scalar_summary("val_dsc", mean_dsc, epoch))
     else:
         log(save_path, f"eval,{args.rank},{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, nan")
