@@ -126,7 +126,7 @@ def data_loaders(args):
             sampler = train_sampler,
             shuffle=False,
             drop_last=True,
-            num_workers=args.world_size,
+            num_workers=args.num_workers,
             pin_memory=True
             )
         loader_valid = DataLoader(
@@ -134,7 +134,7 @@ def data_loaders(args):
             batch_size=args.batch_size,
             sampler = valid_sampler,
             drop_last=True,
-            num_workers=args.world_size,
+            num_workers=args.num_workers,
             pin_memory=True
             #worker_init_fn=worker_init,
             )
@@ -382,6 +382,8 @@ def add_parser():
     parser.add_argument('--aug-scale', type=float, default=0.995, help='image scale for transforms')
     parser.add_argument('--world-size', default=1, type=int, metavar='N',
                         help='number of total workers (default: 1)')
+    parser.add_argument('--num-workers', default=1, type=int, metavar='N',
+                        help='number of workers for DataLoader (default: 1)')
     parser.add_argument('--distributed', action='store_true', help='whether to enable distributed mode and run on multiple devices')
     parser.add_argument('--dist-url', default='env://', help='url used to set up distributed training')
     parser.add_argument('--rank', default=0, help='rank of the card. Overwritten')
