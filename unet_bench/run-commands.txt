@@ -11,6 +11,10 @@ basic run:
 
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 64-batch-64 --epochs 50 --cache-path kaggle_cache --weights-file 64-b-64.pt
 
+basic distributed run:
+
+mpirun -n 2 --bind-to core --rank-by core --allow-run-as-root $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-cards-2 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-c-2.pt --world-size 2
+
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 256-1 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256.pt
 
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 128-batch-256-1 --epochs 50 --image-size 128 --batch-size 256 --cache-path kaggle_duped_cache --weights-file 128-b-256-1.pt

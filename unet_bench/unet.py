@@ -245,18 +245,18 @@ def eval(args, model, loss_fn, testloader, device, epoch):
 
     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"performance/{args.run_name}.txt")
     print(log_loss_summary(loss_valid, epoch, prefix="val_"))
-    mean_dsc = np.mean(
-        dsc_per_volume(
-            validation_pred,
-            validation_true,
-            testloader.dataset.patient_slice_index,
-        )
-    )
     if args.distributed:
-        log(save_path, f"eval,{args.rank},{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, {mean_dsc}")
-    else:
         log(save_path, f"eval,{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, {mean_dsc}")
-    print(log_scalar_summary("val_dsc", mean_dsc, epoch))
+        mean_dsc = np.mean(
+            dsc_per_volume(
+                validation_pred,
+                validation_true,
+                testloader.dataset.patient_slice_index,
+            )
+        )
+        print(log_scalar_summary("val_dsc", mean_dsc, epoch))
+    else:
+        log(save_path, f"eval,{args.rank},{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, nan")
     # log(save_path, log_scalar_summary("val_dsc", mean_dsc, epoch))
     return mean_dsc
 
@@ -385,6 +385,8 @@ def add_parser():
     parser.add_argument('--distributed', action='store_true', help='whether to enable distributed mode and run on multiple devices')
     parser.add_argument('--dist-url', default='env://', help='url used to set up distributed training')
     parser.add_argument('--rank', default=0, help='rank of the card. Overwritten')
+    parser.add_argument('--process-per-node', default=8, type=int, metavar='N',
+                        help='Number of process per node')
     args = parser.parse_args()
     return args
 
