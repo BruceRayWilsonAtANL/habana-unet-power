@@ -119,6 +119,8 @@ def data_loaders(args):
     if args.distributed:
         train_sampler = torch.utils.data.distributed.DistributedSampler(dataset_train)
         valid_sampler = torch.utils.data.distributed.DistributedSampler(dataset_valid)
+        if args.num_workers < args.world_size:
+            args.num_workers = args.world_size
     
         loader_train = DataLoader(
             dataset_train,
@@ -389,8 +391,7 @@ def add_parser():
     parser.add_argument('--distributed', action='store_true', help='whether to enable distributed mode and run on multiple devices')
     parser.add_argument('--dist-url', default='env://', help='url used to set up distributed training')
     parser.add_argument('--rank', default=0, help='rank of the card. Overwritten')
-    parser.add_argument('--process-per-node', default=8, type=int, metavar='N',
-                        help='Number of process per node')
+    parser.add_argument('--process-per-node', default=8, type=int, metavar='N', help='Number of process per node')
     args = parser.parse_args()
     return args
 

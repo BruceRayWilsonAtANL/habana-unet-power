@@ -271,7 +271,7 @@ def init_distributed_mode(args):
     if os.getenv('MASTER_ADDR') is None:
         os.environ['MASTER_ADDR'] = 'localhost'
     if os.getenv('MASTER_PORT') is None:
-        os.environ['MASTER_PORT'] = '12300'
+        os.environ['MASTER_PORT'] = str(12300 + args.num_workers + args.batch_size)
     msg = 'Not using distributed mode'
     try:
         from mpi4py import MPI

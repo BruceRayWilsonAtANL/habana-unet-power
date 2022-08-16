@@ -12,11 +12,23 @@ basic run:
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 64-batch-64 --epochs 5 --cache-path kaggle_cache --weights-file 64-b-64.pt
 
 basic distributed run:
+mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-workers-1 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-w-1.pt --world-size 2 --num-workers 1
+mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-workers-2 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-w-2.pt --world-size 2 --num-workers 2
+mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-workers-6 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-w-6.pt --world-size 2 --num-workers 6
+mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-workers-10 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-cw-10.pt --world-size 2 --num-workers 10
+mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-workers-15 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-w-15.pt --world-size 2 --num-workers 15
+^ Resulted in higher workers = longer
 
-mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-cards-2 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-c-2.pt --world-size 2
+mpirun -n 4 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-workers-4 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-n-4.pt --world-size 4 --num-workers 4
 
-mpirun -n 2 --bind-to core --rank-by core --allow-run-as-root $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-cards-2 --epochs 5 --image-size 64 --batch-size 64 --cache-path kaggle_cache --weights-file 64-t-c-2.pt --world-size 2
-mpirun -n 2 --bind-to core --rank-by core --allow-run-as-root $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-cards-2 --epochs 5 --image-size 64 --batch-size 32 --cache-path kaggle_cache --weights-file 64-t-c-2.pt --world-size 2
+
+up in image-size:
+$PYTHON unet.py --hpu --use_lazy_mode --run-name 256-batch-64 --epochs 5 --image-size 256 --cache-path kaggle_256_cache --weights-file 256-b-64.pt
+mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 256-test-cards-2 --epochs 5 --image-size 256 --batch-size 64 --cache-path kaggle_256_cache --weights-file 256-t-c-2.pt --world-size 2
+
+down in batch-size:
+mpirun -n 2 --bind-to core --rank-by core --allow-run-as-root $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-b-16 --epochs 5 --image-size 64 --batch-size 16 --cache-path kaggle_cache --weights-file 64-t-b-16.pt --world-size 2
+mpirun -n 2 --bind-to core --rank-by core --allow-run-as-root $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 64-test-b-32 --epochs 5 --image-size 64 --batch-size 32 --cache-path kaggle_cache --weights-file 64-t-b-32.pt --world-size 2
 
 
 
