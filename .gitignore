@@ -4,6 +4,7 @@ hltvs/*.txt
 hltvs/*.json
 mnist.py
 train_fp16_bs16.py
+.vscode
 
 **/.DS_Store
 **/__pycache__
