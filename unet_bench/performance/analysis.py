@@ -88,7 +88,7 @@ def train_analysis(train_data: List[pd.DataFrame], formats: List[str], run_names
     
     # Create runs dict, index by tuple cause that's an easy way to seperate the data.
     runs = {(run, format): dict() for run in run_names for format in formats}
-    t_info = merge_cols(train_data, [f"time_{name}" for name in run_names], formats)
+    t_info = merge_cols(train_data, [f"{kind}_{name}" for kind in ["time", "loss"] for name in run_names], formats)
     
     # Get all the first epoch timing data, as the data's loading in slowly at this point.
     delayed = lambda : f"time_{run}_{format}"
@@ -207,7 +207,7 @@ def load_runs(source: str, run_names: List[str]) -> Tuple[pd.DataFrame, pd.DataF
         facts.append(fact)
 
     # Transform out of lists into frames and dict, then return
-    t_info = merge_cols(trains, ["time"], run_names)
+    t_info = merge_cols(trains, ["time", "loss"], run_names)
     e_info = merge_cols(evals, ["time", "loss", "dsc"], run_names)
     return t_info, e_info, {run_names[i]: facts[i] for i in range(len(facts))}
 
@@ -233,13 +233,17 @@ def merge_cols(data: List[pd.DataFrame], columns: List[str], names: List[str]) -
     for entry in data[1:]:
         merger = merger.merge(entry, on="epoch")
 
+    if len(names) < 3: 
+        names.append(None)
     for col in columns:
         merger.rename(columns = {
             f"{col}_x": f"{col}_{names[0]}",
             f"{col}_y": f"{col}_{names[1]}",
-            f"{col}": f"{col}_{names[2]}"
+            f"{col}": f"{col}_{names[2]}",
         }, inplace=True, errors='ignore')
-    
+    if None in names:
+        names.remove(None)
+
     return merger
 
 
