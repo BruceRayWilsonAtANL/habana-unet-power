@@ -22,6 +22,7 @@ unet_bench/performance/txts/*
 unet_bench/scripts/*.py
 unet_bench/performance/*
 !unet_bench/performance/README.md
+!unet_bench/performance/analysis.py
 unet_bench/unet_thet_dist.py
 
 
