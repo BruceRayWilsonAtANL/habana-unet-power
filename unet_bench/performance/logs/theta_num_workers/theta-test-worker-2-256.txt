@@ -1,0 +1,27 @@
+Command: ['unet_local.py', '--distributed', '--run-name', 'theta-test-worker-2-256', '--epochs', '5', '--image-size', '256', '--cache-path', 'kaggle_256_cache', '--weights-file', 't-t-w-256.pt', '--world-size', '2', '--num-workers', '2']
+Command: ['unet_local.py', '--distributed', '--run-name', 'theta-test-worker-2-256', '--epochs', '5', '--image-size', '256', '--cache-path', 'kaggle_256_cache', '--weights-file', 't-t-w-256.pt', '--world-size', '2', '--num-workers', '2']
+Begin CSV
+Begin CSV
+type,card,epoch,time,loss,dsc
+type,card,epoch,time,loss,dsc
+Command: ['unet_local.py', '--distributed', '--run-name', 'theta-test-worker-2-256', '--epochs', '5', '--image-size', '256', '--cache-path', 'kaggle_256_cache', '--weights-file', 't-t-w-256.pt', '--world-size', '2', '--num-workers', '2']
+Begin CSV
+type,card,epoch,time,loss,dsc
+Command: ['unet_local.py', '--distributed', '--run-name', 'theta-test-worker-2-256', '--epochs', '5', '--image-size', '256', '--cache-path', 'kaggle_256_cache', '--weights-file', 't-t-w-256.pt', '--world-size', '2', '--num-workers', '2']
+Begin CSV
+type,epoch,time,loss,dsc
+loaders_init,,13.119813203811646,,
+loaders_init,,13.1298189163208,,
+train,1,65.60390019416809,0.9598251489492563,
+eval,1,14.323451042175293,0.9714463949203491, nan
+train,2,62.83668756484985,0.940726624085353,
+eval,2,8.637308597564697,0.961747944355011, nan
+train,3,63.10026955604553,0.9334217791373913,
+eval,3,7.3846447467803955,0.9573275148868561, nan
+train,4,63.875136375427246,0.9270264987762158,
+eval,4,8.058634042739868,0.9551410973072052, nan
+train,5,64.83495163917542,0.9274077163292811,
+eval,5,7.636736869812012,0.9534522593021393, nan
+total_train_time,5,320.25806999206543,,
+total_eval_time,5,46.062544107437134,,
+End CSV

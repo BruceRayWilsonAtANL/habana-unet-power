@@ -2,22 +2,21 @@ import sys
 import json
 import pandas as pd
 from typing import Tuple, List
-from smi_analysis import smi_analysis
-RUN_TYPE = "theta_num_workers"
+from analysis_smi import smi_analysis
+RUN_TYPE = "habana02_large_batch"
 
 def main():
     if len(sys.argv) <= 1:
         exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi>")  
     elif sys.argv[1].__eq__("run"):
         run_analysis()
-    elif sys.argv[1].__eq__("hl-smi"):
-        smi_analysis(mode="hl-smi")
-    elif sys.argv[1].__eq__("nvidia-smi"):
-        smi_analysis(mode="theta")
-    # elif len(sys.argv) <= 2:
-        # exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi> <target-csv>")  
+    elif sys.argv[1].__eq__("smi"):
+        if len(sys.argv) > 2:
+            smi_analysis(sys.argv[2])
+        else:
+            smi_analysis("all")
     else:
-        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi>")
+        exit("usage: analysis.py run OR analysis.py smi")
 
 def run_analysis():
     
@@ -26,10 +25,10 @@ def run_analysis():
     
     ## These are the variables to change when targetting different files
     ## Sometimes these target a single run. Sometimes both lists have 3+ entries. Should work either way.
-    skeleton = RUN_TYPE + "/theta-test-worker-{}"
+    skeleton = RUN_TYPE + "/128-duped-{}"
     # skeleton = "theta/128-{}-theta"
-    formats = ["1"]
-    run_numbers = ["256"]
+    formats = ["128", "256"]
+    run_numbers = ["1", "2", "3"]
 
     total_times = dict.fromkeys(formats)
     for format in formats:
@@ -55,7 +54,7 @@ def run_analysis():
             collector[run][k] = v
     
     # Get the data into a reasoanble form, then print out.
-    json_safe = cat_tuples(collector, "theta 256")
+    json_safe = cat_tuples(collector, "habana duped")
     print(json.dumps(json_safe, indent=2))
 
 def cat_tuples(data: dict, affix: str) -> dict:
@@ -100,7 +99,7 @@ def train_analysis(train_data: List[pd.DataFrame], formats: List[str], run_names
             runs[format]["first epoch"] += runs[(run, format)]["first epoch train time"] / len(run_names)
     
     # Remove first epoch timing data as to not skew other metrics.
-    t_info.drop(index=t_info.idxmax()[delayed()], inplace=True)
+    t_info.drop(t_info.index[:1], inplace=True)
 
     # Get train epoch timing data, average, minimum, and maximum.
     for format in formats:
@@ -138,7 +137,7 @@ def eval_analysis(eval_data: List[pd.DataFrame], formats: dict, run_names: List[
         runs[format] = dict()
 
     # Drop the first epoch from the data, unimportant for dsc, messes with time.
-    e_info.drop(index=e_info.idxmax()[f"time_{run_names[0]}_{format}"], inplace=True)
+    e_info.drop(e_info.index[:1], inplace=True)
 
     dsc_key = "max dsc"
     # Iterate through to get: maximum dsc, average eval time per epoch.

@@ -210,7 +210,7 @@ def train(args, model, loss_fn, optimizer, loader_train, device, epoch):
         log(
             os.path.join(os.path.dirname(os.path.abspath(__file__)),
             f"performance/{args.run_name}.txt"), 
-            f"train,{args.rank},{epoch},{time.time() - train_time},{np.mean(loss_train)},"
+            f"train,{epoch},{time.time() - train_time},{np.mean(loss_train)},"
         )
     else:
         log(
@@ -261,7 +261,7 @@ def eval(args, model, loss_fn, testloader, device, epoch):
         log(save_path, f"eval,{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, {mean_dsc}")
         print(log_scalar_summary("val_dsc", mean_dsc, epoch))
     elif args.distributed and args.rank == 0:
-        log(save_path, f"eval,{args.rank},{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, nan")
+        log(save_path, f"eval,{epoch},{time.time() - eval_time},{np.mean(loss_valid)}, nan")
     return mean_dsc
 
 def log(save_path, line):
@@ -276,10 +276,7 @@ def main():
     save_path = os.path.join(dir_path, f"performance/{args.run_name}.txt")
     log(save_path, f"Command: {sys.argv}")
     log(save_path, f"Begin CSV")
-    if args.distributed:
-        log(save_path, f"type,card,epoch,time,loss,dsc")
-    else:
-        log(save_path, f"type,epoch,time,loss,dsc")
+    log(save_path, f"type,epoch,time,loss,dsc")
 
     # Set the HPU settings
     if args.use_lazy_mode:
@@ -299,7 +296,8 @@ def main():
     st_timer = time.time()
     if args.distributed:
         loader_train, loader_valid, train_sampler, valid_sampler = data_loaders(args)
-        log(save_path, f"loaders_init,,,{time.time() - st_timer},,")
+        if args.rank == 0:
+            log(save_path, f"loaders_init,,{time.time() - st_timer},,")
     else:
         loader_train, loader_valid = data_loaders(args)
         log(save_path, f"loaders_init,,{time.time() - st_timer},,")
@@ -351,8 +349,8 @@ def main():
     elif args.rank == 0: # Don't both with dsc cause it's broken in distributed atm
         print(f"total_train_time = {total_train_time} for {args.epochs} epochs")
         print(f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
-        log(save_path, f"total_train_time,,{args.epochs},{total_train_time},,")
-        log(save_path, f"total_eval_time,,{args.epochs},{total_eval_time},,")
+        log(save_path, f"total_train_time,{args.epochs},{total_train_time},,")
+        log(save_path, f"total_eval_time,{args.epochs},{total_eval_time},,")
         log(save_path, f"End CSV")
 
 def add_parser():

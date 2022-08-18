@@ -9,21 +9,36 @@ train_fp16_bs16.py
 **/.DS_Store
 **/__pycache__
 
-**/post-procure/*
-**/pre-procure/*
 **/weights/*
 !**/weights/32-normal-theta.pt
-unet_bench/performance/csvs/*
-unet_bench/performance/txts/*
-**/unet_pet.py
+**/csvs/*
+**/logs/*
+!**/csvs/theta_num_workers
+!**/logs/theta_num_workers
+**/theta_num_workers/*
+!**/theta_num_workers/theta-test-worker-2-256*
+!**/csvs/habana02_large_batch
+!**/logs/habana02_large_batch
+**/habana02_large_batch/*
+!**/habana02_large_batch/128-duped-128*
+!**/habana02_large_batch/128-duped-256*
 
+**/performance/hl_smi.py
+**/performance/nvidia_smi.py
+**/performance/txt_to_csv.py
 **/unet_five_layer.py
 **/unet_three_layer.py
 unet_bench/scripts/*.py
-unet_bench/performance/*
-!unet_bench/performance/README.md
-!unet_bench/performance/analysis.py
-unet_bench/unet_thet_dist.py
+
+
+**/post-procure/*
+!**/post-procure/normal-128.csv
+**/pre-procure/*
+!**/pre-procure/normal-128.txt
+**/pngs/*
+!**/theta-v-habana
+**/theta-v-habana/*
+!**/theta-v-habana/normal-128-*
 
 
 # Remove eventually
