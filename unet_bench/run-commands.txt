@@ -43,8 +43,6 @@ $PYTHON unet.py --hpu --use_lazy_mode --run-name 256-batch-64 --epochs 5 --image
 mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name 256-test-cards-2 --epochs 5 --image-size 256 --batch-size 64 --cache-path kaggle_256_cache --weights-file 256-t-c-2.pt --world-size 2
 
 
-
-
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 256-1 --epochs 50 --image-size 256 --cache-path kaggle_256_cache --weights-file 256.pt
 
 $PYTHON unet.py --hpu --use_lazy_mode --run-name 128-batch-256-1 --epochs 50 --image-size 128 --batch-size 256 --cache-path kaggle_duped_cache --weights-file 128-b-256-1.pt

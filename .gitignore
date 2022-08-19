@@ -23,9 +23,6 @@ train_fp16_bs16.py
 !**/habana02_large_batch/128-duped-128*
 !**/habana02_large_batch/128-duped-256*
 
-**/performance/hl_smi.py
-**/performance/nvidia_smi.py
-**/performance/txt_to_csv.py
 **/unet_five_layer.py
 **/unet_three_layer.py
 unet_bench/scripts/*.py

@@ -3,7 +3,7 @@ import json
 import pandas as pd
 from typing import Tuple, List
 from analysis_smi import smi_analysis
-RUN_TYPE = "habana02_large_batch"
+RUN_TYPE = "post-git-test"
 
 def main():
     if len(sys.argv) <= 1:
