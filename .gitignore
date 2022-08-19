@@ -1,41 +1,33 @@
-Model-References
-hltvs
-hltvs/*.txt
-hltvs/*.json
-mnist.py
-train_fp16_bs16.py
 .vscode
-
 **/.DS_Store
 **/__pycache__
 
 **/weights/*
 !**/weights/32-normal-theta.pt
-**/csvs/*
+
+# Reducing the volume 
+
 **/logs/*
-!**/csvs/theta_num_workers
-!**/logs/theta_num_workers
+**/csvs/*
+!**/theta_num_workers
+!**/habana02_large_batch
 **/theta_num_workers/*
 !**/theta_num_workers/theta-test-worker-2-256*
-!**/csvs/habana02_large_batch
-!**/logs/habana02_large_batch
 **/habana02_large_batch/*
 !**/habana02_large_batch/128-duped-128*
 !**/habana02_large_batch/128-duped-256*
 
-**/unet_five_layer.py
-**/unet_three_layer.py
-unet_bench/scripts/*.py
-
-
-**/post-procure/*
-!**/post-procure/normal-128.csv
-**/pre-procure/*
-!**/pre-procure/normal-128.txt
 **/pngs/*
 !**/theta-v-habana
 **/theta-v-habana/*
 !**/theta-v-habana/normal-128-*
 
+**/unet_five_layer.py
+**/unet_three_layer.py
+unet_bench/scripts/*.py
 
-# Remove eventually
+**/post-procure/*
+!**/post-procure/normal-128.csv
+**/pre-procure/*
+!**/pre-procure/normal-128.txt
+
