@@ -14,6 +14,7 @@ import sys
 
 import torch.distributed as dist
 # os.environ["PT_HPU_LAZY_MODE"]="1"
+LOG_FILE = "performance/unsorted-logs/{}.txt"
 
 class DiceLoss(nn.Module):
 
@@ -202,13 +203,13 @@ def train(args, model, loss_fn, optimizer, loader_train, device, epoch):
     if args.distributed:
         log(
             os.path.join(os.path.dirname(os.path.abspath(__file__)),
-            f"performance/{args.run_name}.txt"), 
+            LOG_FILE.format(args.run_name)), 
             f"train,{args.rank},{epoch},{time.time() - train_time},{np.mean(loss_train)},"
         )
     else:
         log(
             os.path.join(os.path.dirname(os.path.abspath(__file__)),
-            f"performance/{args.run_name}.txt"), 
+            LOG_FILE.format(args.run_name)), 
             f"train,{epoch},{time.time() - train_time},{np.mean(loss_train)},"
         )
     print(log_loss_summary(loss_train, epoch))
@@ -238,7 +239,7 @@ def eval(args, model, loss_fn, testloader, device, epoch):
             [y_true_np[s] for s in range(y_true_np.shape[0])]
         )
 
-    save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), f"performance/{args.run_name}.txt")
+    save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOG_FILE.format(args.run_name))
     
     print(log_loss_summary(loss_valid, epoch, prefix="val_"))
     mean_dsc = np.mean(
@@ -265,7 +266,7 @@ def main():
     # Get parser arguments, prepare the logging file.
     args = add_parser()
     dir_path = os.path.dirname(os.path.abspath(__file__))
-    save_path = os.path.join(dir_path, f"performance/{args.run_name}.txt")
+    save_path = os.path.join(dir_path, LOG_FILE.format(args.run_name))
     log(save_path, f"Command: {sys.argv}")
     log(save_path, f"Begin CSV")
     if args.distributed:
