@@ -1,5 +1,8 @@
+# Unet Power
+
 Reminder: various setup commands on Habana:
-```
+
+```bash
 export HABANA_LOGS=~/.habana_logs
 source ~/aevard_venv/bin/activate
 export PYTHON=/home/aevard/aevard_venv/bin/python
@@ -7,7 +10,8 @@ export PYTHONPATH=/home/aevard/Model-References:/home/aevard/aevard_venv/bin/pyt
 ```
 
 And setup commands on ThetaGPU:
-```
+
+```bash
 qsub -I -n 1 -t 60 -A datascience -q single-gpu --attrs enable_ssh=1
 qsub -I -n 1 -t 120 -A datascience -q full-node --attrs enable_ssh=1
 module load conda/pytorch
@@ -16,15 +20,16 @@ pip install --user scikit-image
 ```
 
 ## Directory Contents
+
 * `unet_bench`:
     Staging location of Habana versions of UNet
-
 
 * `Model-References`:
     Sample apps from Habana. (.gitignore'd, but useful to have around)
 
 
 ## Important Scripts
+
 * `unet_bench/unet.py`:
     The main script to execute.
 
@@ -34,8 +39,8 @@ pip install --user scikit-image
 * `performance/analysis.py`:
     The script for all things analysis.
 
-
 ### Typical process
+
 (Speaking as if the shell is already located in `unet_bench`)
 Most commonly, once all relevant scripts had been transfered to one/both of the node(s),
 I would stage the commands I wanted to use in `run-commands.txt` (the local one,
@@ -55,7 +60,7 @@ file to generate (desired extension is also necessary to specify).
 Once the device profiler was running, I set the unet(s) to run. Information is printed
 on their shells, and everything that is printed should also be logged, and more than that.
 The location of the logging is in `performance/unsorted-logs`. These files and the
-device profiling logs all need to be extracted from the remote in whatever manner 
+device profiling logs all need to be extracted from the remote in whatever manner
 applicable. I genereally used Globus.
 
 From there, the device-profiler log should be placed in
