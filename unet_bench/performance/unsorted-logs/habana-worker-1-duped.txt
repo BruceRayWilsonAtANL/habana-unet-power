@@ -1,0 +1,23 @@
+Command: ['unet.py', '--hpu', '--use_lazy_mode', '--run-name', 'habana-worker-1-duped', '--epochs', '5', '--cache-path', 'kaggle_duped_cache', '--weights-file', 'h-w-1-d.pt']
+Begin CSV
+type,epoch,time,loss,dsc
+Command: ['unet.py', '--hpu', '--use_lazy_mode', '--run-name', 'habana-worker-1-duped', '--epochs', '5', '--cache-path', 'kaggle_duped_cache', '--weights-file', 'h-w-1-d.pt']
+Begin CSV
+type,epoch,time,loss,dsc
+loaders_init,,24.04428768157959,,
+train,1,140.16844964027405,0.9395019474926345,
+eval,1,5.051862478256226,0.9836664746205012, 0.11731053064653692
+train,2,114.69400906562805,0.9209932734113221,
+eval,2,0.7080817222595215,0.9857509483893713, 0.0
+train,3,113.7622561454773,0.9011873151731054,
+eval,3,0.7118098735809326,0.9860281596581141, 0.0014192785334121822
+train,4,113.90471911430359,0.874079289239481,
+eval,4,0.7273499965667725,0.9859819312890371, 0.03581929965249933
+train,5,116.13939094543457,0.8350038736238392,
+eval,5,0.7223007678985596,0.9685133745272955, 0.17676225351006708
+total_train_time,5,598.6898062229156,,
+total_eval_time,5,7.939238786697388,,
+
+Best validation mean DSC: 0.17676225351006708
+
+End CSV
