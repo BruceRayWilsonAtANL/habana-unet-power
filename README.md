@@ -4,9 +4,9 @@ Reminder: various setup commands on Habana:
 
 ```bash
 export HABANA_LOGS=~/.habana_logs
-source ~/aevard_venv/bin/activate
+source /home/aevard/aevard_venv/bin/activate
 export PYTHON=/home/aevard/aevard_venv/bin/python
-export PYTHONPATH=/home/aevard/Model-References:/home/aevard/aevard_venv/bin/python
+export PYTHONPATH=/home/bwilson/DL/Habana/Model-References:/home/aevard/aevard_venv/bin/python
 ```
 
 And setup commands on ThetaGPU:
@@ -26,7 +26,6 @@ pip install --user scikit-image
 
 * `Model-References`:
     Sample apps from Habana. (.gitignore'd, but useful to have around)
-
 
 ## Important Scripts
 
