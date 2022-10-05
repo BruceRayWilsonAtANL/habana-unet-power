@@ -4,7 +4,7 @@ import os
 import time
 import torch
 import numpy as np
-from skimage.transform import rescale, rotate 
+from skimage.transform import rescale, rotate
 from torch.utils.data import DataLoader
 from torchvision.transforms import Compose
 from dataset import BrainSegmentationDataset
@@ -22,7 +22,7 @@ class DiceLoss(nn.Module):
     def __init__(self):
         super(DiceLoss, self).__init__()
         self.smooth = 1.0
-    
+
     def forward(self, y_pred, y_true):
         assert y_pred.size() == y_true.size()
         y_pred = y_pred[:, 0].contiguous().view(-1)
@@ -43,7 +43,7 @@ def transforms_net(scale=0.995, angle=5):
 
     return Compose(transform_list)
 
-class Scale(object): 
+class Scale(object):
 
     def __init__(self, scale):
         self.scale = scale
@@ -81,7 +81,7 @@ class Rotate(object):
 
     def __init__(self, angle):
         self.angle = angle
-    
+
     def __call__(self, sample):
         image, mask = sample
 
@@ -122,7 +122,7 @@ def data_loaders(args):
         valid_sampler = torch.utils.data.distributed.DistributedSampler(dataset_valid)
         if args.num_workers < args.world_size:
             args.num_workers = args.world_size
-    
+
         loader_train = DataLoader(
             dataset_train,
             batch_size=args.batch_size,
@@ -193,7 +193,7 @@ def train(args, model, loss_fn, optimizer, loader_train, device, epoch):
         x, y_true = data
         x, y_true = x.to(device), y_true.to(device)
         if args.use_lazy_mode:
-            htcore.mark_step() 
+            htcore.mark_step()
 
         optimizer.zero_grad()
 
@@ -202,21 +202,21 @@ def train(args, model, loss_fn, optimizer, loader_train, device, epoch):
             loss = loss_fn(y_pred, y_true)
             loss.backward()
             if args.use_lazy_mode:
-                htcore.mark_step() 
+                htcore.mark_step()
             optimizer.step()
             if args.use_lazy_mode:
-                htcore.mark_step() 
+                htcore.mark_step()
             loss_train.append(loss.item())
     if args.distributed:
         log(
             os.path.join(os.path.dirname(os.path.abspath(__file__)),
-            LOG_FILE.format(args.run_name)), 
+            LOG_FILE.format(args.run_name)),
             f"train,{epoch},{time.time() - train_time},{np.mean(loss_train)},"
         )
     else:
         log(
             os.path.join(os.path.dirname(os.path.abspath(__file__)),
-            LOG_FILE.format(args.run_name)), 
+            LOG_FILE.format(args.run_name)),
             f"train,{epoch},{time.time() - train_time},{np.mean(loss_train)},"
         )
     print(log_loss_summary(loss_train, epoch))
@@ -249,7 +249,7 @@ def eval(args, model, loss_fn, testloader, device, epoch):
         )
 
     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOG_FILE.format(args.run_name))
-    
+
     print(log_loss_summary(loss_valid, epoch, prefix="val_"))
     mean_dsc = np.mean(
         dsc_per_volume(
@@ -269,90 +269,6 @@ def log(save_path, line):
     with open(save_path, "a") as file:
         file.write(line +"\n")
 
-def main():
-
-    # Get parser arguments, prepare the logging file.
-    args = add_parser()
-    dir_path = os.path.dirname(os.path.abspath(__file__))
-    save_path = os.path.join(dir_path, LOG_FILE.format(args.run_name))
-    log(save_path, f"Command: {sys.argv}")
-    log(save_path, f"Begin CSV")
-    log(save_path, f"type,epoch,time,loss,dsc")
-
-    # Set the HPU settings
-    if args.use_lazy_mode:
-        os.environ["PT_HPU_LAZY_MODE"]="1"
-    else:
-        os.environ["PT_HPU_LAZY_MODE"]="2"   
-    torch.manual_seed(args.seed)
-    torch.multiprocessing.set_start_method('spawn')
-    device = torch.device("hpu")
-    torch.cuda.current_device = lambda: None
-    torch.cuda.set_device = lambda x: None
-    print(device)
-    import habana_frameworks.torch.distributed.hccl
-    utils.init_distributed_mode(args)
-    
-    # Get the data loaders and time their init (useful for cache vs non cache)
-    st_timer = time.time()
-    if args.distributed:
-        loader_train, loader_valid, train_sampler, valid_sampler = data_loaders(args)
-        if args.rank == 0:
-            log(save_path, f"loaders_init,,{time.time() - st_timer},,")
-    else:
-        loader_train, loader_valid = data_loaders(args)
-        log(save_path, f"loaders_init,,{time.time() - st_timer},,")
-
-    # Block here is to allow other versions of the unet. Essentially unused, though.
-    if args.layers == 4:
-        from models.unet_base import UNet
-    model = UNet(in_channels=3, out_channels=1)
-    model.to(device)
-    
-    # Set other hyperparameters and hyper...functions?
-    loss_fn = DiceLoss()
-    best_validation_dsc = 0.0
-    optimizer = optim.Adam(model.parameters(), lr=args.lr)
-    total_train_time = 0
-    total_eval_time = 0
-    
-    # One of the spots the distributed training may be going wrong.
-    if args.distributed and args.hpu:
-        model = torch.nn.parallel.DistributedDataParallel(model, bucket_cap_mb=100, gradient_as_bucket_view=True)
-
-    # Train and test loop.
-    # Almost everywhere epoch is used is log output, hence index by 1
-    for epoch in range(1, args.epochs+1):
-        print(f"Beginning epoch {epoch}")
-        st_timer = time.time()
-        if args.distributed:
-            train_sampler.set_epoch(epoch-1)
-        train(args, model, loss_fn, optimizer, loader_train, device, epoch)
-        total_train_time += (time.time() - st_timer)
-
-        st_timer = time.time()
-        dsc = eval(args, model, loss_fn, loader_valid, device, epoch)
-        total_eval_time += (time.time() - st_timer)
-
-        if dsc > best_validation_dsc:
-            best_validation_dsc = dsc
-            torch.save(model.state_dict(), os.path.join(dir_path, f"weights/{args.weights_file}"))
-
-    # Log all the info not already logged in train/eval
-    if not args.distributed:
-        print(f"total_train_time = {total_train_time} for {args.epochs} epochs")
-        print(f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
-        print(f"\nBest validation mean DSC: {best_validation_dsc}\n")
-        log(save_path, f"total_train_time,{args.epochs},{total_train_time},,")
-        log(save_path, f"total_eval_time,{args.epochs},{total_eval_time},,")
-        log(save_path, f"\nBest validation mean DSC: {best_validation_dsc}\n")
-        log(save_path, f"End CSV")
-    elif args.rank == 0: # Don't both with dsc cause it's broken in distributed atm
-        print(f"total_train_time = {total_train_time} for {args.epochs} epochs")
-        print(f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
-        log(save_path, f"total_train_time,{args.epochs},{total_train_time},,")
-        log(save_path, f"total_eval_time,{args.epochs},{total_eval_time},,")
-        log(save_path, f"End CSV")
 
 def add_parser():
     # Training settings
@@ -391,9 +307,96 @@ def add_parser():
     parser.add_argument('--dist-url', default='env://', help='url used to set up distributed training')
     parser.add_argument('--rank', default=0, help='rank of the card. Overwritten')
     parser.add_argument('--process-per-node', default=8, type=int, metavar='N', help='Number of process per node')
+
     args = parser.parse_args()
+    
     return args
+
+
+def main():
+
+    # Get parser arguments, prepare the logging file.
+    args = add_parser()
+    dir_path = os.path.dirname(os.path.abspath(__file__))
+    save_path = os.path.join(dir_path, LOG_FILE.format(args.run_name))
+    log(save_path, f"Command: {sys.argv}")
+    log(save_path, f"Begin CSV")
+    log(save_path, f"type,epoch,time,loss,dsc")
+
+    # Set the HPU settings
+    if args.use_lazy_mode:
+        os.environ["PT_HPU_LAZY_MODE"]="1"
+    else:
+        os.environ["PT_HPU_LAZY_MODE"]="2"
+    torch.manual_seed(args.seed)
+    torch.multiprocessing.set_start_method('spawn')
+    device = torch.device("hpu")
+    torch.cuda.current_device = lambda: None
+    torch.cuda.set_device = lambda x: None
+    print(device)
+    import habana_frameworks.torch.distributed.hccl
+    utils.init_distributed_mode(args)
+
+    # Get the data loaders and time their init (useful for cache vs non cache)
+    st_timer = time.time()
+    if args.distributed:
+        loader_train, loader_valid, train_sampler, valid_sampler = data_loaders(args)
+        if args.rank == 0:
+            log(save_path, f"loaders_init,,{time.time() - st_timer},,")
+    else:
+        loader_train, loader_valid = data_loaders(args)
+        log(save_path, f"loaders_init,,{time.time() - st_timer},,")
+
+    # Block here is to allow other versions of the unet. Essentially unused, though.
+    if args.layers == 4:
+        from models.unet_base import UNet
+    model = UNet(in_channels=3, out_channels=1)
+    model.to(device)
+
+    # Set other hyperparameters and hyper...functions?
+    loss_fn = DiceLoss()
+    best_validation_dsc = 0.0
+    optimizer = optim.Adam(model.parameters(), lr=args.lr)
+    total_train_time = 0
+    total_eval_time = 0
+
+    # One of the spots the distributed training may be going wrong.
+    if args.distributed and args.hpu:
+        model = torch.nn.parallel.DistributedDataParallel(model, bucket_cap_mb=100, gradient_as_bucket_view=True)
+
+    # Train and test loop.
+    # Almost everywhere epoch is used is log output, hence index by 1
+    for epoch in range(1, args.epochs+1):
+        print(f"Beginning epoch {epoch}")
+        st_timer = time.time()
+        if args.distributed:
+            train_sampler.set_epoch(epoch-1)
+        train(args, model, loss_fn, optimizer, loader_train, device, epoch)
+        total_train_time += (time.time() - st_timer)
+
+        st_timer = time.time()
+        dsc = eval(args, model, loss_fn, loader_valid, device, epoch)
+        total_eval_time += (time.time() - st_timer)
+
+        if dsc > best_validation_dsc:
+            best_validation_dsc = dsc
+            torch.save(model.state_dict(), os.path.join(dir_path, f"weights/{args.weights_file}"))
+
+    # Log all the info not already logged in train/eval
+    if not args.distributed:
+        print(f"total_train_time = {total_train_time} for {args.epochs} epochs")
+        print(f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
+        print(f"\nBest validation mean DSC: {best_validation_dsc}\n")
+        log(save_path, f"total_train_time,{args.epochs},{total_train_time},,")
+        log(save_path, f"total_eval_time,{args.epochs},{total_eval_time},,")
+        log(save_path, f"\nBest validation mean DSC: {best_validation_dsc}\n")
+        log(save_path, f"End CSV")
+    elif args.rank == 0: # Don't both with dsc cause it's broken in distributed atm
+        print(f"total_train_time = {total_train_time} for {args.epochs} epochs")
+        print(f"total_eval_time = {total_eval_time} for {args.epochs} epochs")
+        log(save_path, f"total_train_time,{args.epochs},{total_train_time},,")
+        log(save_path, f"total_eval_time,{args.epochs},{total_eval_time},,")
+        log(save_path, f"End CSV")
 
 if __name__ == '__main__':
     main()
- 
