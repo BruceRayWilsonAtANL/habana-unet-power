@@ -1766,45 +1766,73 @@ cd apps/unet_bench/
 
 Begin OK
 
+Open Terminal 1 from dev machine
+
 ```bash
- 2001  source ~/aevard_venv/bin/activate
- 2002  export PYTHON=/home/aevard/aevard_venv/bin/python
- 2003  export HABANA_LOGS=~/habana_logs
- 2004  source /home/aevard/aevard_venv/bin/activate
- x2016  $PYTHON unet.py --hpu --use_lazy_mode --run-name mem-print-1 --epochs 5 --cache-path kaggle_cache --weights-file m-p-1.pt
+ssh -J wilsonb@homes.cels.anl.gov wilsonb@habana-01.ai.alcf.anl.gov
+```
+
+Continue
+
+```bash
+export PYTHON=/home/aevard/aevard_venv/bin/python
+export HABANA_LOGS=~/habana_logs
+source /home/aevard/aevard_venv/bin/activate
 
 
 xxcd /home/aevard/apps/habana-unet-power/unet_bench/
- 2005  cd DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+cd DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+
+# This only gets done once of course.
 cp -r /home/aevard/apps/unet_bench/data/kaggle_duped_cache/ data/kaggle_duped_cache
 
 
 cd /home/wilsonb/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
+
+# This only gets done once of course.
 chmod 755 build-hl-smi-csv
+```
+
+Start the power monitoring script with a specified output file.
+
+```bash
 ./build-hl-smi-csv post-git-test.txt
+```
 
-# Start Terminal 2
+# Start Terminal 2 from your dev machine
 
-time $PYTHON unet.py --hpu --use_lazy_mode --run-name habana-worker-1-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-1-d.pt
-time mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-2-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-2-d.pt --world-size 2 --num-workers 2
-time mpirun -n 4 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-4-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-4-d.pt --world-size 4 --num-workers 4
+Open a new terminal.
 
-# Switch to Terminal 1
-top
+```bash
+ssh -J wilsonb@homes.cels.anl.gov wilsonb@habana-01.ai.alcf.anl.gov
+```
 
-# Close top
-# When the runs have completed switch to Terminal 2
+Continue
+
+```bash
+export PYTHON=/home/aevard/aevard_venv/bin/python
+export HABANA_LOGS=~/habana_logs
+source /home/aevard/aevard_venv/bin/activate
+cd DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
 ```
 
 
+```bash
+time $PYTHON unet.py --hpu --use_lazy_mode --run-name habana-worker-1-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-1-d.pt
+time mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-2-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-2-d.pt --world-size 2 --num-workers 2
+time mpirun -n 4 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-4-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-4-d.pt --world-size 4 --num-workers 4
+```
 
-cd performance/
-ls
-rm *.txt
-mkdir unsorted-logs
-cd ..
-ls
-$PYTHON unet.py --hpu --use_lazy_mode --run-name mem-print-1 --epochs 5 --cache-path kaggle_cache --weights-file m-p-1.pt
+When the runs have finished switch to terminal 1
+
+<Ctrl+c> out of the power monitoring scripts
+
+
+```bash
+cat performance/load-size-128.txt | pbcopy
+xclip
+pbcopy
+```
 
 
 
