@@ -1,5 +1,6 @@
 import os
 import sys
+from tabnanny import filename_only
 
 def main():
     """
@@ -12,12 +13,14 @@ def main():
     # Allow script to work when called from anywhere
     location = os.path.dirname(os.path.abspath(__file__))
 
+    print(f"location: {location}")
+
     # Get every .txt in the directory, passing their names w/ other path arguments
     contents = os.listdir(os.path.join(f"{location}/logs", sys.argv[1]))
     for content in contents:
         if content.split(".")[-1] == ("txt"):
             csvify_file(content.split(".")[0], location, sys.argv[1])
-    
+
 
 def csvify_file(txt_filename, root_dir, group):
     """
@@ -39,7 +42,10 @@ def csvify_file(txt_filename, root_dir, group):
     writing = False
 
     # Begin writing
-    with open(f"{root_dir}/csvs/{group}/{txt_filename}.csv", 'w') as output:
+    fileOut = f"{root_dir}/csvs/{group}/{txt_filename}.csv"
+    print(f'fileOut: {fileOut}')
+    
+    with open(fileOut, 'w') as output:
         for line in lines:
             # Looking for the Begin and End CSV flags to signpost what should be written
             if line.__eq__("Begin CSV\n"):

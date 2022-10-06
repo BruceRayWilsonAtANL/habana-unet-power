@@ -103,18 +103,20 @@ Use **git pull**
 
 ### Run Post-Processing Scripts
 
+#### Venv
+
 ```bash
 # Activate venv
 python3.8 -m venv --system-site-packages ~/venvpower
 source ~/venvpower/bin/activate
 
 cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
-python analysis.py run
+xpython analysis.py run
 ```
 
+#### Move Log Files
 
-
-
+The log file format should be:
 
 ```python
 LOG_FILE = "performance/unsorted-logs/{}.txt"
@@ -122,3 +124,46 @@ LOG_FILE = "performance/unsorted-logs/{}.txt"
     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOG_FILE.format(args.run_name))
 ```
 
+`unet.py` should be writing its runtime logs to **unsorted-logs**.  Move the logs to the **logs** directory.
+
+```bash
+cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+```
+
+Let us say you want to call your batch of runs 'habana_init_test'.
+
+```bash
+cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+mkdir -p logs/habana_init_test
+
+mv unsorted-logs/* logs/habana_init_test
+```
+
+#### Process Log Files
+
+If necessary,
+
+```bash
+cd /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+```
+
+Run text to csv conversion script.
+
+```bash
+python3 txt_to_csv.py <dirname-in-logs>
+```
+
+Example:
+
+```bash
+python3 txt_to_csv.py habana_init_test
+```
+
+Example output:
+
+```console
+location: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-1-duped.csv
+fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-4-duped.csv
+fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-2-duped.csv
+```

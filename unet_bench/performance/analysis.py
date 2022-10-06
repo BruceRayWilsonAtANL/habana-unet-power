@@ -23,14 +23,16 @@ def main():
 
 def run_analysis():
 
-    t_info = []
-    e_info = []
+    # TODO: This method will probably need updating for specific tests.
+
+    test_info = []
+    evals_info = []
 
     ## These are the variables to change when targetting different files
     ## Sometimes these target a single run. Sometimes both lists have 3+ entries. Should work either way.
     system = 'theta'
     system = 'habana'
-    skeleton = RUN_TYPE + "/{}-worker" + "-duped"
+    skeleton = RUN_TYPE + f"/{system}-worker" + "-{}-duped"
     # skeleton = "theta/128-{}-theta"
     formats = ["128", "256"]
     formats = [system]
@@ -38,16 +40,17 @@ def run_analysis():
 
     total_times = dict.fromkeys(formats)
     for format in formats:
-        sharedNameBetweenModels = skeleton.format(format)
+        #sharedNameBetweenModels = skeleton.format(format)
+        sharedNameBetweenModels = skeleton
         trains, evals, facts = load_runs(sharedNameBetweenModels, run_numbers)
-        t_info.append(trains)
-        e_info.append(evals)
+        test_info.append(trains)
+        evals_info.append(evals)
         total_times[format] = facts
 
     # Hand off to the analysis functions so they can do their work.
     # We get back the dataframes in whatever state, but don't currently use them.
-    train_runs = train_analysis(t_info, formats, run_numbers)
-    eval_runs = eval_analysis(e_info, formats, run_numbers)
+    train_runs = train_analysis(test_info, formats, run_numbers)
+    eval_runs = eval_analysis(evals_info, formats, run_numbers)
     outside_runs = outsides_analysis(total_times, formats, run_numbers)
 
     # Collect all the data present in each return
@@ -202,12 +205,15 @@ def load_runs(source: str, run_names: List[str]) -> Tuple[pd.DataFrame, pd.DataF
     Returns: A tuple with three entries, train data, eval data, and outside data.
     """
 
+    # TODO: I probably should have not modified this method.
+
     # Make for each type of data generated from the files.
     trains = []
     evals = []
     facts = []
     for name in run_names:
-        train, eval, fact = load_blocks(f"csvs/{source}-{name}.csv")
+        filepath = source.format(name) + ".csv"
+        train, eval, fact = load_blocks(filepath)
         trains.append(train)
         evals.append(eval)
         facts.append(fact)
