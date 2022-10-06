@@ -3,7 +3,10 @@ import json
 import pandas as pd
 from typing import Tuple, List
 #from analysis_smi import smi_analysis
-RUN_TYPE = "post-git-test"
+
+# RUN_TYPE is the directory in which unet.py stored the results.
+# The relative path from Unet is ./performance/unsorted-logs.
+RUN_TYPE = "unsorted-logs"
 
 def main():
     if len(sys.argv) <= 1:
@@ -25,14 +28,18 @@ def run_analysis():
 
     ## These are the variables to change when targetting different files
     ## Sometimes these target a single run. Sometimes both lists have 3+ entries. Should work either way.
-    skeleton = RUN_TYPE + "/128-duped-{}"
+    system = 'theta'
+    system = 'habana'
+    skeleton = RUN_TYPE + "/{}-worker" + "-duped"
     # skeleton = "theta/128-{}-theta"
     formats = ["128", "256"]
-    run_numbers = ["1", "2", "3"]
+    formats = [system]
+    run_numbers = ["1", "2", "4"]
 
     total_times = dict.fromkeys(formats)
     for format in formats:
-        trains, evals, facts = load_runs(skeleton.format(format), run_numbers)
+        sharedNameBetweenModels = skeleton.format(format)
+        trains, evals, facts = load_runs(sharedNameBetweenModels, run_numbers)
         t_info.append(trains)
         e_info.append(evals)
         total_times[format] = facts
@@ -191,8 +198,8 @@ def load_runs(source: str, run_names: List[str]) -> Tuple[pd.DataFrame, pd.DataF
     Gets a group of specified csvs and combines their data into two dataframes and one dict.
     Arguments:
         source: A string for the source (shared) name between the models.
-        run_names: A list of the identifying parts of the names
-    Returns: a tuple with three entries, train data, eval data, and outside data
+        run_names: A list of the identifying parts of the names.
+    Returns: A tuple with three entries, train data, eval data, and outside data.
     """
 
     # Make for each type of data generated from the files.
@@ -205,7 +212,7 @@ def load_runs(source: str, run_names: List[str]) -> Tuple[pd.DataFrame, pd.DataF
         evals.append(eval)
         facts.append(fact)
 
-    # Transform out of lists into frames and dict, then return
+    # Transform out of lists into frames and dict, then return.
     t_info = merge_cols(trains, ["time", "loss"], run_names)
     e_info = merge_cols(evals, ["time", "loss", "dsc"], run_names)
     return t_info, e_info, {run_names[i]: facts[i] for i in range(len(facts))}

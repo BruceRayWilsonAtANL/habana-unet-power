@@ -250,6 +250,8 @@ def eval(args, model, loss_fn, testloader, device, epoch):
 
     save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOG_FILE.format(args.run_name))
 
+    print(f'\nSaving data to {save_path}\n')
+
     print(log_loss_summary(loss_valid, epoch, prefix="val_"))
     mean_dsc = np.mean(
         dsc_per_volume(
@@ -309,7 +311,7 @@ def add_parser():
     parser.add_argument('--process-per-node', default=8, type=int, metavar='N', help='Number of process per node')
 
     args = parser.parse_args()
-    
+
     return args
 
 

@@ -95,18 +95,30 @@ Use **git commit -am "Added run results."**
 Use **git pull**
 Use **git push**
 
-## On Development Machine
+## Post Processing
+
+### Git Pull Repo
 
 Use **git pull**
 
-## Run Post-Processing Scripts
+### Run Post-Processing Scripts
 
 ```bash
-# Activate venv (dlvenv)
+# Activate venv
 python3.8 -m venv --system-site-packages ~/venvpower
 source ~/venvpower/bin/activate
 
 cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 python analysis.py run
+```
+
+
+
+
+
+```python
+LOG_FILE = "performance/unsorted-logs/{}.txt"
+# ...
+    save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOG_FILE.format(args.run_name))
 ```
 
