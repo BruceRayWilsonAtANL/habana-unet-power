@@ -58,6 +58,21 @@ time mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distribu
 time mpirun -n 4 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-4-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-4-d.pt --world-size 4 --num-workers 4
 ```
 
+The argument **run-name** is used to create the output file name.  The Python code is:
+
+```python
+LOG_FILE = "performance/unsorted-logs/{}.txt"
+# ...
+    save_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), LOG_FILE.format(args.run_name))
+```
+
+**Example:**  The first **run-name** is **habana-worker-1-duped** so, the relative path of the
+output file is:
+
+```console
+./performance/unsorted-logs/habana-worker-1-duped.txt
+```
+
 When the runs have finished switch to terminal 1
 
 ## Switch to Terminal 1
@@ -71,6 +86,27 @@ xclip
 pbcopy
 ```
 
-## Copy Files to Development Machine
+### Use Repo
 
+**NOTE:** Do not add **data/kaggle_duped_cache/**
+
+Use **git add** to add files to the repo.
+Use **git commit -am "Added run results."**
+Use **git pull**
+Use **git push**
+
+## On Development Machine
+
+Use **git pull**
+
+## Run Post-Processing Scripts
+
+```bash
+# Activate venv (dlvenv)
+python3.8 -m venv --system-site-packages ~/venvpower
+source ~/venvpower/bin/activate
+
+cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+python analysis.py run
+```
 

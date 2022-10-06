@@ -2,12 +2,12 @@ import sys
 import json
 import pandas as pd
 from typing import Tuple, List
-from analysis_smi import smi_analysis
+#from analysis_smi import smi_analysis
 RUN_TYPE = "post-git-test"
 
 def main():
     if len(sys.argv) <= 1:
-        exit("usage: analysis.py run OR analysis.py <hl-smi/nvidia-smi>")  
+        exit("usage: python analysis.py run OR python analysis.py <hl-smi/nvidia-smi>")
     elif sys.argv[1].__eq__("run"):
         run_analysis()
     elif sys.argv[1].__eq__("smi"):
@@ -16,13 +16,13 @@ def main():
         else:
             smi_analysis("all")
     else:
-        exit("usage: analysis.py run OR analysis.py smi")
+        exit("usage: python analysis.py run OR python analysis.py smi")
 
 def run_analysis():
-    
+
     t_info = []
     e_info = []
-    
+
     ## These are the variables to change when targetting different files
     ## Sometimes these target a single run. Sometimes both lists have 3+ entries. Should work either way.
     skeleton = RUN_TYPE + "/128-duped-{}"
@@ -52,7 +52,7 @@ def run_analysis():
             collector[run][k] = v
         for k, v in outside_runs[run].items():
             collector[run][k] = v
-    
+
     # Get the data into a reasoanble form, then print out.
     json_safe = cat_tuples(collector, "habana duped")
     print(json.dumps(json_safe, indent=2))
@@ -84,11 +84,11 @@ def train_analysis(train_data: List[pd.DataFrame], formats: List[str], run_names
         run_names: A list of all the run names within formats.
     Returns: a dict of the important train-specific information.
     """
-    
+
     # Create runs dict, index by tuple cause that's an easy way to seperate the data.
     runs = {(run, format): dict() for run in run_names for format in formats}
     t_info = merge_cols(train_data, [f"{kind}_{name}" for kind in ["time", "loss"] for name in run_names], formats)
-    
+
     # Get all the first epoch timing data, as the data's loading in slowly at this point.
     delayed = lambda : f"time_{run}_{format}"
     for format in formats:
@@ -97,7 +97,7 @@ def train_analysis(train_data: List[pd.DataFrame], formats: List[str], run_names
         for run in run_names:
             runs[(run, format)]["first epoch train time"] = t_info.max().get(delayed())
             runs[format]["first epoch"] += runs[(run, format)]["first epoch train time"] / len(run_names)
-    
+
     # Remove first epoch timing data as to not skew other metrics.
     t_info.drop(t_info.index[:1], inplace=True)
 
@@ -127,11 +127,11 @@ def eval_analysis(eval_data: List[pd.DataFrame], formats: dict, run_names: List[
 
     # Create runs dict, index by tuple cause that's an easy way to seperate the data.
     runs = {(run, format): dict() for run in run_names for format in formats}
-    
+
     # Merge the dataframes into a single one, using to_merges for their col names
     to_merges = [f"{kind}_{num}" for kind in ["time", "loss", "dsc"] for num in run_names]
     e_info = merge_cols(eval_data, to_merges, formats)
-    
+
     # Also create this for averages.
     for format in formats:
         runs[format] = dict()
@@ -232,7 +232,7 @@ def merge_cols(data: List[pd.DataFrame], columns: List[str], names: List[str]) -
     for entry in data[1:]:
         merger = merger.merge(entry, on="epoch")
 
-    if len(names) < 3: 
+    if len(names) < 3:
         names.append(None)
     for col in columns:
         merger.rename(columns = {
@@ -267,7 +267,7 @@ def load_blocks(filepath: str) -> Tuple[pd.DataFrame, pd.DataFrame, dict]:
     total_train = data.at[data[data["type"] == "total_train_time"].index[0], "time"]
     total_eval = data.at[data[data["type"] == "total_eval_time"].index[0], "time"]
     return t_info, e_info, {"loaders_init": loader_time, "total_train": total_train, "total_eval": total_eval}
-    
+
 
 if __name__ == '__main__':
     main()
