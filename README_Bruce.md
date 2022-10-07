@@ -111,7 +111,6 @@ python3.8 -m venv --system-site-packages ~/venvpower
 source ~/venvpower/bin/activate
 
 cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
-xpython analysis.py run
 ```
 
 #### Move Log Files
@@ -167,3 +166,12 @@ fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/perfo
 fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-4-duped.csv
 fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-2-duped.csv
 ```
+
+#### Analyze CSV Files
+
+```bash
+python analysis.py run
+```
+
+analysis_smi.py
+    load_hl_csv()

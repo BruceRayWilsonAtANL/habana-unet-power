@@ -2,11 +2,10 @@ import sys
 import json
 import pandas as pd
 from typing import Tuple, List
-#from analysis_smi import smi_analysis
+from analysis_smi import smi_analysis
 
-# RUN_TYPE is the directory in which unet.py stored the results.
-# The relative path from Unet is ./performance/unsorted-logs.
-RUN_TYPE = "unsorted-logs"
+# RUN_TYPE is the directory in which txt_to_csv.py stored the results.
+RUN_TYPE = "habana_init_test"
 
 def main():
     if len(sys.argv) <= 1:
@@ -24,6 +23,7 @@ def main():
 def run_analysis():
 
     # TODO: This method will probably need updating for specific tests.
+    # TODO: Current file format example: csvs/habana_init_test/habana-worker-1-duped.csv
 
     test_info = []
     evals_info = []
@@ -97,16 +97,22 @@ def train_analysis(train_data: List[pd.DataFrame], formats: List[str], run_names
 
     # Create runs dict, index by tuple cause that's an easy way to seperate the data.
     runs = {(run, format): dict() for run in run_names for format in formats}
+
     t_info = merge_cols(train_data, [f"{kind}_{name}" for kind in ["time", "loss"] for name in run_names], formats)
 
     # Get all the first epoch timing data, as the data's loading in slowly at this point.
     delayed = lambda : f"time_{run}_{format}"
+    columns = 1
     for format in formats:
         runs[format] = {}
         runs[format]["first epoch"] = 0.0
         for run in run_names:
-            runs[(run, format)]["first epoch train time"] = t_info.max().get(delayed())
-            runs[format]["first epoch"] += runs[(run, format)]["first epoch train time"] / len(run_names)
+            runs[(run, format)]["first epoch train time"] = t_info.max(axis=columns).get(delayed())
+
+            runTime = runs[(run, format)]["first epoch train time"]
+            print(f"runtime: {runTime}")
+            print(f"len(run_names): {len(run_names)}")
+            runs[format]["first epoch"] += runTime / len(run_names)
 
     # Remove first epoch timing data as to not skew other metrics.
     t_info.drop(t_info.index[:1], inplace=True)
@@ -213,6 +219,9 @@ def load_runs(source: str, run_names: List[str]) -> Tuple[pd.DataFrame, pd.DataF
     facts = []
     for name in run_names:
         filepath = source.format(name) + ".csv"
+        filepath = "csvs/" + filepath
+        print(f'load_runs:filepath: {filepath}')
+
         train, eval, fact = load_blocks(filepath)
         trains.append(train)
         evals.append(eval)
@@ -234,19 +243,74 @@ def merge_cols(data: List[pd.DataFrame], columns: List[str], names: List[str]) -
     Returns: A single dataframe with merged data.
     """
 
+    """
+[   epoch        time      loss
+1    1.0  140.168450  0.939502
+3    2.0  114.694009  0.920993
+5    3.0  113.762256  0.901187
+7    4.0  113.904719  0.874079
+9    5.0  116.139391  0.835004,    epoch                time                loss
+2      1   147.9222149848938  0.9377131691766442
+3      1   148.0099799633026   0.938847649534908
+5      2   116.1036126613617  0.9208118253891621
+6      2  116.39511227607727  0.9182228500689935
+8      3  114.69748592376709  0.9070872391035797
+9      3  114.76577472686768  0.9092210317970416
+11     4  115.10956358909607  0.8920853974622324
+12     4  115.02885174751282   0.897967837272434
+14     5  115.12287878990173  0.8777411760540184
+15     5  115.31558752059937  0.8793905289894944,     epoch        time      loss
+1     1.0  102.155200  0.945525
+2     1.0  102.164418  0.945498
+3     1.0  102.199025  0.947834
+4     1.0  102.202429  0.946424
+6     2.0   77.957279  0.930487
+7     2.0   77.850877  0.927208
+8     2.0   77.859111  0.928871
+9     2.0   77.944326  0.928141
+11    3.0   78.027041  0.921006
+12    3.0   78.034348  0.919641
+13    3.0   78.061501  0.920601
+14    3.0   78.067974  0.925340
+16    4.0   77.610885  0.913918
+17    4.0   77.599507  0.917305
+18    4.0   77.683750  0.913656
+19    4.0   77.660889  0.919404
+21    5.0   78.263063  0.912192
+22    5.0   78.270816  0.912770
+23    5.0   78.203078  0.907386
+24    5.0   78.225516  0.910161]
+    """
+
+    print(f"\n\nmerge_cols.columns: {columns}")
+    print(f"merge_cols.names: {names}")
+
     # Edge for length one. Still rename columns for outward consistency.
     if len(data) == 1:
         data[0].rename(columns = {f"{col}": f"{col}_{names[0]}" for col in columns}, inplace=True)
         return data[0]
     merger = data[0].copy()
 
+    dataFrames = []
+    for dataFrame in data:
+        dataFrames.append(dataFrame)
+
+    result = pd.concat(dataFrames)
+
     #TODO This renaming scheme only works for 3, and it should for 2. Who knows about 4+
     # Anyway, merge data, then fix all the conflicting names
-    for entry in data[1:]:
-        merger = merger.merge(entry, on="epoch")
+    #for entry in data[1:]:
+    #    merger = merger.merge(entry, on="epoch")
 
-    if len(names) < 3:
+    merger = result
+    print(f'\nmerge_cols.result: \n{result}')
+
+    if len(names) == 1:
         names.append(None)
+
+    if len(names) == 2:
+        names.append(None)
+
     for col in columns:
         merger.rename(columns = {
             f"{col}_x": f"{col}_{names[0]}",
@@ -255,6 +319,8 @@ def merge_cols(data: List[pd.DataFrame], columns: List[str], names: List[str]) -
         }, inplace=True, errors='ignore')
     if None in names:
         names.remove(None)
+
+    print(f'merge_cols.merger: \n{merger}')
 
     return merger
 

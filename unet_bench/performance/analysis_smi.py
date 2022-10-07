@@ -4,8 +4,10 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import os
+
 MAX_MEM = 32768
 HABANA_CSV = "csvs/habana02_theta_comapre"
+HABANA_CSV = "csvs/habana02_theta_compare"
 THETA_CSV = "csvs/theta"
 OUT_DIR = "pngs/theta-v-habana"
 OVERWRITE = False # Included since it's very easy to overwrite old, useful data.
@@ -29,23 +31,36 @@ def smi_analysis(mode="all"):
     units = ["W", "%"]
 
     # Change these variables in every run, as well as which frames are getting produced and viewed.
+    # TODO: Change the 'run' variable.
     run = "normal-128"
-    title = f"{mode.capitalize()} power usage, 50x dataset, 2 epochs, size 64"
-    outfile_name = f"{OUT_DIR}/normal-128-{mode}.png"
+
+    input_run = input(f"Enter run name [{run}]:")
+    if len(input_run) > 0:
+        run = input_run
+
+
+    plot_title = f"{mode.capitalize()} power usage, 50x dataset, 2 epochs, size 64"
+
+    input_plot_title = input(f"Enter plot title [{plot_title}]")
+    if len(input_plot_title) > 0:
+        plot_title = input_plot_title
+
+    outfile_name = f"{OUT_DIR}/{run}-{mode}.png"
+    print(f"\nsmi_analysis.outfile {outfile_name}")
 
     # These lists get commented and uncommented, and the function values changed, with every dataset to display.
     # Hence a number of things currently commented out
 
     habana_frames = filter_frames("128 normal", run, "hl-smi", exclude_frames=[0])
     frame_avgs.append(("habana", average_run(filter_frames("64 max", "64-max", "hl-smi"), metrics, units)))
-    
+
     # single_frames = filter_frames("single card", "duped-128", "hl-smi")
     # frame_avgs.append(("single-card", average_run(single_frames, metrics, units)))
 
     theta_frames = filter_frames("theta", run, "theta")
     for frame in theta_frames: # Theta device names are ugly
         frame = ("theta", frame[1])
-   
+
     # Utilization actually isn't all that useful. For now just track power.
     # This expansion is useful for if there's more/other metrics. Right now, there aren't really.
     # metrics = [tuple(metric.split(' ')) for metric in next(iter(id_frames.values())) if len(metric.split(' ')) > 1]
@@ -77,10 +92,10 @@ def smi_analysis(mode="all"):
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
             if mode in ["all", "total"]:
                 plt.plot(frame[1][time_name], frame[1]["total draw"], label=f"{frame[0]} total")
-        
+
         # Add legend label and titles. Most of these should be modified in variables at the start.
         plt.legend(loc='upper left')
-        plt.title(title)
+        plt.title(plot_title)
         plt.xlabel("Time since start of profiler (S)")
         plt.ylabel("Power (W)", rotation="horizontal")
         ## Enable and rename once there's a satisfying figure. Be wary to not overwrite past figures.
@@ -100,12 +115,17 @@ def filter_frames(name: str, run_name: str, mode: str, utilz=None, exclude_frame
         exclude_frames: A list to target certain frames for exclusion, default empty.
     Returns: A list of the frames, loaded and filtered, each tagged with a name.
     """
+
+    print(f"\nfilter_frames.name: {name}")
+    print(f"filter_frames.run_name: {run_name}")
+    print(f"filter_frames.mode: {mode}")
+
     # The different profilers might have different names that wasn't dealt with in data cleaning. This utilz is one fix.
     if utilz is None:
         utilz = lambda mode: "utilization.aip [%]" if mode.__eq__("hl-smi") else "utilization.gpu [%]"
 
     frames = []
-    print(run_name)
+
     for frame in load_hl_csv(run_name, mode=mode, exclude_frames=exclude_frames).items():
         if frame[1].var()[utilz(mode)] > 1.0: # Filters most inactive cards, does not catch foreign runners on those cards.
             frames.append((f"{name} {frame[0]}", frame[1]))
@@ -132,12 +152,12 @@ def average_run(frames: List[pd.DataFrame], metrics: List[str], units: List[str]
 
 
 def clean_curve(
-    name: str, 
-    frame: pd.DataFrame, 
-    metric: str, 
-    unit: str, 
-    boundary=10, 
-    num_bases=2, 
+    name: str,
+    frame: pd.DataFrame,
+    metric: str,
+    unit: str,
+    boundary=10,
+    num_bases=2,
     inplace=True
     ) -> pd.DataFrame:
     """
@@ -207,7 +227,7 @@ def delete_indicated_end(frame: pd.DataFrame, boundary=10, inplace=True) -> pd.D
 
 def smoothed_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1):
     """
-    An old function for utilization. Unused, since utilization went unused. 
+    An old function for utilization. Unused, since utilization went unused.
     Strictly inplace in the current version.
     Arguments:
         frame: The dataframe which to smooth the curve from.
@@ -249,7 +269,7 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
     inactive = np.float64(frame[metric].mode().squeeze())
     find_ends(frame, metric, num_bases=num_bases)
     bases = find_bases(frame, metric, num_bases=num_bases)
-    
+
 
     # Running calculation values and loop setup
     over_baseline = 0.0
@@ -379,7 +399,7 @@ def utilization_vals(frame: pd.DataFrame, metric: str, time_name: str):
         totals.drop(labels=[baseline, baseline-1], inplace=True)
     except KeyError:
         totals.drop(labels=baseline, inplace=True)
-    
+
     # Calculate and return a basic percentage, based on time and % utils
     sum = 0
     total = 0
@@ -392,23 +412,35 @@ def utilization_vals(frame: pd.DataFrame, metric: str, time_name: str):
     return sum / total, index
 
 
-def load_hl_csv(filename: str, mode="hl-smi", exclude_frames=[]) -> dict[pd.DataFrame]:
+#def load_hl_csv(filename: str, mode="hl-smi", exclude_frames=[]) -> dict[pd.DataFrame]:
+def load_hl_csv(filename: str, mode="hl-smi", exclude_frames=[]):
     """
     Loads a specific hl csv file, returning a dict of frames, one for each device polled.
     Arguments:
         filename: csv file to read from
-        mode: which mode this csv is based on
+        mode: which mode this csv is based on. One of ["hl-smi", "smi"].
         exclude_frames: frames to ignore for one reason or another. Most commonly
             because they have been identified to dirty graphs to generate after.
     Returns: a dict of DataFrames
     """
+
+    print(f"\n\nload_hl_csv.filename: {filename}")
+    print(f"load_hl_csv.mode: {mode}")
+    print(f"load_hl_csv.exclude_frames: {exclude_frames}")
+
     # Load the data into a single larger dataframe.
     loc = os.path.dirname(os.path.abspath(__file__))
-    all_data = pd.read_csv(os.path.join(loc, f"poll-data/{mode}/post-procure/{filename}.csv"))
+
+    filepath = f"poll-data/{mode}/post-procure/{filename}.csv"
+    fullFilepath = os.path.join(loc, filepath)
+    print(f"load_hl_csv.fullFilePath: {fullFilepath}")
+    # /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/poll-data/hl-smi/post-procure/64-max.csv
+
+    all_data = pd.read_csv(fullFilepath)
 
     # Create dict and frames based off the large one.
     id_frames = {id: pd.DataFrame() for id in all_data['device'].unique() if id not in exclude_frames}
-    
+
     # populate each frame
     for id in id_frames.keys():
         # TODO see above
