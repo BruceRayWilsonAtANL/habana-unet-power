@@ -8,8 +8,11 @@ from analysis_smi import smi_analysis
 RUN_TYPE = "habana_init_test"
 
 def main():
+
+    help_string = 'Usage: \npython analysis.py run \nOR \npython analysis.py smi ["model", "total", "all"]'
+
     if len(sys.argv) <= 1:
-        exit("usage: python analysis.py run OR python analysis.py <hl-smi/nvidia-smi>")
+        exit(help_string)
     elif sys.argv[1].__eq__("run"):
         run_analysis()
     elif sys.argv[1].__eq__("smi"):
@@ -18,7 +21,7 @@ def main():
         else:
             smi_analysis("all")
     else:
-        exit("usage: python analysis.py run OR python analysis.py smi")
+        exit(help_string)
 
 def run_analysis():
 

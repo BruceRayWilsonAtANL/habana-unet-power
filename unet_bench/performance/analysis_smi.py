@@ -12,14 +12,16 @@ THETA_CSV = "csvs/theta"
 OUT_DIR = "pngs/theta-v-habana"
 OVERWRITE = False # Included since it's very easy to overwrite old, useful data.
 
-# Always in flux to graph whatever targeted. Not really worth making consistent, instead marking major blocks.
-def smi_analysis(mode="all"):
+# Always in flux to graph whatever targeted. Not really worth making consistent,
+# instead marking major blocks.
+def smi_analysis(mode_="all"):
     """
     The main function of this file. Runs everything, and is very mutable (read: messy).
     This is the function to change when trying to output more data.
     Arguments:
-        mode: Whether to chart model, total (baseline + model), or both sets of values.
-    Returns: Nothing. Generates a plt figure and sometimes a png.
+        mode:   Whether to chart model, total (baseline + model), or both sets of values.
+                    Choices: ["model", "total", "all"]
+    Returns:    Nothing. Generates a plt figure and sometimes a png.
     """
 
     # These are the general frame lists to create and view.
@@ -39,20 +41,25 @@ def smi_analysis(mode="all"):
         run = input_run
 
 
-    plot_title = f"{mode.capitalize()} power usage, 50x dataset, 2 epochs, size 64"
+    plot_title = f"{mode_.capitalize()} power usage, 50x dataset, 2 epochs, size 64"
 
-    input_plot_title = input(f"Enter plot title [{plot_title}]")
+    input_plot_title = input(f"Enter plot title [{plot_title}]:")
     if len(input_plot_title) > 0:
         plot_title = input_plot_title
 
-    outfile_name = f"{OUT_DIR}/{run}-{mode}.png"
-    print(f"\nsmi_analysis.outfile {outfile_name}")
+    outfile_name = f"{OUT_DIR}/{run}-{mode_}.png"
+    print(f"\nsmi_analysis.outfile: {outfile_name}")
 
     # These lists get commented and uncommented, and the function values changed, with every dataset to display.
     # Hence a number of things currently commented out
 
     habana_frames = filter_frames("128 normal", run, "hl-smi", exclude_frames=[0])
-    frame_avgs.append(("habana", average_run(filter_frames("64 max", "64-max", "hl-smi"), metrics, units)))
+    print(f"smi_analysis.habana_frames: {habana_frames}")
+
+    filtered_frames = filter_frames("64 max", "64-max", "hl-smi")
+    averaged_run = average_run(filtered_frames, metrics, units)
+
+    frame_avgs.append(("habana", averaged_run))
 
     # single_frames = filter_frames("single card", "duped-128", "hl-smi")
     # frame_avgs.append(("single-card", average_run(single_frames, metrics, units)))
@@ -76,21 +83,21 @@ def smi_analysis(mode="all"):
         habana_frames = []
         for frame in habana_frames:
             clean_curve(frame[0], frame[1], "power.draw", "W", boundary=1)
-            if mode in ["all", "model"]:
+            if mode_ in ["all", "model"]:
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
-            if mode in ["all", "total"]:
+            if mode_ in ["all", "total"]:
                 plt.plot(frame[1][time_name], frame[1]["total draw"], label=f"{frame[0]} total")
         for frame in theta_frames:
             clean_curve(frame[0], frame[1], "power.draw", "W", num_bases=2)
-            if mode in ["all", "model"]:
+            if mode_ in ["all", "model"]:
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
-            if mode in ["all", "total"]:
+            if mode_ in ["all", "total"]:
                 plt.plot(frame[1][time_name], frame[1]["total draw"], label=f"{frame[0]} total")
         for frame in frame_avgs:
             clean_curve(frame[0], frame[1], "power.draw", "W")
-            if mode in ["all", "model"]:
+            if mode_ in ["all", "model"]:
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
-            if mode in ["all", "total"]:
+            if mode_ in ["all", "total"]:
                 plt.plot(frame[1][time_name], frame[1]["total draw"], label=f"{frame[0]} total")
 
         # Add legend label and titles. Most of these should be modified in variables at the start.
