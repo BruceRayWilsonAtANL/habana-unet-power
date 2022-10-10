@@ -34,9 +34,9 @@ def smi_analysis(mode_="all"):
 
     # Change these variables in every run, as well as which frames are getting produced and viewed.
     # TODO: Change the 'run' variable.
-    run = "normal-128"
+    run = "habana_init_test"
 
-    input_run = input(f"Enter run name [{run}]:")
+    input_run = input(f"Enter run name [{run}]: ")
     if len(input_run) > 0:
         run = input_run
 
@@ -53,34 +53,39 @@ def smi_analysis(mode_="all"):
     # These lists get commented and uncommented, and the function values changed, with every dataset to display.
     # Hence a number of things currently commented out
 
-    habana_frames = filter_frames("128 normal", run, "hl-smi", exclude_frames=[0])
+    name = run.replace('_', ' ')
+    run_name = run
+    mode = "hl-smi"
+    habana_frames = filter_frames(name, run_name, mode, exclude_frames=[0])
     print(f"smi_analysis.habana_frames: {habana_frames}")
 
-    filtered_frames = filter_frames("64 max", "64-max", "hl-smi")
-    averaged_run = average_run(filtered_frames, metrics, units)
+    original = False
+    if original:
+        filtered_frames = filter_frames("64 max", "64-max", "hl-smi")
+        averaged_run = average_run(filtered_frames, metrics, units)
 
-    frame_avgs.append(("habana", averaged_run))
+        frame_avgs.append(("habana", averaged_run))
 
-    # single_frames = filter_frames("single card", "duped-128", "hl-smi")
-    # frame_avgs.append(("single-card", average_run(single_frames, metrics, units)))
+        # single_frames = filter_frames("single card", "duped-128", "hl-smi")
+        # frame_avgs.append(("single-card", average_run(single_frames, metrics, units)))
 
-    theta_frames = filter_frames("theta", run, "theta")
-    for frame in theta_frames: # Theta device names are ugly
-        frame = ("theta", frame[1])
+        theta_frames = filter_frames("theta", run, "theta")
+        for frame in theta_frames: # Theta device names are ugly
+            frame = ("theta", frame[1])
 
-    # Utilization actually isn't all that useful. For now just track power.
-    # This expansion is useful for if there's more/other metrics. Right now, there aren't really.
-    # metrics = [tuple(metric.split(' ')) for metric in next(iter(id_frames.values())) if len(metric.split(' ')) > 1]
+        # Utilization actually isn't all that useful. For now just track power.
+        # This expansion is useful for if there's more/other metrics. Right now, there aren't really.
+        # metrics = [tuple(metric.split(' ')) for metric in next(iter(id_frames.values())) if len(metric.split(' ')) > 1]
 
     # The block of code that generates the figure(s).
     # Could (and previously has been) a loop for every metric. Since it's currently just power, didn't bother.
     time_name = "time-diff"
     if "power.draw" in metrics:
         plt.figure(figsize=(10, 4))
-        # Plot all the frame data that should be shown
+        # Plot all the frame data that should be shown.
         # Comment out any of these if their data isn't desired (or in existence) for the chart.
-        # Example: for the example png, habana_frames just adds clutter. Would comment out usually
-        habana_frames = []
+        # Example: for the example png, habana_frames just adds clutter. Would comment out usually,
+        #habana_frames = []
         for frame in habana_frames:
             clean_curve(frame[0], frame[1], "power.draw", "W", boundary=1)
             if mode_ in ["all", "model"]:
@@ -441,7 +446,9 @@ def load_hl_csv(filename: str, mode="hl-smi", exclude_frames=[]):
     filepath = f"poll-data/{mode}/post-procure/{filename}.csv"
     fullFilepath = os.path.join(loc, filepath)
     print(f"load_hl_csv.fullFilePath: {fullFilepath}")
-    # /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/poll-data/hl-smi/post-procure/64-max.csv
+    # /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/poll-data/hl-smi/post-procure/64-max.csv
+
+    # FileNotFoundError: [Errno 2] No such file or directory: '/home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/poll-data/hl-smi/post-procure/habana_init_test.csv'
 
     all_data = pd.read_csv(fullFilepath)
 

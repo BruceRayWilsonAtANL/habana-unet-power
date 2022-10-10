@@ -15,13 +15,13 @@ export PYTHON=/home/aevard/aevard_venv/bin/python
 export HABANA_LOGS=~/habana_logs
 source /home/aevard/aevard_venv/bin/activate
 
-
-cd DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power
 
 # This only gets done once of course.
+mkdir data
 cp -r /home/aevard/apps/unet_bench/data/kaggle_duped_cache/ data/kaggle_duped_cache
 
-cd /home/wilsonb/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
 
 # This only gets done once of course.
 chmod 755 build-hl-smi-csv
@@ -80,7 +80,7 @@ When the runs have finished switch to terminal 1
 <Ctrl+c> out of the power monitoring scripts
 
 ```bash
-# I don't know what Andre did here.
+# I don't know what Andre did here.  This just may be a copy to the clipboard.
 cat performance/load-size-128.txt | pbcopy
 xclip
 pbcopy
@@ -110,7 +110,7 @@ Use **git pull**
 python3.8 -m venv --system-site-packages ~/venvpower
 source ~/venvpower/bin/activate
 
-cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 ```
 
 #### Move Log Files
@@ -126,13 +126,13 @@ LOG_FILE = "performance/unsorted-logs/{}.txt"
 `unet.py` should be writing its runtime logs to **unsorted-logs**.  Move the logs to the **logs** directory.
 
 ```bash
-cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 ```
 
 Let us say you want to call your batch of runs 'habana_init_test'.
 
 ```bash
-cd ~/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 mkdir -p logs/habana_init_test
 
 mv unsorted-logs/* logs/habana_init_test
@@ -143,7 +143,7 @@ mv unsorted-logs/* logs/habana_init_test
 If necessary,
 
 ```bash
-cd /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+cd /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 ```
 
 Run text to csv conversion script.
@@ -169,8 +169,15 @@ fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/perfo
 
 #### Analyze CSV Files
 
+How to get this file created or something simular?
+
+```console
+    # FileNotFoundError: [Errno 2] No such file or directory: '/home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/poll-data/hl-smi/post-procure/habana_init_test.csv'
+```
+
 ```bash
-python analysis.py run
+python -m pdb analysis.py smi all
+python analysis.py smi all
 ```
 
 analysis_smi.py
