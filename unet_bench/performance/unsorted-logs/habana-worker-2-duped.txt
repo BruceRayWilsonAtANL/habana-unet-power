@@ -1,0 +1,25 @@
+Command: ['unet.py', '--hpu', '--use_lazy_mode', '--distributed', '--run-name', 'habana-worker-2-duped', '--epochs', '5', '--cache-path', 'kaggle_duped_cache', '--weights-file', 'h-w-2-d.pt', '--world-size', '2', '--num-workers', '2']
+Begin CSV
+type,epoch,time,loss,dsc
+Command: ['unet.py', '--hpu', '--use_lazy_mode', '--distributed', '--run-name', 'habana-worker-2-duped', '--epochs', '5', '--cache-path', 'kaggle_duped_cache', '--weights-file', 'h-w-2-d.pt', '--world-size', '2', '--num-workers', '2']
+Begin CSV
+type,epoch,time,loss,dsc
+loaders_init,,9.66529655456543,,
+train,1,155.87876296043396,0.9388340000712544,
+train,1,155.98736190795898,0.9377186752240593,
+eval,1,12.076467275619507,0.9835750937461853, nan
+train,2,116.00641775131226,0.918506672076129,
+train,2,115.97673988342285,0.9211070707084936,
+eval,2,8.135995149612427,0.9831321120262146, nan
+train,3,118.37639331817627,0.9092483722835506,
+train,3,118.58868479728699,0.9071211820348687,
+eval,3,8.166581630706787,0.981581699848175, nan
+train,4,114.74820256233215,0.8979387720790478,
+train,4,114.74753069877625,0.8921003363548069,
+eval,4,8.186083555221558,0.9815900564193726, nan
+train,5,116.05092334747314,0.8792033693112364,
+train,5,115.98029708862305,0.8775417328974523,
+eval,5,8.578257083892822,0.9794468998908996, nan
+total_train_time,5,620.9937500953674,,
+total_eval_time,5,45.17556428909302,,
+End CSV

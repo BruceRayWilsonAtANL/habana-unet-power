@@ -2,15 +2,15 @@ Stats after cleanup.
 Pool ID:                              0
 Limit:                      32063610961 (29.86 GB)
 InUse:                          2097280 (2.00 MB)
-MaxInUse:                     469001216 (447.27 MB)
-NumAllocs:                        28653
-NumFrees:                         28378
-ActiveAllocs:                       275
-ScratchMem:                   175948800 (167.80 MB)
-MaxAllocSize:                 175856512 (167.71 MB)
-TotalSystemAllocs:                28654
-TotalSystemFrees:                 28378
-TotActiveAllocs:                    276
+MaxInUse:                    5866069760 (5594.32 MB)
+NumAllocs:                       118516
+NumFrees:                        118114
+ActiveAllocs:                       402
+ScratchMem:                  3068880640 (2926.71 MB)
+MaxAllocSize:                3068788352 (2926.62 MB)
+TotalSystemAllocs:               118517
+TotalSystemFrees:                118114
+TotActiveAllocs:                    403
 Fragmentation:                        0
 FragmentationMask:                     
 
