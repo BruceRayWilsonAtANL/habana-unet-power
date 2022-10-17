@@ -5,7 +5,7 @@ import numpy as np
 
 def main():
     """
-    This file cleans all of the hl-smi generated from Habana at once, located in hl-smi-csvs.
+    This file cleans all of the hl-smi generated from Habana at once, located in xxxhl-smi-csvs.
     """
 
     # Allow script to work when called from anywhere.
@@ -22,13 +22,13 @@ def clean_file(txt_filename, root_dir):
     Turns the named txt file into a csv, cleaning data format and entries as it goes.
     Arguments:
         txt_filename: The name of the hl-smi txt output file to be cleaned.
-        root_dir: The path for the parent directory of hl-smi-csvs.
+        root_dir: The path for the parent directory of xxxhl-smi-csvs.
     """
 
     # Open the file for reading, and create the csv header.
     with open(f"{root_dir}/poll-data/hl-smi/pre-procure/{txt_filename}.txt") as raw_file:
         lines = raw_file.readlines()
-    
+
     # The timestamp in particular is messy, we only need seconds from the start of run.
     header = lines[0]
     time_format = "%a %b %d %H:%M:%S %Z %j"
@@ -45,7 +45,7 @@ def clean_file(txt_filename, root_dir):
             if line.__eq__(header):
                 continue
             vals = line.replace('\n', '').split(", ")
-            
+
             # Format time based on previously-generated formatting.
             time = (datetime.strptime(vals[0], time_format).replace(year=cur_year) - first_time).seconds
 

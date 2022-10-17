@@ -4,8 +4,9 @@ from tabnanny import filename_only
 
 def main():
     """
-    This file turns all the run-written txt logs in sub-dir of ./txts into a dir in ./csvs
-    command line argument: the directory to instrument to be csvs. E.G. python3 txt_to_csv.py habana02_large_batch
+    This file turns all the run-written txt logs in sub-dir of ./txts (maybe now ./logs)
+    into a directory in ./csvs.
+    Command line argument: the directory to instrument to be csvs. E.g., python3 txt_to_csv.py habana_init_test
     """
     if len(sys.argv) < 2:
         exit("Usage: python3 txt_to_csv.py <dirname-in-logs>")
@@ -44,7 +45,7 @@ def csvify_file(txt_filename, root_dir, group):
     # Begin writing
     fileOut = f"{root_dir}/csvs/{group}/{txt_filename}.csv"
     print(f'fileOut: {fileOut}')
-    
+
     with open(fileOut, 'w') as output:
         for line in lines:
             # Looking for the Begin and End CSV flags to signpost what should be written

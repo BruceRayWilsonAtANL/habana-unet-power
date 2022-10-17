@@ -19,7 +19,8 @@ cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power
 
 # This only gets done once of course.
 mkdir data
-cp -r /home/aevard/apps/unet_bench/data/kaggle_duped_cache/ data/kaggle_duped_cache
+cd data
+cp -r /home/aevard/apps/unet_bench/data/kaggle_duped_cache/ .
 
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
 
@@ -30,8 +31,11 @@ chmod 755 build-hl-smi-csv
 Start the power monitoring script with a specified output file.
 
 ```bash
-./build-hl-smi-csv post-git-test.txt
+./build-hl-smi-csv unet-test.txt
 ```
+
+**NOTE** Remember this file.  cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts/unet-test.txt.
+Below it is referred to as the **device-profiler log**.
 
 ## Terminal 2
 
@@ -49,13 +53,18 @@ Continue
 export PYTHON=/home/aevard/aevard_venv/bin/python
 export HABANA_LOGS=~/habana_logs
 source /home/aevard/aevard_venv/bin/activate
-cd DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+```
+
+```bash
+rm performance/unsorted-logs/habana-worker*
 ```
 
 ```bash
 time $PYTHON unet.py --hpu --use_lazy_mode --run-name habana-worker-1-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-1-d.pt
 time mpirun -n 2 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-2-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-2-d.pt --world-size 2 --num-workers 2
 time mpirun -n 4 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-4-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-4-d.pt --world-size 4 --num-workers 4
+time mpirun -n 8 --rank-by core $PYTHON unet.py --hpu --use_lazy_mode --distributed --run-name habana-worker-8-duped --epochs 5 --cache-path kaggle_duped_cache --weights-file h-w-8-d.pt --world-size 8 --num-workers 8
 ```
 
 The argument **run-name** is used to create the output file name.  The Python code is:
@@ -115,6 +124,15 @@ cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 
 #### Move Log Files
 
+```text
+Once the device profiler was running, I set the unet(s) to run. Information is printed
+on their shells, and everything that is printed should also be logged, and more than that.
+The location of the logging is in `performance/unsorted-logs`. These files and the
+device profiling logs all need to be extracted from the remote in whatever manner
+applicable. I genereally used Globus. - Alex
+I have this done and documented below. -BRW
+```
+
 The log file format should be:
 
 ```python
@@ -127,6 +145,42 @@ LOG_FILE = "performance/unsorted-logs/{}.txt"
 
 ```bash
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+mv unsorted-logs/* logs/habana_init_test
+```
+
+```bash
+ls -al logs/habana_init_test
+```
+
+The output should look like:
+
+```console
+total 28
+drwxrwxr-x 2 bwilson bwilson 4096 Oct 11 08:53 .
+drwxrwxr-x 5 bwilson bwilson 4096 Oct 10 10:44 ..
+-rw-rw-r-- 1 bwilson bwilson  939 Oct 11 08:02 habana-worker-1-duped.txt
+-rw-rw-r-- 1 bwilson bwilson 1372 Oct 11 08:02 habana-worker-2-duped.txt
+-rw-rw-r-- 1 bwilson bwilson 2370 Oct 11 08:02 habana-worker-4-duped.txt
+-rw-rw-r-- 1 bwilson bwilson 4392 Oct 11 08:02 habana-worker-8-duped.txt
+```
+
+```text
+The device-profiler log should be placed in
+`performance/poll-data/<node-type>/pre-procure`
+where node-type is [hl-smi | nvidia-smi].
+```
+
+Continuing with the Habana example:
+
+```bash
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+cp ./scripts/unet-test.txt ./performance/poll-data/hl-smi/pre-procure
+```
+
+```text
+Place the runtime logs into
+`performance/logs/<name-of-test-category>` to be used. Once placed, I used
+combinations of `hl_smi.py`, `nvidia_smi.py`, and `txt_to_csv.py` to clean them. - Andre
 ```
 
 Let us say you want to call your batch of runs 'habana_init_test'.
@@ -134,11 +188,55 @@ Let us say you want to call your batch of runs 'habana_init_test'.
 ```bash
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 mkdir -p logs/habana_init_test
-
-mv unsorted-logs/* logs/habana_init_test
 ```
 
+##### hl_smi.py
+
+```bash
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+python3 hl_smi.py
+#poll-data/hl-smi/pre-procure/*.txt # Input
+#poll-data/hl-smi/post-procure/*.csv # Output
+```
+
+```python
+def main():
+    """
+    This file cleans all of the hl-smi generated from Habana at once, located in hl-smi-csvs.
+    """
+
+    # Allow script to work when called from anywhere.
+    location = os.path.dirname(os.path.abspath(__file__))
+
+    # For every file in pre-procure, turn it into one in post-procure.
+    for content in os.listdir(os.path.join(location, "poll-data/hl-smi/pre-procure")):
+        if content.split(".")[-1] == ("txt"):
+            clean_file(content.split(".")[0], location)
+
+
+def clean_file(txt_filename, root_dir):
+    """
+    Turns the named txt file into a csv, cleaning data format and entries as it goes.
+    Arguments:
+        txt_filename: The name of the hl-smi txt output file to be cleaned.
+        root_dir: The path for the parent directory of hl-smi-csvs.
+    """
+```
+
+
+
+
+
 #### Process Log Files
+
+```text
+Then use `analysis.py` and `analysis_smi.py` to extract insights from them.
+See `performance/README.md` for more details there, they unfortunately
+need to be edited to be used effective, apologies. Generally speaking, though,
+I would get the runtime performance as a printed json object from calling
+`python3 analysis.py run`, and a figure from `python3 analysis.py smi`.
+A png should also get generated in `performance/pngs/<project-name>`. - Andre
+```
 
 If necessary,
 
@@ -161,24 +259,31 @@ python3 txt_to_csv.py habana_init_test
 Example output:
 
 ```console
-location: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
-fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-1-duped.csv
-fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-4-duped.csv
-fileOut: /home/bwilson/DL/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-2-duped.csv
+location: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
+fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-1-duped.csv
+fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-4-duped.csv
+fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-8-duped.csv
+fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-2-duped.csv
 ```
 
 #### Analyze CSV Files
 
-How to get this file created or something simular?
+I may not be using this.  I am not sure.
 
-```console
-    # FileNotFoundError: [Errno 2] No such file or directory: '/home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/poll-data/hl-smi/post-procure/habana_init_test.csv'
+```bash
+python analysis.py run
 ```
 
 ```bash
-python -m pdb analysis.py smi all
 python analysis.py smi all
 ```
 
 analysis_smi.py
     load_hl_csv()
+
+
+#### hl_smi.py
+
+This file cleans all of the hl-smi generated from Habana at once, located in hl-smi-csvs.
+
+For every file in pre-procure, turn it into one in post-procure.

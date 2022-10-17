@@ -39,7 +39,10 @@ def run_analysis():
     # skeleton = "theta/128-{}-theta"
     formats = ["128", "256"]
     formats = [system]
-    run_numbers = ["1", "2", "4"]
+    run_numbers = ["1", "2", "4", "8"]
+
+    print(f'run_analysis.run_numbers: {run_numbers}')
+    input(f'<Ctrl-c> if they need changed.')
 
     total_times = dict.fromkeys(formats)
     for format in formats:

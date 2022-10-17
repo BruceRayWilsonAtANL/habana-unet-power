@@ -41,7 +41,7 @@ def smi_analysis(mode_="all"):
         run = input_run
 
 
-    plot_title = f"{mode_.capitalize()} power usage, 50x dataset, 2 epochs, size 64"
+    plot_title = f"{mode_.capitalize()} power usage"
 
     input_plot_title = input(f"Enter plot title [{plot_title}]:")
     if len(input_plot_title) > 0:
