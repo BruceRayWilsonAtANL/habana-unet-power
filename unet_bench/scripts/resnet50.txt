@@ -1,0 +1,1977 @@
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:58:48 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:58:48 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:58:48 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:58:48 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:58:48 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:58:48 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:58:48 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:58:48 UTC 202, 2, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:58:51 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:58:51 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:58:51 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:58:51 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:58:51 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:58:51 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:58:51 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:58:51 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:58:55 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:58:55 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:58:55 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:58:55 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:58:55 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:58:55 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:58:55 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:58:55 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:58:59 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:58:59 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:58:59 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 20:58:59 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:58:59 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:58:59 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:58:59 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:58:59 UTC 202, 1, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:01 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:01 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 20:59:01 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:01 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:01 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:01 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:01 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:01 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:05 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:05 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:05 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:05 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:05 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:05 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:05 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:05 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:09 UTC 202, 6, 16 %, 106 W, 512 MiB
+Tue Oct 18 20:59:09 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 20:59:09 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:09 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:09 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:09 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:09 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:09 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:12 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:12 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:12 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:12 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:12 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:12 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:12 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:12 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:15 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:15 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:15 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:15 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:15 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:15 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:15 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:15 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:19 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:19 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:19 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:19 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:19 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:19 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:19 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:19 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:22 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:22 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:22 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:22 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:22 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:22 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:22 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:22 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:25 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 20:59:25 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:25 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:25 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:25 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:25 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:25 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:25 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:29 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 20:59:29 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:29 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:29 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:29 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:29 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:29 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:29 UTC 202, 3, 13 %, 99 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:34 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:34 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:34 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:34 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:34 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:34 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:34 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:34 UTC 202, 2, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:37 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:37 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:37 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:37 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:37 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:37 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:37 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:37 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:41 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:41 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:41 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:41 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:41 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:41 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:41 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:41 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:44 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:44 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:44 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:44 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:44 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:44 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:44 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:44 UTC 202, 2, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:47 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:47 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:47 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:47 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:47 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:47 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:47 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:47 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:51 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:51 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:51 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:51 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:51 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:51 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:51 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:51 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:55 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:55 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:55 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 20:59:55 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:55 UTC 202, 1, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:55 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 20:59:55 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:55 UTC 202, 3, 13 %, 99 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 20:59:59 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 20:59:59 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:59 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:59 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 20:59:59 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 20:59:59 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 20:59:59 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 20:59:59 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:03 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:03 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:03 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:03 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:03 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:03 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:03 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:03 UTC 202, 1, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:06 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:06 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:06 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:06 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:06 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:06 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:06 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:06 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:10 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:10 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:10 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:10 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:10 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:10 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:10 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:10 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:14 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:14 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:14 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:00:14 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:14 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:14 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:14 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:14 UTC 202, 6, 16 %, 107 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:18 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:18 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:18 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:18 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:00:18 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:18 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:18 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:18 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:21 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:21 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:21 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:21 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:21 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:21 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:21 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:21 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:24 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:24 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:24 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:24 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:24 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:24 UTC 202, 7, 13 %, 97 W, 512 MiB
+Tue Oct 18 21:00:24 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:24 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:28 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:28 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:00:28 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:28 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:28 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:28 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:28 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:28 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:31 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:31 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:31 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:00:31 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:31 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:31 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:31 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:31 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:34 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:34 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:34 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:34 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:34 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:34 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:34 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:34 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:37 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:37 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:37 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:37 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:37 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:37 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:37 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:37 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:41 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:41 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:41 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:41 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:41 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:41 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:41 UTC 202, 6, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:00:41 UTC 202, 7, 13 %, 98 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:44 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:44 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:44 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:44 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:44 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:44 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:44 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:44 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:49 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:49 UTC 202, 7, 13 %, 97 W, 512 MiB
+Tue Oct 18 21:00:49 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:49 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:49 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:49 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:49 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:49 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:51 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:51 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:51 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:51 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:51 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:51 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:51 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:51 UTC 202, 1, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:55 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:55 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:55 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:55 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:55 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:00:55 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:00:55 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:55 UTC 202, 1, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:00:58 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:00:58 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:00:58 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:00:58 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:00:58 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:00:58 UTC 202, 6, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:00:58 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:00:58 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:02 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:02 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:01:02 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:02 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:02 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:02 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:02 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:02 UTC 202, 3, 13 %, 99 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:05 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:05 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:05 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:05 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:05 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:05 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:05 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:05 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:09 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:09 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:09 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:09 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:09 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:09 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:09 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:09 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:12 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:12 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:12 UTC 202, 6, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:01:12 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:12 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:12 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:12 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:12 UTC 202, 7, 13 %, 98 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:16 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:16 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:16 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:01:16 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:16 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:16 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:16 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:16 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:20 UTC 202, 6, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:01:20 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:01:20 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:20 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:20 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:20 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:20 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:20 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:23 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:23 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:23 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:23 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:23 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:23 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:23 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:23 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:27 UTC 202, 7, 13 %, 97 W, 512 MiB
+Tue Oct 18 21:01:27 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:27 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:27 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:27 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:27 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:27 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:27 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:30 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:30 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:30 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:30 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:30 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:30 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:30 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:01:30 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:34 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:34 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:34 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:34 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:34 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:34 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:34 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:34 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:38 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:38 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:38 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:38 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:38 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:38 UTC 202, 1, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:38 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:38 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:40 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:40 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:40 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:40 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:40 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:40 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:40 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:40 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:45 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:45 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:45 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:45 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:45 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:45 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:45 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:45 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:48 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:48 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:48 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:48 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:48 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:48 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:48 UTC 202, 7, 13 %, 97 W, 512 MiB
+Tue Oct 18 21:01:48 UTC 202, 3, 13 %, 99 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:52 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:52 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:52 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:52 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:52 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:52 UTC 202, 1, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:52 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:01:52 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:55 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:55 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:01:55 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:55 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:55 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:55 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:55 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:55 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:01:59 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:59 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:59 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:01:59 UTC 202, 7, 12 %, 98 W, 512 MiB
+Tue Oct 18 21:01:59 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:01:59 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:01:59 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:01:59 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:03 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:03 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:03 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:02:03 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:03 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:03 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:03 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:03 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:08 UTC 202, 7, 13 %, 97 W, 512 MiB
+Tue Oct 18 21:02:08 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:08 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:08 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:02:08 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:08 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:08 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:08 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:11 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:11 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:11 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:11 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:11 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:11 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:11 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:11 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:15 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:15 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:15 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:15 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:15 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:02:15 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:15 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:15 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:19 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:02:19 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:19 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:19 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:19 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:19 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:19 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:02:19 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:24 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:24 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:24 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:24 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:24 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:24 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:24 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:02:24 UTC 202, 2, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:26 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:26 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:26 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:26 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:26 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:26 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:26 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:02:26 UTC 202, 1, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:31 UTC 202, 2, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:31 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:31 UTC 202, 5, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:02:31 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:31 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:31 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:31 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:31 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:34 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:34 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:34 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:34 UTC 202, 7, 13 %, 97 W, 512 MiB
+Tue Oct 18 21:02:34 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:34 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:02:34 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:34 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:38 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:38 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:38 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:38 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:38 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:38 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:38 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:38 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:42 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:42 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:42 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:42 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:42 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:42 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:42 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:02:42 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:46 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:46 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:46 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:46 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:46 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:46 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:46 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:02:46 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:50 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:50 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:50 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:02:50 UTC 202, 7, 13 %, 98 W, 512 MiB
+Tue Oct 18 21:02:50 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:02:50 UTC 202, 0, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:02:50 UTC 202, 3, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:02:50 UTC 202, 4, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:54 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:02:54 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:02:54 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:02:54 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:02:54 UTC 202, 2, 15 %, 102 W, 32255 MiB
+Tue Oct 18 21:02:54 UTC 202, 1, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:02:54 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:02:54 UTC 202, 0, 14 %, 101 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:02:57 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:02:57 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:02:57 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:02:57 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:02:57 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:02:57 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:02:57 UTC 202, 1, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:02:57 UTC 202, 0, 14 %, 101 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:01 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:01 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:01 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:01 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:01 UTC 202, 5, 16 %, 106 W, 32255 MiB
+Tue Oct 18 21:03:01 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:01 UTC 202, 0, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:03:01 UTC 202, 1, 14 %, 103 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:05 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:05 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:05 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:05 UTC 202, 1, 15 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:05 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:05 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:05 UTC 202, 0, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:03:05 UTC 202, 3, 13 %, 99 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:08 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:08 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:08 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:08 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:08 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:08 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:08 UTC 202, 0, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:03:08 UTC 202, 1, 14 %, 103 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:13 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:13 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:13 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:13 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:13 UTC 202, 1, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:13 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:13 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:13 UTC 202, 0, 14 %, 101 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:16 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:16 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:16 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:16 UTC 202, 1, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:16 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:16 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:16 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:16 UTC 202, 0, 14 %, 101 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:20 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:20 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:20 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:20 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:20 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:20 UTC 202, 0, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:03:20 UTC 202, 1, 15 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:20 UTC 202, 4, 14 %, 102 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:25 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:25 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:25 UTC 202, 5, 16 %, 106 W, 32255 MiB
+Tue Oct 18 21:03:25 UTC 202, 0, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:03:25 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:25 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:25 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:25 UTC 202, 1, 14 %, 102 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:28 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:28 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:28 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:28 UTC 202, 1, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:28 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:28 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:28 UTC 202, 0, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:03:28 UTC 202, 5, 16 %, 107 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:32 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:32 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:32 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:32 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:32 UTC 202, 5, 16 %, 106 W, 32255 MiB
+Tue Oct 18 21:03:32 UTC 202, 1, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:32 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:32 UTC 202, 0, 14 %, 101 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:36 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:36 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:36 UTC 202, 2, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:36 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:36 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:36 UTC 202, 1, 14 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:36 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:36 UTC 202, 0, 14 %, 101 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:40 UTC 202, 2, 15 %, 103 W, 32255 MiB
+Tue Oct 18 21:03:40 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:40 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:40 UTC 202, 3, 25 %, 100 W, 32255 MiB
+Tue Oct 18 21:03:40 UTC 202, 5, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:40 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:40 UTC 202, 1, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:40 UTC 202, 0, 14 %, 191 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:43 UTC 202, 2, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:43 UTC 202, 7, 13 %, 98 W, 32255 MiB
+Tue Oct 18 21:03:43 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:03:43 UTC 202, 3, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:03:43 UTC 202, 4, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:03:43 UTC 202, 0, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:03:43 UTC 202, 5, 16 %, 106 W, 32255 MiB
+Tue Oct 18 21:03:43 UTC 202, 1, 14 %, 102 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:48 UTC 202, 6, 81 %, 289 W, 32255 MiB
+Tue Oct 18 21:03:48 UTC 202, 2, 78 %, 294 W, 32255 MiB
+Tue Oct 18 21:03:48 UTC 202, 3, 75 %, 311 W, 32255 MiB
+Tue Oct 18 21:03:48 UTC 202, 0, 65 %, 265 W, 32255 MiB
+Tue Oct 18 21:03:48 UTC 202, 7, 73 %, 283 W, 32255 MiB
+Tue Oct 18 21:03:48 UTC 202, 4, 55 %, 261 W, 32255 MiB
+Tue Oct 18 21:03:48 UTC 202, 5, 87 %, 283 W, 32255 MiB
+Tue Oct 18 21:03:48 UTC 202, 1, 78 %, 283 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:54 UTC 202, 6, 90 %, 316 W, 32255 MiB
+Tue Oct 18 21:03:54 UTC 202, 4, 79 %, 263 W, 32255 MiB
+Tue Oct 18 21:03:54 UTC 202, 3, 82 %, 308 W, 32255 MiB
+Tue Oct 18 21:03:54 UTC 202, 2, 86 %, 294 W, 32255 MiB
+Tue Oct 18 21:03:54 UTC 202, 7, 69 %, 272 W, 32255 MiB
+Tue Oct 18 21:03:54 UTC 202, 1, 80 %, 240 W, 32255 MiB
+Tue Oct 18 21:03:54 UTC 202, 0, 63 %, 218 W, 32255 MiB
+Tue Oct 18 21:03:54 UTC 202, 5, 60 %, 303 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:03:59 UTC 202, 6, 90 %, 323 W, 32255 MiB
+Tue Oct 18 21:03:59 UTC 202, 7, 74 %, 276 W, 32255 MiB
+Tue Oct 18 21:03:59 UTC 202, 2, 86 %, 320 W, 32255 MiB
+Tue Oct 18 21:03:59 UTC 202, 3, 85 %, 309 W, 32255 MiB
+Tue Oct 18 21:03:59 UTC 202, 4, 86 %, 187 W, 32255 MiB
+Tue Oct 18 21:03:59 UTC 202, 0, 80 %, 228 W, 32255 MiB
+Tue Oct 18 21:03:59 UTC 202, 5, 53 %, 283 W, 32255 MiB
+Tue Oct 18 21:03:59 UTC 202, 1, 45 %, 281 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:05 UTC 202, 6, 44 %, 192 W, 32255 MiB
+Tue Oct 18 21:04:05 UTC 202, 2, 89 %, 321 W, 32255 MiB
+Tue Oct 18 21:04:05 UTC 202, 7, 84 %, 266 W, 32255 MiB
+Tue Oct 18 21:04:05 UTC 202, 0, 74 %, 294 W, 32255 MiB
+Tue Oct 18 21:04:05 UTC 202, 5, 82 %, 304 W, 32255 MiB
+Tue Oct 18 21:04:05 UTC 202, 4, 85 %, 165 W, 32255 MiB
+Tue Oct 18 21:04:05 UTC 202, 3, 76 %, 289 W, 32255 MiB
+Tue Oct 18 21:04:05 UTC 202, 1, 77 %, 300 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:09 UTC 202, 6, 90 %, 324 W, 32255 MiB
+Tue Oct 18 21:04:09 UTC 202, 4, 79 %, 285 W, 32255 MiB
+Tue Oct 18 21:04:09 UTC 202, 7, 79 %, 198 W, 32255 MiB
+Tue Oct 18 21:04:09 UTC 202, 0, 42 %, 273 W, 32255 MiB
+Tue Oct 18 21:04:09 UTC 202, 3, 78 %, 273 W, 32255 MiB
+Tue Oct 18 21:04:09 UTC 202, 2, 85 %, 322 W, 32255 MiB
+Tue Oct 18 21:04:09 UTC 202, 5, 86 %, 232 W, 32255 MiB
+Tue Oct 18 21:04:09 UTC 202, 1, 80 %, 286 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:15 UTC 202, 6, 81 %, 291 W, 32255 MiB
+Tue Oct 18 21:04:15 UTC 202, 4, 75 %, 280 W, 32255 MiB
+Tue Oct 18 21:04:15 UTC 202, 5, 76 %, 291 W, 32255 MiB
+Tue Oct 18 21:04:15 UTC 202, 7, 78 %, 296 W, 32255 MiB
+Tue Oct 18 21:04:15 UTC 202, 1, 87 %, 315 W, 32255 MiB
+Tue Oct 18 21:04:15 UTC 202, 3, 82 %, 307 W, 32255 MiB
+Tue Oct 18 21:04:15 UTC 202, 2, 89 %, 296 W, 32255 MiB
+Tue Oct 18 21:04:15 UTC 202, 0, 76 %, 204 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:19 UTC 202, 2, 15 %, 146 W, 32255 MiB
+Tue Oct 18 21:04:19 UTC 202, 7, 59 %, 199 W, 32255 MiB
+Tue Oct 18 21:04:19 UTC 202, 6, 44 %, 173 W, 32255 MiB
+Tue Oct 18 21:04:19 UTC 202, 5, 43 %, 202 W, 32255 MiB
+Tue Oct 18 21:04:19 UTC 202, 3, 51 %, 269 W, 32255 MiB
+Tue Oct 18 21:04:19 UTC 202, 4, 76 %, 289 W, 32255 MiB
+Tue Oct 18 21:04:19 UTC 202, 1, 86 %, 314 W, 32255 MiB
+Tue Oct 18 21:04:19 UTC 202, 0, 82 %, 281 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:25 UTC 202, 2, 69 %, 284 W, 32255 MiB
+Tue Oct 18 21:04:25 UTC 202, 6, 52 %, 201 W, 32255 MiB
+Tue Oct 18 21:04:25 UTC 202, 3, 41 %, 198 W, 32255 MiB
+Tue Oct 18 21:04:25 UTC 202, 7, 75 %, 249 W, 32255 MiB
+Tue Oct 18 21:04:25 UTC 202, 5, 85 %, 186 W, 32255 MiB
+Tue Oct 18 21:04:25 UTC 202, 4, 76 %, 308 W, 32255 MiB
+Tue Oct 18 21:04:25 UTC 202, 0, 72 %, 287 W, 32255 MiB
+Tue Oct 18 21:04:25 UTC 202, 1, 76 %, 207 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:30 UTC 202, 6, 78 %, 307 W, 32255 MiB
+Tue Oct 18 21:04:30 UTC 202, 7, 79 %, 303 W, 32255 MiB
+Tue Oct 18 21:04:30 UTC 202, 3, 86 %, 260 W, 32255 MiB
+Tue Oct 18 21:04:30 UTC 202, 1, 79 %, 219 W, 32255 MiB
+Tue Oct 18 21:04:30 UTC 202, 0, 83 %, 199 W, 32255 MiB
+Tue Oct 18 21:04:30 UTC 202, 2, 50 %, 185 W, 32255 MiB
+Tue Oct 18 21:04:30 UTC 202, 5, 47 %, 236 W, 32255 MiB
+Tue Oct 18 21:04:30 UTC 202, 4, 59 %, 277 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:33 UTC 202, 6, 89 %, 320 W, 32255 MiB
+Tue Oct 18 21:04:33 UTC 202, 2, 89 %, 311 W, 32255 MiB
+Tue Oct 18 21:04:33 UTC 202, 4, 69 %, 312 W, 32255 MiB
+Tue Oct 18 21:04:33 UTC 202, 5, 76 %, 278 W, 32255 MiB
+Tue Oct 18 21:04:33 UTC 202, 0, 67 %, 275 W, 32255 MiB
+Tue Oct 18 21:04:33 UTC 202, 1, 87 %, 314 W, 32255 MiB
+Tue Oct 18 21:04:33 UTC 202, 7, 77 %, 282 W, 32255 MiB
+Tue Oct 18 21:04:33 UTC 202, 3, 43 %, 278 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:37 UTC 202, 2, 84 %, 287 W, 32255 MiB
+Tue Oct 18 21:04:37 UTC 202, 6, 79 %, 314 W, 32255 MiB
+Tue Oct 18 21:04:37 UTC 202, 4, 77 %, 281 W, 32255 MiB
+Tue Oct 18 21:04:37 UTC 202, 1, 80 %, 265 W, 32255 MiB
+Tue Oct 18 21:04:37 UTC 202, 3, 68 %, 210 W, 32255 MiB
+Tue Oct 18 21:04:37 UTC 202, 0, 37 %, 230 W, 32255 MiB
+Tue Oct 18 21:04:37 UTC 202, 5, 72 %, 287 W, 32255 MiB
+Tue Oct 18 21:04:37 UTC 202, 7, 79 %, 287 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:42 UTC 202, 6, 66 %, 201 W, 32255 MiB
+Tue Oct 18 21:04:42 UTC 202, 1, 79 %, 285 W, 32255 MiB
+Tue Oct 18 21:04:42 UTC 202, 4, 76 %, 284 W, 32255 MiB
+Tue Oct 18 21:04:43 UTC 202, 5, 80 %, 285 W, 32255 MiB
+Tue Oct 18 21:04:42 UTC 202, 0, 73 %, 271 W, 32255 MiB
+Tue Oct 18 21:04:43 UTC 202, 3, 86 %, 304 W, 32255 MiB
+Tue Oct 18 21:04:43 UTC 202, 2, 62 %, 285 W, 32255 MiB
+Tue Oct 18 21:04:43 UTC 202, 7, 76 %, 283 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:47 UTC 202, 6, 45 %, 191 W, 32255 MiB
+Tue Oct 18 21:04:47 UTC 202, 5, 73 %, 293 W, 32255 MiB
+Tue Oct 18 21:04:47 UTC 202, 7, 38 %, 194 W, 32255 MiB
+Tue Oct 18 21:04:47 UTC 202, 2, 43 %, 282 W, 32255 MiB
+Tue Oct 18 21:04:47 UTC 202, 4, 79 %, 259 W, 32255 MiB
+Tue Oct 18 21:04:47 UTC 202, 3, 61 %, 159 W, 32255 MiB
+Tue Oct 18 21:04:47 UTC 202, 0, 44 %, 230 W, 32255 MiB
+Tue Oct 18 21:04:47 UTC 202, 1, 82 %, 289 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:51 UTC 202, 6, 89 %, 250 W, 32255 MiB
+Tue Oct 18 21:04:51 UTC 202, 3, 87 %, 297 W, 32255 MiB
+Tue Oct 18 21:04:51 UTC 202, 2, 89 %, 317 W, 32255 MiB
+Tue Oct 18 21:04:51 UTC 202, 5, 78 %, 289 W, 32255 MiB
+Tue Oct 18 21:04:51 UTC 202, 1, 15 %, 172 W, 32255 MiB
+Tue Oct 18 21:04:51 UTC 202, 0, 85 %, 294 W, 32255 MiB
+Tue Oct 18 21:04:51 UTC 202, 4, 80 %, 269 W, 32255 MiB
+Tue Oct 18 21:04:51 UTC 202, 7, 49 %, 176 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:04:56 UTC 202, 6, 77 %, 286 W, 32255 MiB
+Tue Oct 18 21:04:56 UTC 202, 2, 77 %, 292 W, 32255 MiB
+Tue Oct 18 21:04:56 UTC 202, 1, 82 %, 308 W, 32255 MiB
+Tue Oct 18 21:04:56 UTC 202, 3, 78 %, 311 W, 32255 MiB
+Tue Oct 18 21:04:56 UTC 202, 5, 75 %, 311 W, 32255 MiB
+Tue Oct 18 21:04:56 UTC 202, 4, 87 %, 314 W, 32255 MiB
+Tue Oct 18 21:04:56 UTC 202, 7, 83 %, 303 W, 32255 MiB
+Tue Oct 18 21:04:56 UTC 202, 0, 83 %, 287 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:00 UTC 202, 6, 76 %, 249 W, 32255 MiB
+Tue Oct 18 21:05:00 UTC 202, 2, 76 %, 304 W, 32255 MiB
+Tue Oct 18 21:05:00 UTC 202, 7, 79 %, 305 W, 32255 MiB
+Tue Oct 18 21:05:00 UTC 202, 1, 87 %, 313 W, 32255 MiB
+Tue Oct 18 21:05:00 UTC 202, 5, 86 %, 307 W, 32255 MiB
+Tue Oct 18 21:05:00 UTC 202, 0, 63 %, 212 W, 32255 MiB
+Tue Oct 18 21:05:00 UTC 202, 3, 85 %, 271 W, 32255 MiB
+Tue Oct 18 21:05:00 UTC 202, 4, 85 %, 266 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:05 UTC 202, 2, 77 %, 289 W, 32255 MiB
+Tue Oct 18 21:05:05 UTC 202, 6, 84 %, 267 W, 32255 MiB
+Tue Oct 18 21:05:05 UTC 202, 3, 69 %, 297 W, 32255 MiB
+Tue Oct 18 21:05:05 UTC 202, 5, 83 %, 273 W, 32255 MiB
+Tue Oct 18 21:05:05 UTC 202, 0, 77 %, 266 W, 32255 MiB
+Tue Oct 18 21:05:05 UTC 202, 7, 72 %, 273 W, 32255 MiB
+Tue Oct 18 21:05:05 UTC 202, 4, 87 %, 233 W, 32255 MiB
+Tue Oct 18 21:05:05 UTC 202, 1, 73 %, 285 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:10 UTC 202, 2, 44 %, 238 W, 32255 MiB
+Tue Oct 18 21:05:10 UTC 202, 5, 75 %, 282 W, 32255 MiB
+Tue Oct 18 21:05:10 UTC 202, 6, 81 %, 291 W, 32255 MiB
+Tue Oct 18 21:05:10 UTC 202, 0, 46 %, 178 W, 32255 MiB
+Tue Oct 18 21:05:10 UTC 202, 7, 64 %, 280 W, 32255 MiB
+Tue Oct 18 21:05:10 UTC 202, 3, 47 %, 307 W, 32255 MiB
+Tue Oct 18 21:05:10 UTC 202, 1, 46 %, 302 W, 32255 MiB
+Tue Oct 18 21:05:10 UTC 202, 4, 58 %, 314 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:15 UTC 202, 6, 78 %, 294 W, 32255 MiB
+Tue Oct 18 21:05:15 UTC 202, 4, 78 %, 299 W, 32255 MiB
+Tue Oct 18 21:05:15 UTC 202, 7, 67 %, 285 W, 32255 MiB
+Tue Oct 18 21:05:15 UTC 202, 0, 83 %, 305 W, 32255 MiB
+Tue Oct 18 21:05:15 UTC 202, 3, 86 %, 235 W, 32255 MiB
+Tue Oct 18 21:05:15 UTC 202, 2, 70 %, 286 W, 32255 MiB
+Tue Oct 18 21:05:15 UTC 202, 5, 86 %, 299 W, 32255 MiB
+Tue Oct 18 21:05:15 UTC 202, 1, 74 %, 287 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:20 UTC 202, 6, 78 %, 288 W, 32255 MiB
+Tue Oct 18 21:05:20 UTC 202, 2, 84 %, 314 W, 32255 MiB
+Tue Oct 18 21:05:20 UTC 202, 3, 84 %, 291 W, 32255 MiB
+Tue Oct 18 21:05:20 UTC 202, 5, 86 %, 290 W, 32255 MiB
+Tue Oct 18 21:05:20 UTC 202, 1, 48 %, 177 W, 32255 MiB
+Tue Oct 18 21:05:20 UTC 202, 0, 47 %, 235 W, 32255 MiB
+Tue Oct 18 21:05:20 UTC 202, 7, 81 %, 286 W, 32255 MiB
+Tue Oct 18 21:05:20 UTC 202, 4, 88 %, 286 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:25 UTC 202, 6, 47 %, 264 W, 32255 MiB
+Tue Oct 18 21:05:25 UTC 202, 5, 87 %, 312 W, 32255 MiB
+Tue Oct 18 21:05:25 UTC 202, 2, 86 %, 297 W, 32255 MiB
+Tue Oct 18 21:05:25 UTC 202, 7, 73 %, 122 W, 32255 MiB
+Tue Oct 18 21:05:25 UTC 202, 4, 68 %, 219 W, 32255 MiB
+Tue Oct 18 21:05:25 UTC 202, 1, 81 %, 304 W, 32255 MiB
+Tue Oct 18 21:05:25 UTC 202, 0, 83 %, 299 W, 32255 MiB
+Tue Oct 18 21:05:25 UTC 202, 3, 74 %, 304 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:31 UTC 202, 2, 72 %, 315 W, 32255 MiB
+Tue Oct 18 21:05:31 UTC 202, 6, 60 %, 187 W, 32255 MiB
+Tue Oct 18 21:05:31 UTC 202, 4, 79 %, 286 W, 32255 MiB
+Tue Oct 18 21:05:31 UTC 202, 7, 74 %, 290 W, 32255 MiB
+Tue Oct 18 21:05:31 UTC 202, 3, 86 %, 301 W, 32255 MiB
+Tue Oct 18 21:05:31 UTC 202, 1, 81 %, 306 W, 32255 MiB
+Tue Oct 18 21:05:31 UTC 202, 5, 62 %, 313 W, 32255 MiB
+Tue Oct 18 21:05:31 UTC 202, 0, 76 %, 281 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:35 UTC 202, 6, 83 %, 309 W, 32255 MiB
+Tue Oct 18 21:05:35 UTC 202, 2, 76 %, 299 W, 32255 MiB
+Tue Oct 18 21:05:35 UTC 202, 7, 82 %, 274 W, 32255 MiB
+Tue Oct 18 21:05:35 UTC 202, 5, 87 %, 314 W, 32255 MiB
+Tue Oct 18 21:05:35 UTC 202, 0, 72 %, 276 W, 32255 MiB
+Tue Oct 18 21:05:35 UTC 202, 1, 74 %, 296 W, 32255 MiB
+Tue Oct 18 21:05:35 UTC 202, 4, 86 %, 277 W, 32255 MiB
+Tue Oct 18 21:05:35 UTC 202, 3, 79 %, 196 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:41 UTC 202, 6, 77 %, 282 W, 32255 MiB
+Tue Oct 18 21:05:41 UTC 202, 0, 72 %, 272 W, 32255 MiB
+Tue Oct 18 21:05:41 UTC 202, 7, 62 %, 290 W, 32255 MiB
+Tue Oct 18 21:05:41 UTC 202, 1, 79 %, 275 W, 32255 MiB
+Tue Oct 18 21:05:41 UTC 202, 2, 76 %, 294 W, 32255 MiB
+Tue Oct 18 21:05:41 UTC 202, 4, 62 %, 294 W, 32255 MiB
+Tue Oct 18 21:05:41 UTC 202, 5, 77 %, 280 W, 32255 MiB
+Tue Oct 18 21:05:41 UTC 202, 3, 68 %, 279 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:46 UTC 202, 2, 84 %, 317 W, 32255 MiB
+Tue Oct 18 21:05:46 UTC 202, 5, 76 %, 276 W, 32255 MiB
+Tue Oct 18 21:05:46 UTC 202, 3, 86 %, 313 W, 32255 MiB
+Tue Oct 18 21:05:46 UTC 202, 1, 85 %, 301 W, 32255 MiB
+Tue Oct 18 21:05:46 UTC 202, 7, 77 %, 306 W, 32255 MiB
+Tue Oct 18 21:05:46 UTC 202, 6, 78 %, 285 W, 32255 MiB
+Tue Oct 18 21:05:46 UTC 202, 0, 77 %, 263 W, 32255 MiB
+Tue Oct 18 21:05:46 UTC 202, 4, 50 %, 300 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:50 UTC 202, 5, 78 %, 302 W, 32255 MiB
+Tue Oct 18 21:05:50 UTC 202, 2, 64 %, 277 W, 32255 MiB
+Tue Oct 18 21:05:50 UTC 202, 1, 77 %, 288 W, 32255 MiB
+Tue Oct 18 21:05:50 UTC 202, 6, 85 %, 263 W, 32255 MiB
+Tue Oct 18 21:05:50 UTC 202, 3, 87 %, 312 W, 32255 MiB
+Tue Oct 18 21:05:50 UTC 202, 7, 79 %, 217 W, 32255 MiB
+Tue Oct 18 21:05:50 UTC 202, 4, 85 %, 290 W, 32255 MiB
+Tue Oct 18 21:05:50 UTC 202, 0, 82 %, 269 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:05:55 UTC 202, 3, 73 %, 283 W, 32255 MiB
+Tue Oct 18 21:05:55 UTC 202, 4, 57 %, 254 W, 32255 MiB
+Tue Oct 18 21:05:55 UTC 202, 1, 44 %, 237 W, 32255 MiB
+Tue Oct 18 21:05:55 UTC 202, 6, 77 %, 315 W, 32255 MiB
+Tue Oct 18 21:05:55 UTC 202, 0, 68 %, 199 W, 32255 MiB
+Tue Oct 18 21:05:55 UTC 202, 5, 68 %, 278 W, 32255 MiB
+Tue Oct 18 21:05:55 UTC 202, 2, 79 %, 286 W, 32255 MiB
+Tue Oct 18 21:05:55 UTC 202, 7, 55 %, 273 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:00 UTC 202, 6, 16 %, 109 W, 32255 MiB
+Tue Oct 18 21:06:00 UTC 202, 2, 15 %, 105 W, 32255 MiB
+Tue Oct 18 21:06:00 UTC 202, 3, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:06:00 UTC 202, 5, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:06:00 UTC 202, 1, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:06:00 UTC 202, 7, 13 %, 100 W, 32255 MiB
+Tue Oct 18 21:06:00 UTC 202, 4, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:06:00 UTC 202, 0, 14 %, 102 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:04 UTC 202, 6, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:06:04 UTC 202, 4, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:06:04 UTC 202, 7, 14 %, 100 W, 32255 MiB
+Tue Oct 18 21:06:04 UTC 202, 3, 48 %, 261 W, 32255 MiB
+Tue Oct 18 21:06:04 UTC 202, 2, 15 %, 226 W, 32255 MiB
+Tue Oct 18 21:06:04 UTC 202, 5, 64 %, 233 W, 32255 MiB
+Tue Oct 18 21:06:04 UTC 202, 1, 56 %, 255 W, 32255 MiB
+Tue Oct 18 21:06:04 UTC 202, 0, 14 %, 102 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:09 UTC 202, 6, 16 %, 274 W, 32255 MiB
+Tue Oct 18 21:06:09 UTC 202, 3, 19 %, 170 W, 32255 MiB
+Tue Oct 18 21:06:09 UTC 202, 4, 63 %, 256 W, 32255 MiB
+Tue Oct 18 21:06:09 UTC 202, 7, 13 %, 139 W, 32255 MiB
+Tue Oct 18 21:06:09 UTC 202, 5, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:06:09 UTC 202, 0, 68 %, 102 W, 32255 MiB
+Tue Oct 18 21:06:09 UTC 202, 1, 15 %, 103 W, 32255 MiB
+Tue Oct 18 21:06:09 UTC 202, 2, 73 %, 117 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:13 UTC 202, 6, 74 %, 285 W, 32255 MiB
+Tue Oct 18 21:06:13 UTC 202, 2, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:06:13 UTC 202, 7, 72 %, 240 W, 32255 MiB
+Tue Oct 18 21:06:13 UTC 202, 4, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:06:13 UTC 202, 5, 33 %, 109 W, 32255 MiB
+Tue Oct 18 21:06:13 UTC 202, 3, 20 %, 218 W, 32255 MiB
+Tue Oct 18 21:06:13 UTC 202, 1, 44 %, 125 W, 32255 MiB
+Tue Oct 18 21:06:13 UTC 202, 0, 36 %, 122 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:18 UTC 202, 6, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:06:18 UTC 202, 2, 15 %, 243 W, 32255 MiB
+Tue Oct 18 21:06:18 UTC 202, 4, 61 %, 279 W, 32255 MiB
+Tue Oct 18 21:06:18 UTC 202, 7, 39 %, 104 W, 32255 MiB
+Tue Oct 18 21:06:18 UTC 202, 5, 37 %, 108 W, 32255 MiB
+Tue Oct 18 21:06:18 UTC 202, 1, 41 %, 226 W, 32255 MiB
+Tue Oct 18 21:06:18 UTC 202, 0, 51 %, 102 W, 32255 MiB
+Tue Oct 18 21:06:18 UTC 202, 3, 14 %, 175 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:22 UTC 202, 6, 16 %, 235 W, 32255 MiB
+Tue Oct 18 21:06:22 UTC 202, 3, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:06:22 UTC 202, 7, 13 %, 99 W, 32255 MiB
+Tue Oct 18 21:06:22 UTC 202, 2, 19 %, 105 W, 32255 MiB
+Tue Oct 18 21:06:22 UTC 202, 5, 53 %, 185 W, 32255 MiB
+Tue Oct 18 21:06:22 UTC 202, 1, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:06:22 UTC 202, 0, 70 %, 134 W, 32255 MiB
+Tue Oct 18 21:06:22 UTC 202, 4, 15 %, 280 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:26 UTC 202, 2, 76 %, 277 W, 32255 MiB
+Tue Oct 18 21:06:26 UTC 202, 3, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:06:26 UTC 202, 5, 76 %, 277 W, 32255 MiB
+Tue Oct 18 21:06:26 UTC 202, 1, 47 %, 155 W, 32255 MiB
+Tue Oct 18 21:06:26 UTC 202, 4, 84 %, 178 W, 32255 MiB
+Tue Oct 18 21:06:26 UTC 202, 6, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:06:26 UTC 202, 0, 71 %, 102 W, 32255 MiB
+Tue Oct 18 21:06:26 UTC 202, 7, 53 %, 273 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:30 UTC 202, 5, 75 %, 287 W, 32255 MiB
+Tue Oct 18 21:06:30 UTC 202, 1, 74 %, 300 W, 32255 MiB
+Tue Oct 18 21:06:30 UTC 202, 0, 60 %, 269 W, 32255 MiB
+Tue Oct 18 21:06:30 UTC 202, 6, 70 %, 221 W, 32255 MiB
+Tue Oct 18 21:06:30 UTC 202, 3, 46 %, 274 W, 32255 MiB
+Tue Oct 18 21:06:30 UTC 202, 2, 71 %, 199 W, 32255 MiB
+Tue Oct 18 21:06:30 UTC 202, 7, 74 %, 165 W, 32255 MiB
+Tue Oct 18 21:06:30 UTC 202, 4, 75 %, 219 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:36 UTC 202, 7, 82 %, 300 W, 32255 MiB
+Tue Oct 18 21:06:36 UTC 202, 2, 77 %, 263 W, 32255 MiB
+Tue Oct 18 21:06:36 UTC 202, 1, 62 %, 274 W, 32255 MiB
+Tue Oct 18 21:06:36 UTC 202, 4, 56 %, 192 W, 32255 MiB
+Tue Oct 18 21:06:36 UTC 202, 6, 86 %, 201 W, 32255 MiB
+Tue Oct 18 21:06:36 UTC 202, 3, 34 %, 244 W, 32255 MiB
+Tue Oct 18 21:06:36 UTC 202, 5, 51 %, 277 W, 32255 MiB
+Tue Oct 18 21:06:36 UTC 202, 0, 71 %, 278 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:41 UTC 202, 2, 60 %, 184 W, 32255 MiB
+Tue Oct 18 21:06:41 UTC 202, 1, 76 %, 275 W, 32255 MiB
+Tue Oct 18 21:06:41 UTC 202, 4, 74 %, 276 W, 32255 MiB
+Tue Oct 18 21:06:41 UTC 202, 3, 72 %, 274 W, 32255 MiB
+Tue Oct 18 21:06:41 UTC 202, 5, 77 %, 311 W, 32255 MiB
+Tue Oct 18 21:06:41 UTC 202, 6, 85 %, 192 W, 32255 MiB
+Tue Oct 18 21:06:41 UTC 202, 0, 74 %, 280 W, 32255 MiB
+Tue Oct 18 21:06:41 UTC 202, 7, 56 %, 217 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:45 UTC 202, 5, 73 %, 283 W, 32255 MiB
+Tue Oct 18 21:06:45 UTC 202, 3, 66 %, 279 W, 32255 MiB
+Tue Oct 18 21:06:45 UTC 202, 2, 52 %, 264 W, 32255 MiB
+Tue Oct 18 21:06:45 UTC 202, 1, 83 %, 287 W, 32255 MiB
+Tue Oct 18 21:06:45 UTC 202, 0, 47 %, 235 W, 32255 MiB
+Tue Oct 18 21:06:45 UTC 202, 7, 72 %, 277 W, 32255 MiB
+Tue Oct 18 21:06:45 UTC 202, 4, 78 %, 275 W, 32255 MiB
+Tue Oct 18 21:06:45 UTC 202, 6, 45 %, 297 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:50 UTC 202, 7, 44 %, 229 W, 32255 MiB
+Tue Oct 18 21:06:50 UTC 202, 3, 70 %, 279 W, 32255 MiB
+Tue Oct 18 21:06:50 UTC 202, 6, 81 %, 281 W, 32255 MiB
+Tue Oct 18 21:06:50 UTC 202, 5, 74 %, 273 W, 32255 MiB
+Tue Oct 18 21:06:50 UTC 202, 4, 77 %, 312 W, 32255 MiB
+Tue Oct 18 21:06:50 UTC 202, 1, 71 %, 284 W, 32255 MiB
+Tue Oct 18 21:06:50 UTC 202, 2, 56 %, 285 W, 32255 MiB
+Tue Oct 18 21:06:50 UTC 202, 0, 85 %, 296 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:55 UTC 202, 6, 76 %, 245 W, 32255 MiB
+Tue Oct 18 21:06:55 UTC 202, 3, 76 %, 307 W, 32255 MiB
+Tue Oct 18 21:06:55 UTC 202, 2, 44 %, 278 W, 32255 MiB
+Tue Oct 18 21:06:55 UTC 202, 0, 73 %, 287 W, 32255 MiB
+Tue Oct 18 21:06:55 UTC 202, 4, 81 %, 312 W, 32255 MiB
+Tue Oct 18 21:06:55 UTC 202, 7, 81 %, 299 W, 32255 MiB
+Tue Oct 18 21:06:55 UTC 202, 5, 62 %, 278 W, 32255 MiB
+Tue Oct 18 21:06:55 UTC 202, 1, 74 %, 271 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:06:59 UTC 202, 6, 76 %, 292 W, 32255 MiB
+Tue Oct 18 21:06:59 UTC 202, 2, 76 %, 299 W, 32255 MiB
+Tue Oct 18 21:06:59 UTC 202, 4, 73 %, 275 W, 32255 MiB
+Tue Oct 18 21:06:59 UTC 202, 7, 73 %, 286 W, 32255 MiB
+Tue Oct 18 21:06:59 UTC 202, 0, 79 %, 299 W, 32255 MiB
+Tue Oct 18 21:06:59 UTC 202, 1, 85 %, 311 W, 32255 MiB
+Tue Oct 18 21:06:59 UTC 202, 5, 73 %, 275 W, 32255 MiB
+Tue Oct 18 21:06:59 UTC 202, 3, 64 %, 274 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:03 UTC 202, 6, 76 %, 285 W, 32255 MiB
+Tue Oct 18 21:07:03 UTC 202, 2, 81 %, 305 W, 32255 MiB
+Tue Oct 18 21:07:03 UTC 202, 3, 81 %, 307 W, 32255 MiB
+Tue Oct 18 21:07:03 UTC 202, 7, 75 %, 267 W, 32255 MiB
+Tue Oct 18 21:07:03 UTC 202, 0, 70 %, 265 W, 32255 MiB
+Tue Oct 18 21:07:03 UTC 202, 1, 74 %, 292 W, 32255 MiB
+Tue Oct 18 21:07:03 UTC 202, 5, 77 %, 241 W, 32255 MiB
+Tue Oct 18 21:07:03 UTC 202, 4, 62 %, 286 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:07 UTC 202, 2, 70 %, 228 W, 32255 MiB
+Tue Oct 18 21:07:07 UTC 202, 5, 87 %, 312 W, 32255 MiB
+Tue Oct 18 21:07:07 UTC 202, 6, 44 %, 284 W, 32255 MiB
+Tue Oct 18 21:07:07 UTC 202, 0, 67 %, 267 W, 32255 MiB
+Tue Oct 18 21:07:07 UTC 202, 3, 60 %, 270 W, 32255 MiB
+Tue Oct 18 21:07:07 UTC 202, 1, 75 %, 284 W, 32255 MiB
+Tue Oct 18 21:07:07 UTC 202, 7, 81 %, 288 W, 32255 MiB
+Tue Oct 18 21:07:07 UTC 202, 4, 77 %, 285 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:12 UTC 202, 6, 87 %, 318 W, 32255 MiB
+Tue Oct 18 21:07:12 UTC 202, 3, 85 %, 312 W, 32255 MiB
+Tue Oct 18 21:07:12 UTC 202, 2, 85 %, 317 W, 32255 MiB
+Tue Oct 18 21:07:12 UTC 202, 1, 45 %, 244 W, 32255 MiB
+Tue Oct 18 21:07:12 UTC 202, 4, 84 %, 309 W, 32255 MiB
+Tue Oct 18 21:07:12 UTC 202, 0, 83 %, 296 W, 32255 MiB
+Tue Oct 18 21:07:12 UTC 202, 5, 84 %, 310 W, 32255 MiB
+Tue Oct 18 21:07:12 UTC 202, 7, 66 %, 235 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:16 UTC 202, 6, 71 %, 289 W, 32255 MiB
+Tue Oct 18 21:07:16 UTC 202, 5, 73 %, 296 W, 32255 MiB
+Tue Oct 18 21:07:16 UTC 202, 7, 59 %, 277 W, 32255 MiB
+Tue Oct 18 21:07:16 UTC 202, 4, 77 %, 274 W, 32255 MiB
+Tue Oct 18 21:07:16 UTC 202, 3, 86 %, 286 W, 32255 MiB
+Tue Oct 18 21:07:16 UTC 202, 2, 74 %, 278 W, 32255 MiB
+Tue Oct 18 21:07:16 UTC 202, 1, 80 %, 273 W, 32255 MiB
+Tue Oct 18 21:07:16 UTC 202, 0, 71 %, 251 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:21 UTC 202, 7, 72 %, 265 W, 32255 MiB
+Tue Oct 18 21:07:21 UTC 202, 2, 78 %, 305 W, 32255 MiB
+Tue Oct 18 21:07:21 UTC 202, 6, 71 %, 206 W, 32255 MiB
+Tue Oct 18 21:07:21 UTC 202, 5, 81 %, 303 W, 32255 MiB
+Tue Oct 18 21:07:21 UTC 202, 3, 84 %, 307 W, 32255 MiB
+Tue Oct 18 21:07:21 UTC 202, 1, 86 %, 306 W, 32255 MiB
+Tue Oct 18 21:07:21 UTC 202, 4, 56 %, 287 W, 32255 MiB
+Tue Oct 18 21:07:21 UTC 202, 0, 74 %, 302 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:26 UTC 202, 6, 75 %, 284 W, 32255 MiB
+Tue Oct 18 21:07:26 UTC 202, 1, 86 %, 309 W, 32255 MiB
+Tue Oct 18 21:07:26 UTC 202, 0, 84 %, 298 W, 32255 MiB
+Tue Oct 18 21:07:26 UTC 202, 2, 84 %, 293 W, 32255 MiB
+Tue Oct 18 21:07:26 UTC 202, 7, 74 %, 203 W, 32255 MiB
+Tue Oct 18 21:07:26 UTC 202, 4, 43 %, 186 W, 32255 MiB
+Tue Oct 18 21:07:26 UTC 202, 5, 73 %, 305 W, 32255 MiB
+Tue Oct 18 21:07:26 UTC 202, 3, 83 %, 223 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:31 UTC 202, 7, 79 %, 304 W, 32255 MiB
+Tue Oct 18 21:07:31 UTC 202, 2, 69 %, 289 W, 32255 MiB
+Tue Oct 18 21:07:31 UTC 202, 5, 74 %, 279 W, 32255 MiB
+Tue Oct 18 21:07:31 UTC 202, 4, 75 %, 295 W, 32255 MiB
+Tue Oct 18 21:07:31 UTC 202, 1, 80 %, 282 W, 32255 MiB
+Tue Oct 18 21:07:31 UTC 202, 6, 87 %, 311 W, 32255 MiB
+Tue Oct 18 21:07:31 UTC 202, 3, 83 %, 276 W, 32255 MiB
+Tue Oct 18 21:07:31 UTC 202, 0, 75 %, 264 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:36 UTC 202, 2, 82 %, 307 W, 32255 MiB
+Tue Oct 18 21:07:36 UTC 202, 6, 59 %, 251 W, 32255 MiB
+Tue Oct 18 21:07:36 UTC 202, 7, 75 %, 272 W, 32255 MiB
+Tue Oct 18 21:07:36 UTC 202, 5, 84 %, 308 W, 32255 MiB
+Tue Oct 18 21:07:36 UTC 202, 4, 85 %, 312 W, 32255 MiB
+Tue Oct 18 21:07:36 UTC 202, 3, 60 %, 291 W, 32255 MiB
+Tue Oct 18 21:07:36 UTC 202, 1, 84 %, 291 W, 32255 MiB
+Tue Oct 18 21:07:36 UTC 202, 0, 83 %, 195 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:41 UTC 202, 2, 85 %, 253 W, 32255 MiB
+Tue Oct 18 21:07:41 UTC 202, 5, 86 %, 312 W, 32255 MiB
+Tue Oct 18 21:07:41 UTC 202, 6, 87 %, 318 W, 32255 MiB
+Tue Oct 18 21:07:41 UTC 202, 7, 81 %, 283 W, 32255 MiB
+Tue Oct 18 21:07:41 UTC 202, 4, 66 %, 210 W, 32255 MiB
+Tue Oct 18 21:07:41 UTC 202, 1, 78 %, 190 W, 32255 MiB
+Tue Oct 18 21:07:41 UTC 202, 3, 76 %, 289 W, 32255 MiB
+Tue Oct 18 21:07:41 UTC 202, 0, 38 %, 201 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:46 UTC 202, 4, 76 %, 305 W, 32255 MiB
+Tue Oct 18 21:07:46 UTC 202, 5, 46 %, 285 W, 32255 MiB
+Tue Oct 18 21:07:46 UTC 202, 2, 77 %, 288 W, 32255 MiB
+Tue Oct 18 21:07:46 UTC 202, 0, 83 %, 305 W, 32255 MiB
+Tue Oct 18 21:07:46 UTC 202, 6, 72 %, 314 W, 32255 MiB
+Tue Oct 18 21:07:46 UTC 202, 1, 86 %, 304 W, 32255 MiB
+Tue Oct 18 21:07:46 UTC 202, 7, 72 %, 277 W, 32255 MiB
+Tue Oct 18 21:07:46 UTC 202, 3, 62 %, 283 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:50 UTC 202, 6, 84 %, 313 W, 32255 MiB
+Tue Oct 18 21:07:50 UTC 202, 2, 86 %, 310 W, 32255 MiB
+Tue Oct 18 21:07:50 UTC 202, 7, 71 %, 230 W, 32255 MiB
+Tue Oct 18 21:07:50 UTC 202, 5, 72 %, 277 W, 32255 MiB
+Tue Oct 18 21:07:50 UTC 202, 0, 74 %, 304 W, 32255 MiB
+Tue Oct 18 21:07:50 UTC 202, 4, 77 %, 295 W, 32255 MiB
+Tue Oct 18 21:07:50 UTC 202, 1, 74 %, 269 W, 32255 MiB
+Tue Oct 18 21:07:50 UTC 202, 3, 84 %, 222 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:07:54 UTC 202, 6, 86 %, 284 W, 32255 MiB
+Tue Oct 18 21:07:54 UTC 202, 5, 53 %, 199 W, 32255 MiB
+Tue Oct 18 21:07:54 UTC 202, 7, 68 %, 276 W, 32255 MiB
+Tue Oct 18 21:07:54 UTC 202, 0, 72 %, 266 W, 32255 MiB
+Tue Oct 18 21:07:54 UTC 202, 4, 69 %, 270 W, 32255 MiB
+Tue Oct 18 21:07:54 UTC 202, 1, 46 %, 191 W, 32255 MiB
+Tue Oct 18 21:07:54 UTC 202, 2, 57 %, 267 W, 32255 MiB
+Tue Oct 18 21:07:54 UTC 202, 3, 74 %, 231 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:00 UTC 202, 6, 74 %, 289 W, 32255 MiB
+Tue Oct 18 21:08:00 UTC 202, 2, 75 %, 312 W, 32255 MiB
+Tue Oct 18 21:08:00 UTC 202, 1, 76 %, 268 W, 32255 MiB
+Tue Oct 18 21:08:00 UTC 202, 4, 85 %, 267 W, 32255 MiB
+Tue Oct 18 21:08:00 UTC 202, 7, 69 %, 274 W, 32255 MiB
+Tue Oct 18 21:08:00 UTC 202, 5, 80 %, 301 W, 32255 MiB
+Tue Oct 18 21:08:00 UTC 202, 0, 83 %, 268 W, 32255 MiB
+Tue Oct 18 21:08:00 UTC 202, 3, 75 %, 289 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:05 UTC 202, 4, 79 %, 301 W, 32255 MiB
+Tue Oct 18 21:08:05 UTC 202, 5, 71 %, 273 W, 32255 MiB
+Tue Oct 18 21:08:05 UTC 202, 0, 78 %, 297 W, 32255 MiB
+Tue Oct 18 21:08:05 UTC 202, 7, 73 %, 301 W, 32255 MiB
+Tue Oct 18 21:08:05 UTC 202, 2, 73 %, 284 W, 32255 MiB
+Tue Oct 18 21:08:05 UTC 202, 1, 48 %, 277 W, 32255 MiB
+Tue Oct 18 21:08:05 UTC 202, 6, 61 %, 279 W, 32255 MiB
+Tue Oct 18 21:08:05 UTC 202, 3, 85 %, 283 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:09 UTC 202, 7, 76 %, 287 W, 32255 MiB
+Tue Oct 18 21:08:09 UTC 202, 0, 78 %, 297 W, 32255 MiB
+Tue Oct 18 21:08:09 UTC 202, 6, 73 %, 280 W, 32255 MiB
+Tue Oct 18 21:08:09 UTC 202, 5, 77 %, 274 W, 32255 MiB
+Tue Oct 18 21:08:09 UTC 202, 4, 73 %, 283 W, 32255 MiB
+Tue Oct 18 21:08:09 UTC 202, 2, 79 %, 276 W, 32255 MiB
+Tue Oct 18 21:08:09 UTC 202, 3, 73 %, 267 W, 32255 MiB
+Tue Oct 18 21:08:09 UTC 202, 1, 76 %, 190 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:13 UTC 202, 4, 47 %, 204 W, 32255 MiB
+Tue Oct 18 21:08:13 UTC 202, 7, 80 %, 303 W, 32255 MiB
+Tue Oct 18 21:08:13 UTC 202, 2, 74 %, 274 W, 32255 MiB
+Tue Oct 18 21:08:13 UTC 202, 0, 81 %, 230 W, 32255 MiB
+Tue Oct 18 21:08:13 UTC 202, 5, 44 %, 292 W, 32255 MiB
+Tue Oct 18 21:08:13 UTC 202, 1, 86 %, 312 W, 32255 MiB
+Tue Oct 18 21:08:13 UTC 202, 6, 87 %, 265 W, 32255 MiB
+Tue Oct 18 21:08:13 UTC 202, 3, 84 %, 283 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:19 UTC 202, 6, 82 %, 210 W, 32255 MiB
+Tue Oct 18 21:08:19 UTC 202, 4, 72 %, 269 W, 32255 MiB
+Tue Oct 18 21:08:19 UTC 202, 3, 73 %, 289 W, 32255 MiB
+Tue Oct 18 21:08:19 UTC 202, 7, 82 %, 297 W, 32255 MiB
+Tue Oct 18 21:08:19 UTC 202, 5, 86 %, 306 W, 32255 MiB
+Tue Oct 18 21:08:19 UTC 202, 0, 77 %, 299 W, 32255 MiB
+Tue Oct 18 21:08:19 UTC 202, 2, 87 %, 307 W, 32255 MiB
+Tue Oct 18 21:08:19 UTC 202, 1, 72 %, 304 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:23 UTC 202, 6, 74 %, 252 W, 32255 MiB
+Tue Oct 18 21:08:23 UTC 202, 0, 49 %, 298 W, 32255 MiB
+Tue Oct 18 21:08:23 UTC 202, 2, 87 %, 284 W, 32255 MiB
+Tue Oct 18 21:08:23 UTC 202, 4, 63 %, 275 W, 32255 MiB
+Tue Oct 18 21:08:23 UTC 202, 5, 85 %, 299 W, 32255 MiB
+Tue Oct 18 21:08:23 UTC 202, 3, 49 %, 310 W, 32255 MiB
+Tue Oct 18 21:08:23 UTC 202, 1, 58 %, 261 W, 32255 MiB
+Tue Oct 18 21:08:23 UTC 202, 7, 57 %, 285 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:29 UTC 202, 4, 86 %, 300 W, 32255 MiB
+Tue Oct 18 21:08:29 UTC 202, 6, 71 %, 224 W, 32255 MiB
+Tue Oct 18 21:08:29 UTC 202, 3, 73 %, 231 W, 32255 MiB
+Tue Oct 18 21:08:29 UTC 202, 2, 80 %, 275 W, 32255 MiB
+Tue Oct 18 21:08:29 UTC 202, 1, 84 %, 308 W, 32255 MiB
+Tue Oct 18 21:08:29 UTC 202, 0, 67 %, 277 W, 32255 MiB
+Tue Oct 18 21:08:29 UTC 202, 7, 77 %, 285 W, 32255 MiB
+Tue Oct 18 21:08:29 UTC 202, 5, 81 %, 277 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:34 UTC 202, 6, 63 %, 281 W, 32255 MiB
+Tue Oct 18 21:08:34 UTC 202, 4, 76 %, 284 W, 32255 MiB
+Tue Oct 18 21:08:34 UTC 202, 7, 69 %, 281 W, 32255 MiB
+Tue Oct 18 21:08:34 UTC 202, 5, 86 %, 292 W, 32255 MiB
+Tue Oct 18 21:08:34 UTC 202, 2, 38 %, 313 W, 32255 MiB
+Tue Oct 18 21:08:34 UTC 202, 3, 72 %, 278 W, 32255 MiB
+Tue Oct 18 21:08:34 UTC 202, 0, 69 %, 282 W, 32255 MiB
+Tue Oct 18 21:08:34 UTC 202, 1, 70 %, 196 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:39 UTC 202, 5, 46 %, 136 W, 32255 MiB
+Tue Oct 18 21:08:39 UTC 202, 3, 39 %, 257 W, 32255 MiB
+Tue Oct 18 21:08:39 UTC 202, 0, 15 %, 103 W, 32255 MiB
+Tue Oct 18 21:08:39 UTC 202, 7, 62 %, 199 W, 32255 MiB
+Tue Oct 18 21:08:39 UTC 202, 6, 17 %, 109 W, 32255 MiB
+Tue Oct 18 21:08:39 UTC 202, 2, 37 %, 105 W, 32255 MiB
+Tue Oct 18 21:08:39 UTC 202, 4, 73 %, 104 W, 32255 MiB
+Tue Oct 18 21:08:39 UTC 202, 1, 71 %, 104 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:43 UTC 202, 6, 75 %, 244 W, 32255 MiB
+Tue Oct 18 21:08:43 UTC 202, 5, 74 %, 230 W, 32255 MiB
+Tue Oct 18 21:08:43 UTC 202, 2, 75 %, 249 W, 32255 MiB
+Tue Oct 18 21:08:43 UTC 202, 4, 67 %, 273 W, 32255 MiB
+Tue Oct 18 21:08:43 UTC 202, 7, 70 %, 256 W, 32255 MiB
+Tue Oct 18 21:08:43 UTC 202, 3, 14 %, 173 W, 32255 MiB
+Tue Oct 18 21:08:43 UTC 202, 1, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:08:43 UTC 202, 0, 53 %, 103 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:48 UTC 202, 2, 15 %, 144 W, 32255 MiB
+Tue Oct 18 21:08:48 UTC 202, 7, 44 %, 101 W, 32255 MiB
+Tue Oct 18 21:08:48 UTC 202, 1, 15 %, 142 W, 32255 MiB
+Tue Oct 18 21:08:48 UTC 202, 0, 47 %, 103 W, 32255 MiB
+Tue Oct 18 21:08:48 UTC 202, 3, 72 %, 190 W, 32255 MiB
+Tue Oct 18 21:08:48 UTC 202, 5, 66 %, 211 W, 32255 MiB
+Tue Oct 18 21:08:48 UTC 202, 4, 73 %, 199 W, 32255 MiB
+Tue Oct 18 21:08:48 UTC 202, 6, 75 %, 109 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:08:55 UTC 202, 6, 19 %, 109 W, 32255 MiB
+Tue Oct 18 21:08:55 UTC 202, 2, 15 %, 275 W, 32255 MiB
+Tue Oct 18 21:08:55 UTC 202, 4, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:08:55 UTC 202, 7, 70 %, 175 W, 32255 MiB
+Tue Oct 18 21:08:55 UTC 202, 3, 68 %, 271 W, 32255 MiB
+Tue Oct 18 21:08:55 UTC 202, 5, 60 %, 219 W, 32255 MiB
+Tue Oct 18 21:08:55 UTC 202, 1, 66 %, 104 W, 32255 MiB
+Tue Oct 18 21:08:55 UTC 202, 0, 47 %, 159 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:00 UTC 202, 6, 19 %, 109 W, 32255 MiB
+Tue Oct 18 21:09:00 UTC 202, 4, 52 %, 261 W, 32255 MiB
+Tue Oct 18 21:09:00 UTC 202, 3, 25 %, 101 W, 32255 MiB
+Tue Oct 18 21:09:00 UTC 202, 7, 39 %, 102 W, 32255 MiB
+Tue Oct 18 21:09:00 UTC 202, 0, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:09:00 UTC 202, 2, 44 %, 104 W, 32255 MiB
+Tue Oct 18 21:09:00 UTC 202, 5, 23 %, 230 W, 32255 MiB
+Tue Oct 18 21:09:00 UTC 202, 1, 19 %, 274 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:04 UTC 202, 2, 73 %, 270 W, 32255 MiB
+Tue Oct 18 21:09:04 UTC 202, 3, 72 %, 287 W, 32255 MiB
+Tue Oct 18 21:09:04 UTC 202, 5, 76 %, 293 W, 32255 MiB
+Tue Oct 18 21:09:04 UTC 202, 6, 78 %, 305 W, 32255 MiB
+Tue Oct 18 21:09:04 UTC 202, 1, 71 %, 267 W, 32255 MiB
+Tue Oct 18 21:09:04 UTC 202, 7, 69 %, 271 W, 32255 MiB
+Tue Oct 18 21:09:04 UTC 202, 4, 75 %, 303 W, 32255 MiB
+Tue Oct 18 21:09:04 UTC 202, 0, 71 %, 177 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:09 UTC 202, 4, 60 %, 189 W, 32255 MiB
+Tue Oct 18 21:09:09 UTC 202, 5, 77 %, 277 W, 32255 MiB
+Tue Oct 18 21:09:09 UTC 202, 2, 64 %, 272 W, 32255 MiB
+Tue Oct 18 21:09:09 UTC 202, 7, 72 %, 260 W, 32255 MiB
+Tue Oct 18 21:09:09 UTC 202, 6, 47 %, 196 W, 32255 MiB
+Tue Oct 18 21:09:09 UTC 202, 3, 38 %, 196 W, 32255 MiB
+Tue Oct 18 21:09:09 UTC 202, 1, 85 %, 309 W, 32255 MiB
+Tue Oct 18 21:09:09 UTC 202, 0, 69 %, 266 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:16 UTC 202, 7, 84 %, 296 W, 32255 MiB
+Tue Oct 18 21:09:16 UTC 202, 5, 84 %, 268 W, 32255 MiB
+Tue Oct 18 21:09:16 UTC 202, 3, 75 %, 278 W, 32255 MiB
+Tue Oct 18 21:09:16 UTC 202, 6, 88 %, 276 W, 32255 MiB
+Tue Oct 18 21:09:16 UTC 202, 0, 60 %, 267 W, 32255 MiB
+Tue Oct 18 21:09:16 UTC 202, 4, 72 %, 280 W, 32255 MiB
+Tue Oct 18 21:09:16 UTC 202, 1, 85 %, 292 W, 32255 MiB
+Tue Oct 18 21:09:16 UTC 202, 2, 77 %, 252 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:20 UTC 202, 6, 74 %, 279 W, 32255 MiB
+Tue Oct 18 21:09:20 UTC 202, 4, 75 %, 266 W, 32255 MiB
+Tue Oct 18 21:09:20 UTC 202, 7, 82 %, 302 W, 32255 MiB
+Tue Oct 18 21:09:20 UTC 202, 5, 84 %, 292 W, 32255 MiB
+Tue Oct 18 21:09:20 UTC 202, 3, 83 %, 289 W, 32255 MiB
+Tue Oct 18 21:09:20 UTC 202, 1, 83 %, 307 W, 32255 MiB
+Tue Oct 18 21:09:20 UTC 202, 0, 82 %, 294 W, 32255 MiB
+Tue Oct 18 21:09:20 UTC 202, 2, 83 %, 297 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:25 UTC 202, 2, 82 %, 312 W, 32255 MiB
+Tue Oct 18 21:09:25 UTC 202, 4, 71 %, 281 W, 32255 MiB
+Tue Oct 18 21:09:25 UTC 202, 6, 45 %, 273 W, 32255 MiB
+Tue Oct 18 21:09:25 UTC 202, 5, 84 %, 293 W, 32255 MiB
+Tue Oct 18 21:09:25 UTC 202, 3, 85 %, 260 W, 32255 MiB
+Tue Oct 18 21:09:25 UTC 202, 0, 38 %, 196 W, 32255 MiB
+Tue Oct 18 21:09:25 UTC 202, 7, 43 %, 268 W, 32255 MiB
+Tue Oct 18 21:09:25 UTC 202, 1, 57 %, 205 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:31 UTC 202, 7, 82 %, 299 W, 32255 MiB
+Tue Oct 18 21:09:31 UTC 202, 5, 87 %, 309 W, 32255 MiB
+Tue Oct 18 21:09:31 UTC 202, 6, 73 %, 274 W, 32255 MiB
+Tue Oct 18 21:09:31 UTC 202, 1, 72 %, 290 W, 32255 MiB
+Tue Oct 18 21:09:31 UTC 202, 3, 79 %, 279 W, 32255 MiB
+Tue Oct 18 21:09:31 UTC 202, 4, 70 %, 223 W, 32255 MiB
+Tue Oct 18 21:09:31 UTC 202, 0, 58 %, 271 W, 32255 MiB
+Tue Oct 18 21:09:31 UTC 202, 2, 75 %, 202 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:36 UTC 202, 7, 75 %, 291 W, 32255 MiB
+Tue Oct 18 21:09:36 UTC 202, 6, 76 %, 287 W, 32255 MiB
+Tue Oct 18 21:09:36 UTC 202, 2, 86 %, 285 W, 32255 MiB
+Tue Oct 18 21:09:36 UTC 202, 4, 84 %, 293 W, 32255 MiB
+Tue Oct 18 21:09:36 UTC 202, 1, 86 %, 266 W, 32255 MiB
+Tue Oct 18 21:09:36 UTC 202, 5, 85 %, 278 W, 32255 MiB
+Tue Oct 18 21:09:36 UTC 202, 3, 48 %, 258 W, 32255 MiB
+Tue Oct 18 21:09:36 UTC 202, 0, 70 %, 293 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:41 UTC 202, 6, 79 %, 276 W, 32255 MiB
+Tue Oct 18 21:09:41 UTC 202, 2, 65 %, 218 W, 32255 MiB
+Tue Oct 18 21:09:41 UTC 202, 7, 44 %, 186 W, 32255 MiB
+Tue Oct 18 21:09:41 UTC 202, 1, 78 %, 262 W, 32255 MiB
+Tue Oct 18 21:09:41 UTC 202, 5, 85 %, 292 W, 32255 MiB
+Tue Oct 18 21:09:41 UTC 202, 3, 82 %, 305 W, 32255 MiB
+Tue Oct 18 21:09:41 UTC 202, 0, 40 %, 259 W, 32255 MiB
+Tue Oct 18 21:09:41 UTC 202, 4, 70 %, 280 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:46 UTC 202, 6, 87 %, 317 W, 32255 MiB
+Tue Oct 18 21:09:46 UTC 202, 0, 67 %, 259 W, 32255 MiB
+Tue Oct 18 21:09:46 UTC 202, 7, 69 %, 272 W, 32255 MiB
+Tue Oct 18 21:09:46 UTC 202, 3, 74 %, 297 W, 32255 MiB
+Tue Oct 18 21:09:46 UTC 202, 2, 83 %, 271 W, 32255 MiB
+Tue Oct 18 21:09:46 UTC 202, 1, 76 %, 203 W, 32255 MiB
+Tue Oct 18 21:09:46 UTC 202, 4, 83 %, 306 W, 32255 MiB
+Tue Oct 18 21:09:46 UTC 202, 5, 73 %, 292 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:52 UTC 202, 7, 82 %, 302 W, 32255 MiB
+Tue Oct 18 21:09:52 UTC 202, 4, 85 %, 304 W, 32255 MiB
+Tue Oct 18 21:09:52 UTC 202, 2, 71 %, 306 W, 32255 MiB
+Tue Oct 18 21:09:52 UTC 202, 6, 79 %, 303 W, 32255 MiB
+Tue Oct 18 21:09:52 UTC 202, 3, 79 %, 300 W, 32255 MiB
+Tue Oct 18 21:09:52 UTC 202, 1, 74 %, 237 W, 32255 MiB
+Tue Oct 18 21:09:52 UTC 202, 0, 68 %, 262 W, 32255 MiB
+Tue Oct 18 21:09:52 UTC 202, 5, 84 %, 180 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:09:57 UTC 202, 3, 79 %, 301 W, 32255 MiB
+Tue Oct 18 21:09:57 UTC 202, 4, 50 %, 251 W, 32255 MiB
+Tue Oct 18 21:09:57 UTC 202, 6, 77 %, 272 W, 32255 MiB
+Tue Oct 18 21:09:57 UTC 202, 5, 71 %, 293 W, 32255 MiB
+Tue Oct 18 21:09:57 UTC 202, 7, 71 %, 259 W, 32255 MiB
+Tue Oct 18 21:09:57 UTC 202, 2, 46 %, 285 W, 32255 MiB
+Tue Oct 18 21:09:57 UTC 202, 0, 77 %, 286 W, 32255 MiB
+Tue Oct 18 21:09:57 UTC 202, 1, 70 %, 268 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:02 UTC 202, 3, 45 %, 173 W, 32255 MiB
+Tue Oct 18 21:10:02 UTC 202, 6, 77 %, 296 W, 32255 MiB
+Tue Oct 18 21:10:02 UTC 202, 5, 80 %, 303 W, 32255 MiB
+Tue Oct 18 21:10:02 UTC 202, 7, 82 %, 301 W, 32255 MiB
+Tue Oct 18 21:10:02 UTC 202, 4, 85 %, 305 W, 32255 MiB
+Tue Oct 18 21:10:02 UTC 202, 1, 83 %, 264 W, 32255 MiB
+Tue Oct 18 21:10:02 UTC 202, 0, 71 %, 259 W, 32255 MiB
+Tue Oct 18 21:10:02 UTC 202, 2, 72 %, 274 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:07 UTC 202, 0, 79 %, 297 W, 32255 MiB
+Tue Oct 18 21:10:07 UTC 202, 5, 78 %, 306 W, 32255 MiB
+Tue Oct 18 21:10:07 UTC 202, 2, 50 %, 282 W, 32255 MiB
+Tue Oct 18 21:10:07 UTC 202, 6, 88 %, 308 W, 32255 MiB
+Tue Oct 18 21:10:07 UTC 202, 7, 58 %, 169 W, 32255 MiB
+Tue Oct 18 21:10:07 UTC 202, 4, 42 %, 234 W, 32255 MiB
+Tue Oct 18 21:10:07 UTC 202, 3, 62 %, 276 W, 32255 MiB
+Tue Oct 18 21:10:07 UTC 202, 1, 71 %, 265 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:12 UTC 202, 6, 77 %, 302 W, 32255 MiB
+Tue Oct 18 21:10:12 UTC 202, 3, 82 %, 302 W, 32255 MiB
+Tue Oct 18 21:10:12 UTC 202, 7, 77 %, 301 W, 32255 MiB
+Tue Oct 18 21:10:12 UTC 202, 4, 71 %, 279 W, 32255 MiB
+Tue Oct 18 21:10:12 UTC 202, 5, 71 %, 267 W, 32255 MiB
+Tue Oct 18 21:10:12 UTC 202, 0, 67 %, 262 W, 32255 MiB
+Tue Oct 18 21:10:12 UTC 202, 2, 74 %, 306 W, 32255 MiB
+Tue Oct 18 21:10:12 UTC 202, 1, 73 %, 280 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:17 UTC 202, 4, 75 %, 265 W, 32255 MiB
+Tue Oct 18 21:10:17 UTC 202, 5, 70 %, 267 W, 32255 MiB
+Tue Oct 18 21:10:17 UTC 202, 2, 79 %, 271 W, 32255 MiB
+Tue Oct 18 21:10:17 UTC 202, 7, 56 %, 268 W, 32255 MiB
+Tue Oct 18 21:10:17 UTC 202, 3, 47 %, 237 W, 32255 MiB
+Tue Oct 18 21:10:17 UTC 202, 0, 68 %, 265 W, 32255 MiB
+Tue Oct 18 21:10:17 UTC 202, 6, 88 %, 311 W, 32255 MiB
+Tue Oct 18 21:10:17 UTC 202, 1, 42 %, 228 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:23 UTC 202, 7, 64 %, 192 W, 32255 MiB
+Tue Oct 18 21:10:23 UTC 202, 2, 71 %, 254 W, 32255 MiB
+Tue Oct 18 21:10:23 UTC 202, 5, 79 %, 267 W, 32255 MiB
+Tue Oct 18 21:10:23 UTC 202, 3, 70 %, 305 W, 32255 MiB
+Tue Oct 18 21:10:23 UTC 202, 4, 69 %, 208 W, 32255 MiB
+Tue Oct 18 21:10:23 UTC 202, 6, 54 %, 202 W, 32255 MiB
+Tue Oct 18 21:10:23 UTC 202, 0, 49 %, 267 W, 32255 MiB
+Tue Oct 18 21:10:23 UTC 202, 1, 83 %, 232 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:28 UTC 202, 6, 60 %, 191 W, 32255 MiB
+Tue Oct 18 21:10:28 UTC 202, 3, 77 %, 200 W, 32255 MiB
+Tue Oct 18 21:10:28 UTC 202, 7, 66 %, 164 W, 32255 MiB
+Tue Oct 18 21:10:28 UTC 202, 2, 85 %, 162 W, 32255 MiB
+Tue Oct 18 21:10:28 UTC 202, 5, 50 %, 279 W, 32255 MiB
+Tue Oct 18 21:10:28 UTC 202, 4, 85 %, 304 W, 32255 MiB
+Tue Oct 18 21:10:28 UTC 202, 1, 43 %, 291 W, 32255 MiB
+Tue Oct 18 21:10:28 UTC 202, 0, 81 %, 196 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:33 UTC 202, 6, 73 %, 196 W, 32255 MiB
+Tue Oct 18 21:10:33 UTC 202, 7, 45 %, 162 W, 32255 MiB
+Tue Oct 18 21:10:33 UTC 202, 5, 42 %, 180 W, 32255 MiB
+Tue Oct 18 21:10:33 UTC 202, 2, 87 %, 307 W, 32255 MiB
+Tue Oct 18 21:10:33 UTC 202, 3, 42 %, 203 W, 32255 MiB
+Tue Oct 18 21:10:33 UTC 202, 0, 61 %, 260 W, 32255 MiB
+Tue Oct 18 21:10:33 UTC 202, 4, 48 %, 279 W, 32255 MiB
+Tue Oct 18 21:10:33 UTC 202, 1, 54 %, 308 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:38 UTC 202, 6, 78 %, 298 W, 32255 MiB
+Tue Oct 18 21:10:38 UTC 202, 2, 74 %, 269 W, 32255 MiB
+Tue Oct 18 21:10:38 UTC 202, 4, 79 %, 248 W, 32255 MiB
+Tue Oct 18 21:10:38 UTC 202, 3, 70 %, 300 W, 32255 MiB
+Tue Oct 18 21:10:38 UTC 202, 7, 71 %, 281 W, 32255 MiB
+Tue Oct 18 21:10:38 UTC 202, 1, 42 %, 314 W, 32255 MiB
+Tue Oct 18 21:10:38 UTC 202, 0, 68 %, 182 W, 32255 MiB
+Tue Oct 18 21:10:38 UTC 202, 5, 82 %, 269 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:43 UTC 202, 6, 87 %, 299 W, 32255 MiB
+Tue Oct 18 21:10:43 UTC 202, 3, 83 %, 303 W, 32255 MiB
+Tue Oct 18 21:10:43 UTC 202, 2, 81 %, 314 W, 32255 MiB
+Tue Oct 18 21:10:43 UTC 202, 7, 81 %, 294 W, 32255 MiB
+Tue Oct 18 21:10:43 UTC 202, 5, 80 %, 273 W, 32255 MiB
+Tue Oct 18 21:10:43 UTC 202, 4, 70 %, 266 W, 32255 MiB
+Tue Oct 18 21:10:43 UTC 202, 0, 70 %, 283 W, 32255 MiB
+Tue Oct 18 21:10:43 UTC 202, 1, 85 %, 173 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:48 UTC 202, 6, 82 %, 309 W, 32255 MiB
+Tue Oct 18 21:10:48 UTC 202, 4, 83 %, 305 W, 32255 MiB
+Tue Oct 18 21:10:48 UTC 202, 3, 71 %, 200 W, 32255 MiB
+Tue Oct 18 21:10:48 UTC 202, 5, 60 %, 277 W, 32255 MiB
+Tue Oct 18 21:10:48 UTC 202, 2, 85 %, 297 W, 32255 MiB
+Tue Oct 18 21:10:48 UTC 202, 7, 64 %, 189 W, 32255 MiB
+Tue Oct 18 21:10:48 UTC 202, 1, 42 %, 277 W, 32255 MiB
+Tue Oct 18 21:10:48 UTC 202, 0, 70 %, 293 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:53 UTC 202, 6, 86 %, 299 W, 32255 MiB
+Tue Oct 18 21:10:53 UTC 202, 5, 70 %, 273 W, 32255 MiB
+Tue Oct 18 21:10:53 UTC 202, 2, 42 %, 281 W, 32255 MiB
+Tue Oct 18 21:10:53 UTC 202, 7, 76 %, 259 W, 32255 MiB
+Tue Oct 18 21:10:53 UTC 202, 0, 51 %, 252 W, 32255 MiB
+Tue Oct 18 21:10:53 UTC 202, 3, 70 %, 261 W, 32255 MiB
+Tue Oct 18 21:10:53 UTC 202, 4, 70 %, 265 W, 32255 MiB
+Tue Oct 18 21:10:53 UTC 202, 1, 76 %, 301 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:10:59 UTC 202, 6, 88 %, 313 W, 32255 MiB
+Tue Oct 18 21:10:59 UTC 202, 4, 70 %, 262 W, 32255 MiB
+Tue Oct 18 21:10:59 UTC 202, 3, 80 %, 308 W, 32255 MiB
+Tue Oct 18 21:10:59 UTC 202, 7, 52 %, 186 W, 32255 MiB
+Tue Oct 18 21:10:59 UTC 202, 0, 42 %, 194 W, 32255 MiB
+Tue Oct 18 21:10:59 UTC 202, 1, 85 %, 264 W, 32255 MiB
+Tue Oct 18 21:10:59 UTC 202, 2, 81 %, 306 W, 32255 MiB
+Tue Oct 18 21:10:59 UTC 202, 5, 78 %, 279 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:04 UTC 202, 2, 85 %, 298 W, 32255 MiB
+Tue Oct 18 21:11:04 UTC 202, 7, 78 %, 278 W, 32255 MiB
+Tue Oct 18 21:11:04 UTC 202, 6, 45 %, 188 W, 32255 MiB
+Tue Oct 18 21:11:04 UTC 202, 3, 46 %, 245 W, 32255 MiB
+Tue Oct 18 21:11:04 UTC 202, 4, 58 %, 264 W, 32255 MiB
+Tue Oct 18 21:11:04 UTC 202, 5, 74 %, 279 W, 32255 MiB
+Tue Oct 18 21:11:04 UTC 202, 0, 72 %, 270 W, 32255 MiB
+Tue Oct 18 21:11:04 UTC 202, 1, 75 %, 274 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:09 UTC 202, 2, 87 %, 304 W, 32255 MiB
+Tue Oct 18 21:11:09 UTC 202, 7, 80 %, 276 W, 32255 MiB
+Tue Oct 18 21:11:09 UTC 202, 6, 74 %, 173 W, 32255 MiB
+Tue Oct 18 21:11:09 UTC 202, 0, 73 %, 265 W, 32255 MiB
+Tue Oct 18 21:11:09 UTC 202, 5, 83 %, 305 W, 32255 MiB
+Tue Oct 18 21:11:09 UTC 202, 4, 81 %, 283 W, 32255 MiB
+Tue Oct 18 21:11:09 UTC 202, 3, 83 %, 247 W, 32255 MiB
+Tue Oct 18 21:11:09 UTC 202, 1, 72 %, 278 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:14 UTC 202, 6, 36 %, 129 W, 32255 MiB
+Tue Oct 18 21:11:14 UTC 202, 2, 62 %, 269 W, 32255 MiB
+Tue Oct 18 21:11:14 UTC 202, 7, 56 %, 259 W, 32255 MiB
+Tue Oct 18 21:11:14 UTC 202, 0, 51 %, 237 W, 32255 MiB
+Tue Oct 18 21:11:14 UTC 202, 5, 17 %, 273 W, 32255 MiB
+Tue Oct 18 21:11:14 UTC 202, 4, 57 %, 177 W, 32255 MiB
+Tue Oct 18 21:11:14 UTC 202, 3, 14 %, 229 W, 32255 MiB
+Tue Oct 18 21:11:14 UTC 202, 1, 70 %, 270 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:19 UTC 202, 4, 15 %, 105 W, 32255 MiB
+Tue Oct 18 21:11:19 UTC 202, 3, 60 %, 193 W, 32255 MiB
+Tue Oct 18 21:11:19 UTC 202, 5, 16 %, 143 W, 32255 MiB
+Tue Oct 18 21:11:19 UTC 202, 0, 53 %, 255 W, 32255 MiB
+Tue Oct 18 21:11:19 UTC 202, 1, 45 %, 269 W, 32255 MiB
+Tue Oct 18 21:11:19 UTC 202, 2, 29 %, 205 W, 32255 MiB
+Tue Oct 18 21:11:19 UTC 202, 6, 72 %, 212 W, 32255 MiB
+Tue Oct 18 21:11:19 UTC 202, 7, 70 %, 101 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:25 UTC 202, 6, 74 %, 274 W, 32255 MiB
+Tue Oct 18 21:11:25 UTC 202, 3, 73 %, 243 W, 32255 MiB
+Tue Oct 18 21:11:25 UTC 202, 7, 70 %, 238 W, 32255 MiB
+Tue Oct 18 21:11:25 UTC 202, 5, 67 %, 270 W, 32255 MiB
+Tue Oct 18 21:11:25 UTC 202, 4, 56 %, 104 W, 32255 MiB
+Tue Oct 18 21:11:25 UTC 202, 0, 70 %, 231 W, 32255 MiB
+Tue Oct 18 21:11:25 UTC 202, 2, 46 %, 148 W, 32255 MiB
+Tue Oct 18 21:11:25 UTC 202, 1, 51 %, 174 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:29 UTC 202, 5, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:11:29 UTC 202, 2, 53 %, 172 W, 32255 MiB
+Tue Oct 18 21:11:29 UTC 202, 3, 53 %, 157 W, 32255 MiB
+Tue Oct 18 21:11:30 UTC 202, 0, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:11:30 UTC 202, 7, 49 %, 162 W, 32255 MiB
+Tue Oct 18 21:11:30 UTC 202, 6, 51 %, 243 W, 32255 MiB
+Tue Oct 18 21:11:30 UTC 202, 1, 19 %, 171 W, 32255 MiB
+Tue Oct 18 21:11:30 UTC 202, 4, 15 %, 257 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:34 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:11:34 UTC 202, 2, 87 %, 299 W, 32255 MiB
+Tue Oct 18 21:11:34 UTC 202, 4, 82 %, 289 W, 32255 MiB
+Tue Oct 18 21:11:34 UTC 202, 3, 78 %, 175 W, 32255 MiB
+Tue Oct 18 21:11:34 UTC 202, 7, 81 %, 255 W, 32255 MiB
+Tue Oct 18 21:11:34 UTC 202, 5, 72 %, 268 W, 32255 MiB
+Tue Oct 18 21:11:34 UTC 202, 1, 70 %, 273 W, 32255 MiB
+Tue Oct 18 21:11:34 UTC 202, 0, 73 %, 256 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:37 UTC 202, 6, 77 %, 297 W, 32255 MiB
+Tue Oct 18 21:11:37 UTC 202, 4, 79 %, 307 W, 32255 MiB
+Tue Oct 18 21:11:37 UTC 202, 1, 85 %, 290 W, 32255 MiB
+Tue Oct 18 21:11:37 UTC 202, 2, 78 %, 256 W, 32255 MiB
+Tue Oct 18 21:11:37 UTC 202, 5, 63 %, 203 W, 32255 MiB
+Tue Oct 18 21:11:37 UTC 202, 0, 80 %, 205 W, 32255 MiB
+Tue Oct 18 21:11:37 UTC 202, 7, 41 %, 242 W, 32255 MiB
+Tue Oct 18 21:11:37 UTC 202, 3, 42 %, 299 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:40 UTC 202, 3, 70 %, 260 W, 32255 MiB
+Tue Oct 18 21:11:40 UTC 202, 7, 68 %, 257 W, 32255 MiB
+Tue Oct 18 21:11:40 UTC 202, 5, 72 %, 280 W, 32255 MiB
+Tue Oct 18 21:11:40 UTC 202, 1, 76 %, 291 W, 32255 MiB
+Tue Oct 18 21:11:40 UTC 202, 2, 83 %, 308 W, 32255 MiB
+Tue Oct 18 21:11:40 UTC 202, 6, 78 %, 287 W, 32255 MiB
+Tue Oct 18 21:11:40 UTC 202, 4, 70 %, 266 W, 32255 MiB
+Tue Oct 18 21:11:40 UTC 202, 0, 69 %, 269 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:43 UTC 202, 7, 70 %, 226 W, 32255 MiB
+Tue Oct 18 21:11:43 UTC 202, 2, 77 %, 181 W, 32255 MiB
+Tue Oct 18 21:11:43 UTC 202, 5, 79 %, 265 W, 32255 MiB
+Tue Oct 18 21:11:43 UTC 202, 1, 48 %, 260 W, 32255 MiB
+Tue Oct 18 21:11:43 UTC 202, 6, 86 %, 272 W, 32255 MiB
+Tue Oct 18 21:11:43 UTC 202, 4, 75 %, 292 W, 32255 MiB
+Tue Oct 18 21:11:43 UTC 202, 3, 69 %, 301 W, 32255 MiB
+Tue Oct 18 21:11:43 UTC 202, 0, 73 %, 219 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:48 UTC 202, 7, 78 %, 264 W, 32255 MiB
+Tue Oct 18 21:11:48 UTC 202, 2, 87 %, 309 W, 32255 MiB
+Tue Oct 18 21:11:48 UTC 202, 5, 71 %, 212 W, 32255 MiB
+Tue Oct 18 21:11:48 UTC 202, 6, 86 %, 285 W, 32255 MiB
+Tue Oct 18 21:11:48 UTC 202, 0, 70 %, 281 W, 32255 MiB
+Tue Oct 18 21:11:48 UTC 202, 1, 85 %, 303 W, 32255 MiB
+Tue Oct 18 21:11:48 UTC 202, 4, 85 %, 267 W, 32255 MiB
+Tue Oct 18 21:11:48 UTC 202, 3, 70 %, 182 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:53 UTC 202, 2, 86 %, 312 W, 32255 MiB
+Tue Oct 18 21:11:53 UTC 202, 7, 68 %, 272 W, 32255 MiB
+Tue Oct 18 21:11:53 UTC 202, 1, 73 %, 305 W, 32255 MiB
+Tue Oct 18 21:11:53 UTC 202, 5, 70 %, 266 W, 32255 MiB
+Tue Oct 18 21:11:53 UTC 202, 6, 82 %, 296 W, 32255 MiB
+Tue Oct 18 21:11:53 UTC 202, 0, 77 %, 247 W, 32255 MiB
+Tue Oct 18 21:11:53 UTC 202, 3, 79 %, 262 W, 32255 MiB
+Tue Oct 18 21:11:53 UTC 202, 4, 73 %, 252 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:11:57 UTC 202, 6, 77 %, 273 W, 32255 MiB
+Tue Oct 18 21:11:57 UTC 202, 2, 76 %, 270 W, 32255 MiB
+Tue Oct 18 21:11:57 UTC 202, 3, 77 %, 296 W, 32255 MiB
+Tue Oct 18 21:11:57 UTC 202, 4, 72 %, 271 W, 32255 MiB
+Tue Oct 18 21:11:57 UTC 202, 7, 73 %, 297 W, 32255 MiB
+Tue Oct 18 21:11:57 UTC 202, 0, 72 %, 257 W, 32255 MiB
+Tue Oct 18 21:11:57 UTC 202, 1, 75 %, 264 W, 32255 MiB
+Tue Oct 18 21:11:57 UTC 202, 5, 52 %, 270 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:01 UTC 202, 2, 82 %, 270 W, 32255 MiB
+Tue Oct 18 21:12:01 UTC 202, 7, 70 %, 226 W, 32255 MiB
+Tue Oct 18 21:12:01 UTC 202, 6, 44 %, 200 W, 32255 MiB
+Tue Oct 18 21:12:01 UTC 202, 4, 71 %, 276 W, 32255 MiB
+Tue Oct 18 21:12:01 UTC 202, 5, 71 %, 282 W, 32255 MiB
+Tue Oct 18 21:12:01 UTC 202, 0, 53 %, 189 W, 32255 MiB
+Tue Oct 18 21:12:01 UTC 202, 3, 60 %, 276 W, 32255 MiB
+Tue Oct 18 21:12:01 UTC 202, 1, 83 %, 265 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:06 UTC 202, 6, 44 %, 186 W, 32255 MiB
+Tue Oct 18 21:12:06 UTC 202, 7, 56 %, 253 W, 32255 MiB
+Tue Oct 18 21:12:06 UTC 202, 2, 62 %, 197 W, 32255 MiB
+Tue Oct 18 21:12:06 UTC 202, 5, 79 %, 219 W, 32255 MiB
+Tue Oct 18 21:12:06 UTC 202, 4, 75 %, 264 W, 32255 MiB
+Tue Oct 18 21:12:06 UTC 202, 0, 67 %, 281 W, 32255 MiB
+Tue Oct 18 21:12:06 UTC 202, 3, 65 %, 273 W, 32255 MiB
+Tue Oct 18 21:12:06 UTC 202, 1, 81 %, 256 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:11 UTC 202, 2, 85 %, 314 W, 32255 MiB
+Tue Oct 18 21:12:11 UTC 202, 6, 87 %, 300 W, 32255 MiB
+Tue Oct 18 21:12:11 UTC 202, 7, 77 %, 260 W, 32255 MiB
+Tue Oct 18 21:12:11 UTC 202, 4, 40 %, 241 W, 32255 MiB
+Tue Oct 18 21:12:11 UTC 202, 5, 52 %, 259 W, 32255 MiB
+Tue Oct 18 21:12:11 UTC 202, 3, 73 %, 262 W, 32255 MiB
+Tue Oct 18 21:12:11 UTC 202, 0, 38 %, 253 W, 32255 MiB
+Tue Oct 18 21:12:11 UTC 202, 1, 57 %, 264 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:16 UTC 202, 2, 81 %, 233 W, 32255 MiB
+Tue Oct 18 21:12:16 UTC 202, 7, 65 %, 192 W, 32255 MiB
+Tue Oct 18 21:12:16 UTC 202, 0, 73 %, 263 W, 32255 MiB
+Tue Oct 18 21:12:16 UTC 202, 5, 74 %, 265 W, 32255 MiB
+Tue Oct 18 21:12:16 UTC 202, 3, 65 %, 278 W, 32255 MiB
+Tue Oct 18 21:12:16 UTC 202, 6, 51 %, 287 W, 32255 MiB
+Tue Oct 18 21:12:16 UTC 202, 1, 78 %, 307 W, 32255 MiB
+Tue Oct 18 21:12:16 UTC 202, 4, 75 %, 277 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:22 UTC 202, 6, 73 %, 314 W, 32255 MiB
+Tue Oct 18 21:12:22 UTC 202, 3, 73 %, 303 W, 32255 MiB
+Tue Oct 18 21:12:22 UTC 202, 2, 73 %, 294 W, 32255 MiB
+Tue Oct 18 21:12:22 UTC 202, 7, 76 %, 286 W, 32255 MiB
+Tue Oct 18 21:12:22 UTC 202, 0, 83 %, 296 W, 32255 MiB
+Tue Oct 18 21:12:22 UTC 202, 4, 48 %, 247 W, 32255 MiB
+Tue Oct 18 21:12:22 UTC 202, 1, 51 %, 241 W, 32255 MiB
+Tue Oct 18 21:12:22 UTC 202, 5, 36 %, 269 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:27 UTC 202, 6, 78 %, 282 W, 32255 MiB
+Tue Oct 18 21:12:27 UTC 202, 2, 50 %, 251 W, 32255 MiB
+Tue Oct 18 21:12:27 UTC 202, 4, 73 %, 245 W, 32255 MiB
+Tue Oct 18 21:12:27 UTC 202, 3, 84 %, 285 W, 32255 MiB
+Tue Oct 18 21:12:27 UTC 202, 5, 80 %, 269 W, 32255 MiB
+Tue Oct 18 21:12:27 UTC 202, 1, 85 %, 289 W, 32255 MiB
+Tue Oct 18 21:12:27 UTC 202, 0, 80 %, 280 W, 32255 MiB
+Tue Oct 18 21:12:27 UTC 202, 7, 82 %, 259 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:32 UTC 202, 2, 42 %, 182 W, 32255 MiB
+Tue Oct 18 21:12:32 UTC 202, 6, 53 %, 255 W, 32255 MiB
+Tue Oct 18 21:12:32 UTC 202, 5, 76 %, 305 W, 32255 MiB
+Tue Oct 18 21:12:32 UTC 202, 0, 39 %, 182 W, 32255 MiB
+Tue Oct 18 21:12:32 UTC 202, 7, 82 %, 284 W, 32255 MiB
+Tue Oct 18 21:12:32 UTC 202, 1, 83 %, 306 W, 32255 MiB
+Tue Oct 18 21:12:32 UTC 202, 3, 85 %, 305 W, 32255 MiB
+Tue Oct 18 21:12:32 UTC 202, 4, 85 %, 266 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:37 UTC 202, 3, 45 %, 232 W, 32255 MiB
+Tue Oct 18 21:12:37 UTC 202, 5, 70 %, 279 W, 32255 MiB
+Tue Oct 18 21:12:37 UTC 202, 0, 70 %, 234 W, 32255 MiB
+Tue Oct 18 21:12:37 UTC 202, 6, 60 %, 201 W, 32255 MiB
+Tue Oct 18 21:12:37 UTC 202, 2, 72 %, 268 W, 32255 MiB
+Tue Oct 18 21:12:37 UTC 202, 4, 69 %, 267 W, 32255 MiB
+Tue Oct 18 21:12:37 UTC 202, 1, 86 %, 282 W, 32255 MiB
+Tue Oct 18 21:12:37 UTC 202, 7, 47 %, 221 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:42 UTC 202, 2, 68 %, 213 W, 32255 MiB
+Tue Oct 18 21:12:42 UTC 202, 6, 45 %, 280 W, 32255 MiB
+Tue Oct 18 21:12:42 UTC 202, 7, 73 %, 259 W, 32255 MiB
+Tue Oct 18 21:12:42 UTC 202, 5, 71 %, 266 W, 32255 MiB
+Tue Oct 18 21:12:42 UTC 202, 4, 86 %, 306 W, 32255 MiB
+Tue Oct 18 21:12:42 UTC 202, 3, 83 %, 293 W, 32255 MiB
+Tue Oct 18 21:12:42 UTC 202, 0, 43 %, 209 W, 32255 MiB
+Tue Oct 18 21:12:42 UTC 202, 1, 72 %, 304 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:48 UTC 202, 7, 81 %, 284 W, 32255 MiB
+Tue Oct 18 21:12:48 UTC 202, 2, 73 %, 283 W, 32255 MiB
+Tue Oct 18 21:12:48 UTC 202, 3, 74 %, 288 W, 32255 MiB
+Tue Oct 18 21:12:48 UTC 202, 5, 78 %, 299 W, 32255 MiB
+Tue Oct 18 21:12:48 UTC 202, 6, 60 %, 197 W, 32255 MiB
+Tue Oct 18 21:12:48 UTC 202, 4, 40 %, 175 W, 32255 MiB
+Tue Oct 18 21:12:48 UTC 202, 0, 42 %, 211 W, 32255 MiB
+Tue Oct 18 21:12:48 UTC 202, 1, 72 %, 267 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:52 UTC 202, 5, 63 %, 200 W, 32255 MiB
+Tue Oct 18 21:12:52 UTC 202, 6, 61 %, 177 W, 32255 MiB
+Tue Oct 18 21:12:52 UTC 202, 7, 59 %, 271 W, 32255 MiB
+Tue Oct 18 21:12:52 UTC 202, 3, 74 %, 279 W, 32255 MiB
+Tue Oct 18 21:12:52 UTC 202, 2, 60 %, 189 W, 32255 MiB
+Tue Oct 18 21:12:52 UTC 202, 4, 78 %, 297 W, 32255 MiB
+Tue Oct 18 21:12:52 UTC 202, 0, 40 %, 292 W, 32255 MiB
+Tue Oct 18 21:12:52 UTC 202, 1, 79 %, 275 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:12:58 UTC 202, 2, 88 %, 309 W, 32255 MiB
+Tue Oct 18 21:12:58 UTC 202, 6, 86 %, 265 W, 32255 MiB
+Tue Oct 18 21:12:58 UTC 202, 4, 82 %, 304 W, 32255 MiB
+Tue Oct 18 21:12:58 UTC 202, 3, 82 %, 289 W, 32255 MiB
+Tue Oct 18 21:12:58 UTC 202, 5, 85 %, 309 W, 32255 MiB
+Tue Oct 18 21:12:58 UTC 202, 0, 79 %, 212 W, 32255 MiB
+Tue Oct 18 21:12:58 UTC 202, 1, 71 %, 306 W, 32255 MiB
+Tue Oct 18 21:12:58 UTC 202, 7, 68 %, 264 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:03 UTC 202, 6, 74 %, 285 W, 32255 MiB
+Tue Oct 18 21:13:03 UTC 202, 2, 77 %, 272 W, 32255 MiB
+Tue Oct 18 21:13:03 UTC 202, 4, 71 %, 274 W, 32255 MiB
+Tue Oct 18 21:13:03 UTC 202, 3, 77 %, 297 W, 32255 MiB
+Tue Oct 18 21:13:03 UTC 202, 0, 81 %, 289 W, 32255 MiB
+Tue Oct 18 21:13:03 UTC 202, 5, 71 %, 283 W, 32255 MiB
+Tue Oct 18 21:13:03 UTC 202, 1, 36 %, 307 W, 32255 MiB
+Tue Oct 18 21:13:03 UTC 202, 7, 68 %, 222 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:08 UTC 202, 4, 52 %, 252 W, 32255 MiB
+Tue Oct 18 21:13:08 UTC 202, 2, 76 %, 270 W, 32255 MiB
+Tue Oct 18 21:13:08 UTC 202, 3, 70 %, 259 W, 32255 MiB
+Tue Oct 18 21:13:08 UTC 202, 5, 70 %, 268 W, 32255 MiB
+Tue Oct 18 21:13:08 UTC 202, 7, 64 %, 194 W, 32255 MiB
+Tue Oct 18 21:13:08 UTC 202, 0, 56 %, 189 W, 32255 MiB
+Tue Oct 18 21:13:08 UTC 202, 6, 82 %, 191 W, 32255 MiB
+Tue Oct 18 21:13:08 UTC 202, 1, 83 %, 302 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:12 UTC 202, 6, 73 %, 273 W, 32255 MiB
+Tue Oct 18 21:13:12 UTC 202, 7, 34 %, 195 W, 32255 MiB
+Tue Oct 18 21:13:12 UTC 202, 5, 75 %, 268 W, 32255 MiB
+Tue Oct 18 21:13:12 UTC 202, 3, 72 %, 284 W, 32255 MiB
+Tue Oct 18 21:13:12 UTC 202, 2, 76 %, 281 W, 32255 MiB
+Tue Oct 18 21:13:12 UTC 202, 0, 41 %, 261 W, 32255 MiB
+Tue Oct 18 21:13:12 UTC 202, 4, 73 %, 288 W, 32255 MiB
+Tue Oct 18 21:13:12 UTC 202, 1, 69 %, 286 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:18 UTC 202, 4, 48 %, 242 W, 32255 MiB
+Tue Oct 18 21:13:18 UTC 202, 6, 61 %, 267 W, 32255 MiB
+Tue Oct 18 21:13:18 UTC 202, 3, 68 %, 275 W, 32255 MiB
+Tue Oct 18 21:13:18 UTC 202, 5, 74 %, 279 W, 32255 MiB
+Tue Oct 18 21:13:18 UTC 202, 7, 74 %, 279 W, 32255 MiB
+Tue Oct 18 21:13:18 UTC 202, 2, 42 %, 267 W, 32255 MiB
+Tue Oct 18 21:13:18 UTC 202, 0, 74 %, 281 W, 32255 MiB
+Tue Oct 18 21:13:18 UTC 202, 1, 51 %, 304 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:22 UTC 202, 2, 73 %, 310 W, 32255 MiB
+Tue Oct 18 21:13:22 UTC 202, 3, 67 %, 227 W, 32255 MiB
+Tue Oct 18 21:13:22 UTC 202, 6, 86 %, 208 W, 32255 MiB
+Tue Oct 18 21:13:22 UTC 202, 7, 53 %, 184 W, 32255 MiB
+Tue Oct 18 21:13:22 UTC 202, 5, 50 %, 272 W, 32255 MiB
+Tue Oct 18 21:13:22 UTC 202, 1, 84 %, 291 W, 32255 MiB
+Tue Oct 18 21:13:22 UTC 202, 4, 71 %, 264 W, 32255 MiB
+Tue Oct 18 21:13:22 UTC 202, 0, 81 %, 290 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:27 UTC 202, 3, 74 %, 266 W, 32255 MiB
+Tue Oct 18 21:13:27 UTC 202, 6, 47 %, 294 W, 32255 MiB
+Tue Oct 18 21:13:27 UTC 202, 7, 81 %, 294 W, 32255 MiB
+Tue Oct 18 21:13:27 UTC 202, 4, 73 %, 192 W, 32255 MiB
+Tue Oct 18 21:13:27 UTC 202, 5, 41 %, 272 W, 32255 MiB
+Tue Oct 18 21:13:27 UTC 202, 2, 87 %, 259 W, 32255 MiB
+Tue Oct 18 21:13:27 UTC 202, 0, 73 %, 257 W, 32255 MiB
+Tue Oct 18 21:13:27 UTC 202, 1, 83 %, 305 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:32 UTC 202, 5, 72 %, 281 W, 32255 MiB
+Tue Oct 18 21:13:32 UTC 202, 7, 58 %, 251 W, 32255 MiB
+Tue Oct 18 21:13:32 UTC 202, 2, 82 %, 299 W, 32255 MiB
+Tue Oct 18 21:13:32 UTC 202, 4, 50 %, 307 W, 32255 MiB
+Tue Oct 18 21:13:32 UTC 202, 1, 83 %, 303 W, 32255 MiB
+Tue Oct 18 21:13:32 UTC 202, 3, 14 %, 214 W, 32255 MiB
+Tue Oct 18 21:13:32 UTC 202, 6, 53 %, 146 W, 32255 MiB
+Tue Oct 18 21:13:32 UTC 202, 0, 14 %, 222 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:37 UTC 202, 6, 16 %, 275 W, 32255 MiB
+Tue Oct 18 21:13:37 UTC 202, 2, 15 %, 174 W, 32255 MiB
+Tue Oct 18 21:13:37 UTC 202, 5, 73 %, 270 W, 32255 MiB
+Tue Oct 18 21:13:37 UTC 202, 4, 15 %, 105 W, 32255 MiB
+Tue Oct 18 21:13:37 UTC 202, 7, 67 %, 254 W, 32255 MiB
+Tue Oct 18 21:13:37 UTC 202, 0, 54 %, 217 W, 32255 MiB
+Tue Oct 18 21:13:37 UTC 202, 3, 69 %, 271 W, 32255 MiB
+Tue Oct 18 21:13:37 UTC 202, 1, 17 %, 218 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:44 UTC 202, 6, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:13:44 UTC 202, 2, 15 %, 105 W, 32255 MiB
+Tue Oct 18 21:13:44 UTC 202, 3, 50 %, 162 W, 32255 MiB
+Tue Oct 18 21:13:44 UTC 202, 5, 60 %, 196 W, 32255 MiB
+Tue Oct 18 21:13:44 UTC 202, 4, 48 %, 240 W, 32255 MiB
+Tue Oct 18 21:13:44 UTC 202, 7, 14 %, 101 W, 32255 MiB
+Tue Oct 18 21:13:44 UTC 202, 1, 44 %, 107 W, 32255 MiB
+Tue Oct 18 21:13:44 UTC 202, 0, 57 %, 250 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:49 UTC 202, 2, 73 %, 209 W, 32255 MiB
+Tue Oct 18 21:13:49 UTC 202, 7, 39 %, 125 W, 32255 MiB
+Tue Oct 18 21:13:49 UTC 202, 6, 38 %, 167 W, 32255 MiB
+Tue Oct 18 21:13:49 UTC 202, 3, 66 %, 268 W, 32255 MiB
+Tue Oct 18 21:13:49 UTC 202, 0, 14 %, 102 W, 32255 MiB
+Tue Oct 18 21:13:49 UTC 202, 5, 34 %, 108 W, 32255 MiB
+Tue Oct 18 21:13:49 UTC 202, 4, 60 %, 226 W, 32255 MiB
+Tue Oct 18 21:13:49 UTC 202, 1, 27 %, 148 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:54 UTC 202, 4, 15 %, 104 W, 32255 MiB
+Tue Oct 18 21:13:54 UTC 202, 2, 53 %, 256 W, 32255 MiB
+Tue Oct 18 21:13:54 UTC 202, 7, 66 %, 213 W, 32255 MiB
+Tue Oct 18 21:13:54 UTC 202, 3, 53 %, 193 W, 32255 MiB
+Tue Oct 18 21:13:54 UTC 202, 5, 16 %, 108 W, 32255 MiB
+Tue Oct 18 21:13:54 UTC 202, 0, 39 %, 102 W, 32255 MiB
+Tue Oct 18 21:13:54 UTC 202, 6, 16 %, 107 W, 32255 MiB
+Tue Oct 18 21:13:54 UTC 202, 1, 64 %, 103 W, 32255 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:13:58 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:13:58 UTC 202, 7, 13 %, 100 W, 512 MiB
+Tue Oct 18 21:13:58 UTC 202, 5, 16 %, 108 W, 512 MiB
+Tue Oct 18 21:13:58 UTC 202, 3, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:13:58 UTC 202, 1, 15 %, 104 W, 512 MiB
+Tue Oct 18 21:13:58 UTC 202, 4, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:13:58 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:13:58 UTC 202, 0, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:02 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:02 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:02 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:02 UTC 202, 3, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:14:02 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:02 UTC 202, 7, 13 %, 100 W, 512 MiB
+Tue Oct 18 21:14:02 UTC 202, 0, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:14:02 UTC 202, 4, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:06 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:06 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:06 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:06 UTC 202, 7, 13 %, 100 W, 512 MiB
+Tue Oct 18 21:14:06 UTC 202, 3, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:14:06 UTC 202, 0, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:14:06 UTC 202, 4, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:06 UTC 202, 5, 16 %, 107 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:09 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:09 UTC 202, 7, 13 %, 100 W, 512 MiB
+Tue Oct 18 21:14:09 UTC 202, 3, 14 %, 100 W, 512 MiB
+Tue Oct 18 21:14:09 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:09 UTC 202, 4, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:14:09 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:09 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:09 UTC 202, 0, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:13 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:13 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:13 UTC 202, 7, 13 %, 100 W, 512 MiB
+Tue Oct 18 21:14:13 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:13 UTC 202, 3, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:14:13 UTC 202, 4, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:14:13 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:13 UTC 202, 0, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:17 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:17 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:17 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:17 UTC 202, 3, 14 %, 101 W, 512 MiB
+Tue Oct 18 21:14:17 UTC 202, 1, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:14:17 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:17 UTC 202, 0, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:14:17 UTC 202, 4, 14 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:21 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:21 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:21 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:21 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:21 UTC 202, 3, 14 %, 100 W, 512 MiB
+Tue Oct 18 21:14:21 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:21 UTC 202, 4, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:14:21 UTC 202, 0, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:25 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:25 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:25 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:25 UTC 202, 3, 14 %, 100 W, 512 MiB
+Tue Oct 18 21:14:25 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:25 UTC 202, 4, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:14:25 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:25 UTC 202, 0, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:29 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:29 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:29 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:29 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:29 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:29 UTC 202, 3, 14 %, 100 W, 512 MiB
+Tue Oct 18 21:14:29 UTC 202, 4, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:14:29 UTC 202, 0, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:32 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:32 UTC 202, 2, 14 %, 103 W, 512 MiB
+Tue Oct 18 21:14:32 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:32 UTC 202, 3, 14 %, 100 W, 512 MiB
+Tue Oct 18 21:14:32 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:32 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:14:32 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:32 UTC 202, 0, 14 %, 102 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:35 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:35 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:35 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:35 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:35 UTC 202, 3, 14 %, 100 W, 512 MiB
+Tue Oct 18 21:14:35 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:14:35 UTC 202, 0, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:14:35 UTC 202, 1, 15 %, 103 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:40 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:40 UTC 202, 3, 13 %, 100 W, 512 MiB
+Tue Oct 18 21:14:40 UTC 202, 6, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:40 UTC 202, 1, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:40 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:40 UTC 202, 2, 15 %, 103 W, 512 MiB
+Tue Oct 18 21:14:40 UTC 202, 4, 14 %, 102 W, 512 MiB
+Tue Oct 18 21:14:40 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Tue Oct 18 21:14:43 UTC 202, 6, 16 %, 106 W, 512 MiB
+Tue Oct 18 21:14:43 UTC 202, 5, 16 %, 107 W, 512 MiB
+Tue Oct 18 21:14:43 UTC 202, 7, 13 %, 99 W, 512 MiB
+Tue Oct 18 21:14:43 UTC 202, 3, 13 %, 100 W, 512 MiB
+Tue Oct 18 21:14:43 UTC 202, 2, 15 %, 103 W, 512 MiB
