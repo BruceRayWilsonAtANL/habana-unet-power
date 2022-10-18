@@ -177,6 +177,10 @@ cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
 cp ./scripts/unet-test.txt ./performance/poll-data/hl-smi/pre-procure
 ```
 
+#### Preprocess Log Files
+
+Preprocess/filter the log file.
+
 ```text
 Place the runtime logs into
 `performance/logs/<name-of-test-category>` to be used. Once placed, I used
@@ -190,44 +194,24 @@ cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 mkdir -p logs/habana_init_test
 ```
 
+For Habana, there are two choices for cleaning data.  They are:
+
+1. hl_smi.py
+2. txt_to_csv.py
+
+The second is more robust per Andre.  I used **hl_smi.py**.
+
 ##### hl_smi.py
 
 ```bash
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
-python3 hl_smi.py
+
 #poll-data/hl-smi/pre-procure/*.txt # Input
 #poll-data/hl-smi/post-procure/*.csv # Output
+python3 hl_smi.py
 ```
 
-```python
-def main():
-    """
-    This file cleans all of the hl-smi generated from Habana at once, located in hl-smi-csvs.
-    """
-
-    # Allow script to work when called from anywhere.
-    location = os.path.dirname(os.path.abspath(__file__))
-
-    # For every file in pre-procure, turn it into one in post-procure.
-    for content in os.listdir(os.path.join(location, "poll-data/hl-smi/pre-procure")):
-        if content.split(".")[-1] == ("txt"):
-            clean_file(content.split(".")[0], location)
-
-
-def clean_file(txt_filename, root_dir):
-    """
-    Turns the named txt file into a csv, cleaning data format and entries as it goes.
-    Arguments:
-        txt_filename: The name of the hl-smi txt output file to be cleaned.
-        root_dir: The path for the parent directory of hl-smi-csvs.
-    """
-```
-
-
-
-
-
-#### Process Log Files
+#### Analyze Log Files
 
 ```text
 Then use `analysis.py` and `analysis_smi.py` to extract insights from them.
@@ -238,6 +222,7 @@ I would get the runtime performance as a printed json object from calling
 A png should also get generated in `performance/pngs/<project-name>`. - Andre
 ```
 
+Begin old...
 If necessary,
 
 ```bash
@@ -266,6 +251,8 @@ fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_
 fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-2-duped.csv
 ```
 
+End old.
+
 #### Analyze CSV Files
 
 I may not be using this.  I am not sure.
@@ -274,16 +261,11 @@ I may not be using this.  I am not sure.
 python analysis.py run
 ```
 
+I believe that I am using:
+
 ```bash
 python analysis.py smi all
 ```
 
 analysis_smi.py
     load_hl_csv()
-
-
-#### hl_smi.py
-
-This file cleans all of the hl-smi generated from Habana at once, located in hl-smi-csvs.
-
-For every file in pre-procure, turn it into one in post-procure.
