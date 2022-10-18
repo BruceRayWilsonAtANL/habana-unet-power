@@ -255,7 +255,7 @@ End old.
 
 #### Analyze CSV Files
 
-I may not be using this.  I am not sure.
+I may not be using this.  I do not think so.
 
 ```bash
 python analysis.py run
@@ -264,8 +264,6 @@ python analysis.py run
 I believe that I am using:
 
 ```bash
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 python analysis.py smi all
 ```
-
-analysis_smi.py
-    load_hl_csv()
