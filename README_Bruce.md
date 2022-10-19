@@ -31,6 +31,7 @@ chmod 755 build-hl-smi-csv
 Start the power monitoring script with a specified output file.
 
 ```bash
+cd /home/wilsonb/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
 ./build-hl-smi-csv unet-test.txt
 ```
 
@@ -87,13 +88,6 @@ When the runs have finished switch to terminal 1
 ## Switch to Terminal 1
 
 <Ctrl+c> out of the power monitoring scripts
-
-```bash
-# I don't know what Andre did here.  This just may be a copy to the clipboard.
-cat performance/load-size-128.txt | pbcopy
-xclip
-pbcopy
-```
 
 ### Use Repo
 
@@ -173,8 +167,13 @@ where node-type is [hl-smi | nvidia-smi].
 Continuing with the Habana example:
 
 ```bash
-cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+#
+#
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
 cp ./scripts/unet-test.txt ./performance/poll-data/hl-smi/pre-procure
+cp ./scripts/resnet50.txt ./performance/poll-data/hl-smi/pre-procure
+#
+#
 ```
 
 #### Preprocess Log Files
@@ -190,8 +189,13 @@ combinations of `hl_smi.py`, `nvidia_smi.py`, and `txt_to_csv.py` to clean them.
 Let us say you want to call your batch of runs 'habana_init_test'.
 
 ```bash
+#
+#
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 mkdir -p logs/habana_init_test
+mkdir -p logs/resnet_test
+#
+#
 ```
 
 For Habana, there are two choices for cleaning data.  They are:
@@ -204,11 +208,15 @@ The second is more robust per Andre.  I used **hl_smi.py**.
 ##### hl_smi.py
 
 ```bash
+#
+#
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 
 #poll-data/hl-smi/pre-procure/*.txt # Input
 #poll-data/hl-smi/post-procure/*.csv # Output
 python3 hl_smi.py
+#
+#
 ```
 
 #### Analyze Log Files
@@ -221,37 +229,6 @@ I would get the runtime performance as a printed json object from calling
 `python3 analysis.py run`, and a figure from `python3 analysis.py smi`.
 A png should also get generated in `performance/pngs/<project-name>`. - Andre
 ```
-
-Begin old...
-If necessary,
-
-```bash
-cd /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
-```
-
-Run text to csv conversion script.
-
-```bash
-python3 txt_to_csv.py <dirname-in-logs>
-```
-
-Example:
-
-```bash
-python3 txt_to_csv.py habana_init_test
-```
-
-Example output:
-
-```console
-location: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
-fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-1-duped.csv
-fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-4-duped.csv
-fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-8-duped.csv
-fileOut: /home/bwilson/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance/csvs/habana_init_test/habana-worker-2-duped.csv
-```
-
-End old.
 
 #### Analyze CSV Files
 
