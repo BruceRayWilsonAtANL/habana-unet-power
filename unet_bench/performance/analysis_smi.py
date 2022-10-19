@@ -34,7 +34,7 @@ def smi_analysis(mode_="all"):
 
     # Change these variables in every run, as well as which frames are getting produced and viewed.
     # TODO: Change the 'run' variable.
-    run = "habana_init_test"
+    run = "resnet50"
 
     input_run = input(f"Enter run name [{run}]: ")
     if len(input_run) > 0:
