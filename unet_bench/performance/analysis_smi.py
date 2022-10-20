@@ -56,7 +56,7 @@ def smi_analysis(mode_="all"):
     name = run.replace('_', ' ')
     run_name = run
     mode = "hl-smi"
-    excludeFrames = [0]  # This removes a good frame.
+    excludeFrames = [0]  # This removes a good frame so, do not do it.
     excludeFrames = []
     habana_frames = filter_frames(name, run_name, mode, exclude_frames=excludeFrames)
     print(f"smi_analysis.habana_frames: {habana_frames}")
@@ -188,6 +188,27 @@ def clean_curve(
         inplace: A boolean for whether the operations should be inplace, default True.
     Returns: The new frame if not inplace, otherwise nothing.
     """
+
+    dumpData = True
+    if dumpData:
+        print(f'name: {name}')
+
+        csvOutPath = 'frame_dump.csv'
+        frame.to_csv(csvOutPath, index=False)
+        print(f'frame: {frame}')
+
+        #columns = ['historic_close', 'future_close', 'historic_day', 'historic_time', 'future_day', 'future_time', 'symbol' ]
+        #dfPrice = pd.read_csv(priceFilename, names=columns)
+
+        print(f'metric: {metric}')
+        print(f'unit: {unit}')
+        print(f'boundary: {boundary}')
+        print(f'num_bases: {num_bases}')
+        print(f'inplace: {inplace}')
+        input('Press <Enter> to continue...')
+
+
+
     if not inplace:
         frame = frame.copy()
 
