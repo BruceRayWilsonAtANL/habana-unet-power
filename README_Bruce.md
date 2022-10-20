@@ -8,16 +8,26 @@ Open Terminal 1 from dev machine
 ssh -J wilsonb@homes.cels.anl.gov wilsonb@habana-01.ai.alcf.anl.gov
 ```
 
-Continue
+Setup environment
 
 ```bash
 export PYTHON=/home/aevard/aevard_venv/bin/python
 export HABANA_LOGS=~/habana_logs
 source /home/aevard/aevard_venv/bin/activate
-
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power
+```
 
-# This only gets done once of course.
+Remove old log files.
+
+```bash
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
+rm performance/unsorted-logs/*
+cd ..
+```
+
+This only gets done once of course.
+
+```bash
 mkdir data
 cd data
 cp -r /home/aevard/apps/unet_bench/data/kaggle_duped_cache/ .
@@ -33,6 +43,7 @@ Start the power monitoring script with a specified output file.
 ```bash
 cd /home/wilsonb/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
 ./build-hl-smi-csv unet-test.txt
+./build-hl-smi-csv resnet50.txt
 ```
 
 **NOTE** Remember this file.  cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts/unet-test.txt.
@@ -48,17 +59,130 @@ Open a new terminal.
 ssh -J wilsonb@homes.cels.anl.gov wilsonb@habana-01.ai.alcf.anl.gov
 ```
 
-Continue
+### ResNet50
+
+Setup environment. (From ~/rn50.sh)
+
+```bash
+cd /home/wilsonb/DL/Habana/Model-References/TensorFlow/computer_vision/Resnets/resnet_keras/
+export PYTHON=$(which python3)
+export PYTHONPATH=/home/wilsonb/DL/Habana/Model-References/:$(which python)
+export HABANA_LOGS=~/.habana_logs
+```
+
+Do runs:
+
+```bash
+time $PYTHON resnet_ctl_imagenet_main.py \
+    -dt bf16 \
+    --data_loader_image_type bf16 \
+    -te 5 \
+    -bs 256 \
+    --optimizer LARS \
+    --base_learning_rate 9.5 \
+    --warmup_epochs 3 \
+    --lr_schedule polynomial \
+    --label_smoothing 0.1 \
+    --weight_decay 0.0001 \
+    --single_l2_loss_op \
+    --data_dir /lambda_stor/data/imagenet/tf_records
+time mpirun \
+    --allow-run-as-root \
+    --bind-to core \
+    -np 2 \
+    --map-by socket:PE=7 \
+    --merge-stderr-to-stdout \
+       $PYTHON resnet_ctl_imagenet_main.py \
+            --dtype bf16 \
+            --data_loader_image_type bf16 \
+            --use_horovod \
+            -te 5 \
+            -bs 256 \
+            --optimizer LARS \
+            --base_learning_rate 9.5 \
+            --warmup_epochs 3 \
+            --lr_schedule polynomial \
+            --label_smoothing 0.1 \
+            --weight_decay 0.0001 \
+            --single_l2_loss_op \
+            --data_dir /lambda_stor/data/imagenet/tf_records
+time mpirun \
+    --allow-run-as-root \
+    --bind-to core \
+    -np 4 \
+    --map-by socket:PE=7 \
+    --merge-stderr-to-stdout \
+       $PYTHON resnet_ctl_imagenet_main.py \
+            --dtype bf16 \
+            --data_loader_image_type bf16 \
+            --use_horovod \
+            -te 5 \
+            -bs 256 \
+            --optimizer LARS \
+            --base_learning_rate 9.5 \
+            --warmup_epochs 3 \
+            --lr_schedule polynomial \
+            --label_smoothing 0.1 \
+            --weight_decay 0.0001 \
+            --single_l2_loss_op \
+            --data_dir /lambda_stor/data/imagenet/tf_records
+time mpirun \
+    --allow-run-as-root \
+    --bind-to core \
+    -np 8 \
+    --map-by socket:PE=7 \
+    --merge-stderr-to-stdout \
+       $PYTHON resnet_ctl_imagenet_main.py \
+            --dtype bf16 \
+            --data_loader_image_type bf16 \
+            --use_horovod \
+            -te 5 \
+            -bs 256 \
+            --optimizer LARS \
+            --base_learning_rate 9.5 \
+            --warmup_epochs 3 \
+            --lr_schedule polynomial \
+            --label_smoothing 0.1 \
+            --weight_decay 0.0001 \
+            --single_l2_loss_op \
+            --data_dir /lambda_stor/data/imagenet/tf_records
+time mpirun -v \
+    --allow-run-as-root \
+    -np 16 \
+    --mca btl_tcp_if_include 192.168.201.0/24 \
+    --tag-output \
+    --merge-stderr-to-stdout \
+    --prefix /usr/local/openmpi \
+    -H 140.221.77.101:8,140.221.77.102:8 \
+    -x GC_KERNEL_PATH \
+    -x HABANA_LOGS \
+    -x PYTHONPATH \
+    -x HCCL_SOCKET_IFNAME=enp75s0f0,ens1f0 \
+    -x HCCL_OVER_TCP=1 \
+    $PYTHON resnet_ctl_imagenet_main.py \
+        -dt bf16 \
+        -dlit bf16 \
+        -bs 256 \
+        -te 5 \
+        --use_horovod \
+        --data_dir /lambda_stor/data/imagenet/tf_records/ \
+        --optimizer LARS \
+        --base_learning_rate 9.5 \
+        --warmup_epochs 3 \
+        --lr_schedule polynomial \
+        --label_smoothing 0.1 \
+        --weight_decay 0.0001 \
+        --single_l2_loss_op \
+        --model_dir=`mktemp -d`
+```
+
+### UNet
 
 ```bash
 export PYTHON=/home/aevard/aevard_venv/bin/python
 export HABANA_LOGS=~/habana_logs
 source /home/aevard/aevard_venv/bin/activate
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
-```
-
-```bash
-rm performance/unsorted-logs/habana-worker*
 ```
 
 ```bash
@@ -82,6 +206,8 @@ output file is:
 ```console
 ./performance/unsorted-logs/habana-worker-1-duped.txt
 ```
+
+### Wrap up
 
 When the runs have finished switch to terminal 1
 
@@ -169,9 +295,9 @@ Continuing with the Habana example:
 ```bash
 #
 #
-cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/scripts
+cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/
 cp ./scripts/unet-test.txt ./performance/poll-data/hl-smi/pre-procure
-cp ./scripts/resnet50.txt ./performance/poll-data/hl-smi/pre-procure
+cp ./scripts/resnet50*.txt ./performance/poll-data/hl-smi/pre-procure
 #
 #
 ```
@@ -191,6 +317,11 @@ Let us say you want to call your batch of runs 'habana_init_test'.
 ```bash
 #
 #
+x
+x
+x
+x
+
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 mkdir -p logs/habana_init_test
 mkdir -p logs/resnet_test
@@ -232,15 +363,10 @@ A png should also get generated in `performance/pngs/<project-name>`. - Andre
 
 #### Analyze CSV Files
 
-I may not be using this.  I do not think so.
-
-```bash
-python analysis.py run
-```
-
-I believe that I am using:
+I am using:
 
 ```bash
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 python analysis.py smi all
+python analysis.py smi model
 ```

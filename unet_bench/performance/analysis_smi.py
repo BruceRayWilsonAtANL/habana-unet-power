@@ -34,7 +34,7 @@ def smi_analysis(mode_="all"):
 
     # Change these variables in every run, as well as which frames are getting produced and viewed.
     # TODO: Change the 'run' variable.
-    run = "resnet50"
+    run = "resnet50_4"
 
     input_run = input(f"Enter run name [{run}]: ")
     if len(input_run) > 0:
@@ -56,7 +56,9 @@ def smi_analysis(mode_="all"):
     name = run.replace('_', ' ')
     run_name = run
     mode = "hl-smi"
-    habana_frames = filter_frames(name, run_name, mode, exclude_frames=[0])
+    excludeFrames = [0]  # This removes a good frame.
+    excludeFrames = []
+    habana_frames = filter_frames(name, run_name, mode, exclude_frames=excludeFrames)
     print(f"smi_analysis.habana_frames: {habana_frames}")
 
     original = False
