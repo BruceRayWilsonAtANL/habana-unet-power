@@ -83,7 +83,7 @@ def smi_analysis(mode_="all"):
     # Could (and previously has been) a loop for every metric. Since it's currently just power, didn't bother.
     time_name = "time-diff"
     if "power.draw" in metrics:
-        plt.figure(figsize=(10, 4))
+        plt.figure(figsize=(10, 5))
         # Plot all the frame data that should be shown.
         # Comment out any of these if their data isn't desired (or in existence) for the chart.
         # Example: for the example png, habana_frames just adds clutter. Would comment out usually,
@@ -197,7 +197,7 @@ def clean_curve(
     Returns: The new frame if not inplace, otherwise nothing.
     """
 
-    dumpData = True
+    dumpData = False
     if dumpData:
         print(f'name: {name}')
 
@@ -305,9 +305,11 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
     Returns: Adds rows 'total draw' and 'over baseline' to frame, returns it if not inplace.
     """
 
-    print('\ncalulate_curve:')
-    print(f'calculate_curve.metric: {metric}')
-    print(f'calculate_curve.unit: {unit}')
+    debug = False
+    if debug:
+        print('\ncalulate_curve:')
+        print(f'calculate_curve.metric: {metric}')
+        print(f'calculate_curve.unit: {unit}')
 
     if not inplace:
         frame = frame.copy()
@@ -350,14 +352,17 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
             tmpOverBaseline = dt * (averageMetric - inactiveBaseline)
             tmpOverBaselineCum += tmpOverBaseline
 
-            print(f'\ncalculate_curve.inactiveBaseline: {inactiveBaseline}')
-            print(f'calculate_curve.tmpOverBaseline: {tmpOverBaseline}')
-            print(f'calculate_curve.tmpOverBaselineCum: {tmpOverBaselineCum}')
+            if debug:
+                print(f'\ncalculate_curve.inactiveBaseline: {inactiveBaseline}')
+                print(f'calculate_curve.tmpOverBaseline: {tmpOverBaseline}')
+                print(f'calculate_curve.tmpOverBaselineCum: {tmpOverBaselineCum}')
 
             tmp_over_baseline = dt * ((rowMetric + prevRowMetric) / 2 - inactiveBaseline)
             over_baseline += tmp_over_baseline
-            print(f'calculate_curve.tmp_over_baseline: {tmp_over_baseline}')
-            print(f'calculate_curve.over_baseline: {over_baseline}')
+
+            if debug:
+                print(f'calculate_curve.tmp_over_baseline: {tmp_over_baseline}')
+                print(f'calculate_curve.over_baseline: {over_baseline}')
 
             total += dt * (rowMetric + prevRowMetric) / 2
 
