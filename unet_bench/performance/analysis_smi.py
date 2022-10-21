@@ -117,7 +117,8 @@ def smi_analysis(mode_="all"):
         plt.legend(loc='upper left')
         plt.title(plot_title)
         plt.xlabel("Time since start of profiler (S)")
-        plt.ylabel("Power (W)", rotation="horizontal")
+        #plt.ylabel("Power (KW)", rotation="horizontal")
+        plt.ylabel("Power (KW)")
         ## Enable and rename once there's a satisfying figure. Be wary to not overwrite past figures.
         if not os.path.isfile(outfile_name) or OVERWRITE:
             plt.savefig(outfile_name)
@@ -361,8 +362,8 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
             total += dt * (rowMetric + prevRowMetric) / 2
 
         # Add calculations to their points to graph later.
-        frame.at[idx, "over baseline"] = over_baseline
-        frame.at[idx, "total draw"] = total
+        frame.at[idx, "over baseline"] = over_baseline / 1000
+        frame.at[idx, "total draw"] = total / 1000
         prev_time = row["time-diff"]
         prevRowMetric = rowMetric
 
