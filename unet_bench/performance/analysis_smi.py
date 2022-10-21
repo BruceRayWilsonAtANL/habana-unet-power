@@ -316,7 +316,7 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
     # Grab the baseline for this function's calcs before calling find_ends.
     inactiveBaseline = np.float64(frame[metric].mode().squeeze())
 
-    desiredNonNegativeMinimum = 0  # Zero should cause the metric to track with the total.
+    desiredNonNegativeMinimum = 104  # Zero should cause the metric to track with the total.
     inactiveBaseline = min(inactiveBaseline, desiredNonNegativeMinimum)
     inactiveBaseline = max(inactiveBaseline, desiredNonNegativeMinimum)
     print(f'calculate_curve.inactiveBaseline: {inactiveBaseline}')
