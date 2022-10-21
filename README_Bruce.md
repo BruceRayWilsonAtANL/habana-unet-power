@@ -366,6 +366,7 @@ A png should also get generated in `performance/pngs/<project-name>`. - Andre
 I am using:
 
 ```bash
+source ~/venvpower/bin/activate
 cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 python analysis.py smi all
 python analysis.py smi model

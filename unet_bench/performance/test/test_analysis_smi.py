@@ -390,6 +390,9 @@ python test/test_analysis_smi.py  TestAnalysisSmi.test_clean_curve_01
 
         print(f'dfPower: \n{dfPower}')
 
+        csvOutPath = 'clean_frame.csv'
+        dfPower.to_csv(csvOutPath, index=False)
+
 
         #
         # Test
