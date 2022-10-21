@@ -386,6 +386,11 @@ python test/test_analysis_smi.py  TestAnalysisSmi.test_clean_curve_01
         # Run
         #
 
+        clean_curve(name, dfPower, metric, unit, boundary, num_bases, inplace)
+
+        print(f'dfPower: \n{dfPower}')
+
+
         #
         # Test
         #

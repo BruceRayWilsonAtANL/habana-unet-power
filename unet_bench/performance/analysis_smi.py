@@ -6,9 +6,9 @@ import numpy as np
 import os
 
 MAX_MEM = 32768
-HABANA_CSV = "csvs/habana02_theta_comapre"
-HABANA_CSV = "csvs/habana02_theta_compare"
-THETA_CSV = "csvs/theta"
+#HABANA_CSV = "csvs/habana02_theta_comapre"
+#HABANA_CSV = "csvs/habana02_theta_compare"
+#THETA_CSV = "csvs/theta"
 OUT_DIR = "pngs/theta-v-habana"
 OVERWRITE = False # Included since it's very easy to overwrite old, useful data.
 
@@ -88,7 +88,9 @@ def smi_analysis(mode_="all"):
         # Comment out any of these if their data isn't desired (or in existence) for the chart.
         # Example: for the example png, habana_frames just adds clutter. Would comment out usually,
         #habana_frames = []
-        for frame in habana_frames:
+        for frameNum, frame in enumerate(habana_frames):
+            #csvOutPath = f'frame_{frameNum}'
+
             clean_curve(frame[0], frame[1], "power.draw", "W", boundary=1)
             if mode_ in ["all", "model"]:
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
@@ -142,6 +144,7 @@ def filter_frames(name: str, run_name: str, mode: str, utilz=None, exclude_frame
 
     for frame in load_hl_csv(run_name, mode=mode, exclude_frames=exclude_frames).items():
         if frame[1].var()[utilz(mode)] > 1.0: # Filters most inactive cards, does not catch foreign runners on those cards.
+            # Keep data for card utilization > 1.0.
             frames.append((f"{name} {frame[0]}", frame[1]))
     return frames
 
@@ -313,15 +316,18 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
     idx, row = next(rows)
     prev_val = row[metric]
     prev_time = row["time-diff"]
+
     # Calculate the curve under the whole active run.
     for idx, row in rows:
         if _within(row[metric], bases):
             inactive = row[metric]
+
         # Only use active rows. Does clip off half the very last entry but not a big error.
         if row["indicator"] == 1:
             dt = row["time-diff"] - prev_time
             over_baseline += dt * ((row[metric] + prev_val) / 2 - inactive)
             total += dt * (row[metric] + prev_val) / 2
+
         # Add calculations to their points to graph later.
         frame.at[idx, "over baseline"] = over_baseline
         frame.at[idx, "total draw"] = total
