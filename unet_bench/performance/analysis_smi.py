@@ -315,6 +315,10 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
 
     # Grab the baseline for this function's calcs before calling find_ends.
     inactiveBaseline = np.float64(frame[metric].mode().squeeze())
+
+    desiredNonNegativeMinimum = 0  # Zero should cause the metric to track with the total.
+    inactiveBaseline = min(inactiveBaseline, desiredNonNegativeMinimum)
+    inactiveBaseline = max(inactiveBaseline, desiredNonNegativeMinimum)
     print(f'calculate_curve.inactiveBaseline: {inactiveBaseline}')
 
     find_ends(frame, metric, num_bases=num_bases)
@@ -323,30 +327,44 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
 
     # Running calculation values and loop setup
     over_baseline = 0.0
+    tmpOverBaselineCum = 0.0
     total = 0.0
     rows = frame.iterrows()
     idx, row = next(rows)
-    prev_val = row[metric]
+    prevRowMetric = row[metric]
     prev_time = row["time-diff"]
 
     # Calculate the curve under the whole active run.
     for idx, row in rows:
         rowMetric = row[metric]
 
-        if _within(rowMetric, bases):
+        resetBaseline = False
+        if _within(rowMetric, bases) and resetBaseline:
             inactiveBaseline = rowMetric
 
         # Only use active rows. Does clip off half the very last entry but not a big error.
         if row["indicator"] == 1:
             dt = row["time-diff"] - prev_time
-            over_baseline += dt * ((rowMetric + prev_val) / 2 - inactiveBaseline)
-            total += dt * (rowMetric + prev_val) / 2
+            averageMetric = (rowMetric + prevRowMetric) / 2
+            tmpOverBaseline = dt * (averageMetric - inactiveBaseline)
+            tmpOverBaselineCum += tmpOverBaseline
+
+            print(f'\ncalculate_curve.inactiveBaseline: {inactiveBaseline}')
+            print(f'calculate_curve.tmpOverBaseline: {tmpOverBaseline}')
+            print(f'calculate_curve.tmpOverBaselineCum: {tmpOverBaselineCum}')
+
+            tmp_over_baseline = dt * ((rowMetric + prevRowMetric) / 2 - inactiveBaseline)
+            over_baseline += tmp_over_baseline
+            print(f'calculate_curve.tmp_over_baseline: {tmp_over_baseline}')
+            print(f'calculate_curve.over_baseline: {over_baseline}')
+
+            total += dt * (rowMetric + prevRowMetric) / 2
 
         # Add calculations to their points to graph later.
         frame.at[idx, "over baseline"] = over_baseline
         frame.at[idx, "total draw"] = total
         prev_time = row["time-diff"]
-        prev_val = rowMetric
+        prevRowMetric = rowMetric
 
     if not inplace:
         return frame
