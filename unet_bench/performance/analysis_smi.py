@@ -83,7 +83,7 @@ def smi_analysis(mode_="all"):
     # Could (and previously has been) a loop for every metric. Since it's currently just power, didn't bother.
     time_name = "time-diff"
     if "power.draw" in metrics:
-        plt.figure(figsize=(10, 5))
+        plt.figure(figsize=(10, 8))
         # Plot all the frame data that should be shown.
         # Comment out any of these if their data isn't desired (or in existence) for the chart.
         # Example: for the example png, habana_frames just adds clutter. Would comment out usually,
@@ -367,8 +367,10 @@ def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, in
             total += dt * (rowMetric + prevRowMetric) / 2
 
         # Add calculations to their points to graph later.
-        frame.at[idx, "over baseline"] = over_baseline / 1000
-        frame.at[idx, "total draw"] = total / 1000
+        frame.at[idx, "over baseline"] = (rowMetric - inactiveBaseline) / 1000
+        # Do not do the total.  Venkat only wants the instantaneous value.  That makes sense.
+        #frame.at[idx, "total draw"] = total / 1000
+        frame.at[idx, "total draw"] = rowMetric / 1000
         prev_time = row["time-diff"]
         prevRowMetric = rowMetric
 

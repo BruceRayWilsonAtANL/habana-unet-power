@@ -245,7 +245,7 @@ cd ~/DL/github.com/BruceRayWilsonAtANL/habana-unet-power/unet_bench/performance
 #### Move Log Files
 
 ```text
-Once the device profiler was running, I set the unet(s) to run. Information is printed
+Once the device profiler is running, I set the unet(s) to run. Information is printed
 on their shells, and everything that is printed should also be logged, and more than that.
 The location of the logging is in `performance/unsorted-logs`. These files and the
 device profiling logs all need to be extracted from the remote in whatever manner
