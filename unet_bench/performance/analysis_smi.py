@@ -6,9 +6,9 @@ import numpy as np
 import os
 
 MAX_MEM = 32768
-HABANA_CSV = "csvs/habana02_theta_comapre"
-HABANA_CSV = "csvs/habana02_theta_compare"
-THETA_CSV = "csvs/theta"
+#HABANA_CSV = "csvs/habana02_theta_comapre"
+#HABANA_CSV = "csvs/habana02_theta_compare"
+#THETA_CSV = "csvs/theta"
 OUT_DIR = "pngs/theta-v-habana"
 OVERWRITE = False # Included since it's very easy to overwrite old, useful data.
 
@@ -34,7 +34,7 @@ def smi_analysis(mode_="all"):
 
     # Change these variables in every run, as well as which frames are getting produced and viewed.
     # TODO: Change the 'run' variable.
-    run = "resnet50"
+    run = "resnet50_1"
 
     input_run = input(f"Enter run name [{run}]: ")
     if len(input_run) > 0:
@@ -56,7 +56,9 @@ def smi_analysis(mode_="all"):
     name = run.replace('_', ' ')
     run_name = run
     mode = "hl-smi"
-    habana_frames = filter_frames(name, run_name, mode, exclude_frames=[0])
+    excludeFrames = [0]  # This removes a good frame so, do not do it.
+    excludeFrames = []
+    habana_frames = filter_frames(name, run_name, mode, exclude_frames=excludeFrames)
     print(f"smi_analysis.habana_frames: {habana_frames}")
 
     original = False
@@ -81,25 +83,31 @@ def smi_analysis(mode_="all"):
     # Could (and previously has been) a loop for every metric. Since it's currently just power, didn't bother.
     time_name = "time-diff"
     if "power.draw" in metrics:
-        plt.figure(figsize=(10, 4))
+        plt.figure(figsize=(10, 8))
         # Plot all the frame data that should be shown.
         # Comment out any of these if their data isn't desired (or in existence) for the chart.
         # Example: for the example png, habana_frames just adds clutter. Would comment out usually,
         #habana_frames = []
-        for frame in habana_frames:
-            clean_curve(frame[0], frame[1], "power.draw", "W", boundary=1)
+
+        # Create the curve for "power.draw".
+        metric = "power.draw"
+        unit   = "W"
+
+        for frameNum, frame in enumerate(habana_frames):
+            #csvOutPath = f'frame_{frameNum}'
+            clean_curve(frame[0], frame[1], metric, unit, boundary=1)
             if mode_ in ["all", "model"]:
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
             if mode_ in ["all", "total"]:
                 plt.plot(frame[1][time_name], frame[1]["total draw"], label=f"{frame[0]} total")
         for frame in theta_frames:
-            clean_curve(frame[0], frame[1], "power.draw", "W", num_bases=2)
+            clean_curve(frame[0], frame[1], metric, unit, num_bases=2)
             if mode_ in ["all", "model"]:
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
             if mode_ in ["all", "total"]:
                 plt.plot(frame[1][time_name], frame[1]["total draw"], label=f"{frame[0]} total")
         for frame in frame_avgs:
-            clean_curve(frame[0], frame[1], "power.draw", "W")
+            clean_curve(frame[0], frame[1], metric, unit)
             if mode_ in ["all", "model"]:
                 plt.plot(frame[1][time_name], frame[1]["over baseline"], label=f"{frame[0]} model")
             if mode_ in ["all", "total"]:
@@ -109,7 +117,8 @@ def smi_analysis(mode_="all"):
         plt.legend(loc='upper left')
         plt.title(plot_title)
         plt.xlabel("Time since start of profiler (S)")
-        plt.ylabel("Power (W)", rotation="horizontal")
+        #plt.ylabel("Power (KW)", rotation="horizontal")
+        plt.ylabel("Power (KW)")
         ## Enable and rename once there's a satisfying figure. Be wary to not overwrite past figures.
         if not os.path.isfile(outfile_name) or OVERWRITE:
             plt.savefig(outfile_name)
@@ -140,6 +149,7 @@ def filter_frames(name: str, run_name: str, mode: str, utilz=None, exclude_frame
 
     for frame in load_hl_csv(run_name, mode=mode, exclude_frames=exclude_frames).items():
         if frame[1].var()[utilz(mode)] > 1.0: # Filters most inactive cards, does not catch foreign runners on those cards.
+            # Keep data for card utilization > 1.0.
             frames.append((f"{name} {frame[0]}", frame[1]))
     return frames
 
@@ -186,6 +196,27 @@ def clean_curve(
         inplace: A boolean for whether the operations should be inplace, default True.
     Returns: The new frame if not inplace, otherwise nothing.
     """
+
+    dumpData = False
+    if dumpData:
+        print(f'name: {name}')
+
+        csvOutPath = 'frame_dump.csv'
+        frame.to_csv(csvOutPath, index=False)
+        print(f'frame: {frame}')
+
+        #columns = ['historic_close', 'future_close', 'historic_day', 'historic_time', 'future_day', 'future_time', 'symbol' ]
+        #dfPrice = pd.read_csv(priceFilename, names=columns)
+
+        print(f'metric: {metric}')
+        print(f'unit: {unit}')
+        print(f'boundary: {boundary}')
+        print(f'num_bases: {num_bases}')
+        print(f'inplace: {inplace}')
+        input('Press <Enter> to continue...')
+
+
+
     if not inplace:
         frame = frame.copy()
 
@@ -264,46 +295,84 @@ def smoothed_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1):
 
 def calculate_curve(frame: pd.DataFrame, metric: str, unit: str, num_bases=1, inplace=True):
     """
-    Calculates the overall metric curve across the whole run
+    Calculates the overall/cumulative metric curve across the whole run
     Arguments:
         frame: The dataframe to calculate on.
-        metric: The string metric name which to calculate.
-        unit: The string for the metric's unit.
+        metric: The string metric name to calculate.  E.g., 'power.draw'.
+        unit: The string for the metric's unit.  E.g., 'W'.
         num_bases: The number of baselines to treat as inactive, default 1.
         inplace: Whether to modify the original frame or, default true.
     Returns: Adds rows 'total draw' and 'over baseline' to frame, returns it if not inplace.
     """
+
+    debug = False
+    if debug:
+        print('\ncalulate_curve:')
+        print(f'calculate_curve.metric: {metric}')
+        print(f'calculate_curve.unit: {unit}')
+
     if not inplace:
         frame = frame.copy()
+
     frame.rename(columns={f"{metric} [{unit}]": metric}, inplace=True)
 
     # Grab the baseline for this function's calcs before calling find_ends.
-    inactive = np.float64(frame[metric].mode().squeeze())
+    inactiveBaseline = np.float64(frame[metric].mode().squeeze())
+
+    desiredNonNegativeMinimum = 104  # Zero should cause the metric to track with the total.
+    inactiveBaseline = min(inactiveBaseline, desiredNonNegativeMinimum)
+    inactiveBaseline = max(inactiveBaseline, desiredNonNegativeMinimum)
+    print(f'calculate_curve.inactiveBaseline: {inactiveBaseline}')
+
     find_ends(frame, metric, num_bases=num_bases)
     bases = find_bases(frame, metric, num_bases=num_bases)
 
 
     # Running calculation values and loop setup
     over_baseline = 0.0
+    tmpOverBaselineCum = 0.0
     total = 0.0
     rows = frame.iterrows()
     idx, row = next(rows)
-    prev_val = row[metric]
+    prevRowMetric = row[metric]
     prev_time = row["time-diff"]
+
     # Calculate the curve under the whole active run.
     for idx, row in rows:
-        if _within(row[metric], bases):
-            inactive = row[metric]
+        rowMetric = row[metric]
+
+        resetBaseline = False
+        if _within(rowMetric, bases) and resetBaseline:
+            inactiveBaseline = rowMetric
+
         # Only use active rows. Does clip off half the very last entry but not a big error.
         if row["indicator"] == 1:
             dt = row["time-diff"] - prev_time
-            over_baseline += dt * ((row[metric] + prev_val) / 2 - inactive)
-            total += dt * (row[metric] + prev_val) / 2
+            averageMetric = (rowMetric + prevRowMetric) / 2
+            tmpOverBaseline = dt * (averageMetric - inactiveBaseline)
+            tmpOverBaselineCum += tmpOverBaseline
+
+            if debug:
+                print(f'\ncalculate_curve.inactiveBaseline: {inactiveBaseline}')
+                print(f'calculate_curve.tmpOverBaseline: {tmpOverBaseline}')
+                print(f'calculate_curve.tmpOverBaselineCum: {tmpOverBaselineCum}')
+
+            tmp_over_baseline = dt * ((rowMetric + prevRowMetric) / 2 - inactiveBaseline)
+            over_baseline += tmp_over_baseline
+
+            if debug:
+                print(f'calculate_curve.tmp_over_baseline: {tmp_over_baseline}')
+                print(f'calculate_curve.over_baseline: {over_baseline}')
+
+            total += dt * (rowMetric + prevRowMetric) / 2
+
         # Add calculations to their points to graph later.
-        frame.at[idx, "over baseline"] = over_baseline
-        frame.at[idx, "total draw"] = total
+        frame.at[idx, "over baseline"] = (rowMetric - inactiveBaseline) / 1000
+        # Do not do the total.  Venkat only wants the instantaneous value.  That makes sense.
+        #frame.at[idx, "total draw"] = total / 1000
+        frame.at[idx, "total draw"] = rowMetric / 1000
         prev_time = row["time-diff"]
-        prev_val = row[metric]
+        prevRowMetric = rowMetric
 
     if not inplace:
         return frame
@@ -384,7 +453,7 @@ def _within(value: int, baselines: List[int], bounds=1) -> bool:
         value: The value to check.
         baselines: The baselines to compare value to.
         bounds: The sensitivity of the baselines, default 1.
-    Returns: True if value is within the sensetivity of any baseline, false if not.
+    Returns: True if the value is within the sensitivity of any baseline, false if not.
     """
     for baseline in baselines:
         if value <= baseline + bounds and value >= baseline - bounds:
