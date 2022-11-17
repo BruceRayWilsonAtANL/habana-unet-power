@@ -2218,3 +2218,7 @@ Wed Oct 19 15:17:24 UTC 202, 1, 14 %, 103 W, 512 MiB
 Wed Oct 19 15:17:24 UTC 202, 7, 13 %, 98 W, 512 MiB
 Wed Oct 19 15:17:24 UTC 202, 4, 14 %, 102 W, 512 MiB
 Wed Oct 19 15:17:24 UTC 202, 0, 14 %, 101 W, 512 MiB
+timestamp, module_id, utilization.aip [%], power.draw [W], memory.used [MiB]
+Thu Nov 17 19:46:49 UTC 202, 6, 16 %, 107 W, 512 MiB
+Thu Nov 17 19:46:49 UTC 202, 3, 13 %, 99 W, 512 MiB
+Thu Nov 17 19:46:49 UTC 202, 4, 14 %, 102 W, 512 MiB
